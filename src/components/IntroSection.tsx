@@ -62,6 +62,18 @@ const IntroSection = () => (
           <FaLinkedin />
         </a>
       </div>
+
+      <div className='mt-12 space-y-4 max-w-2xl'>
+        <p className='text-lg text-gray-600 leading-relaxed'>
+          안녕하세요, AI와 함께 성장하는 프론트엔드 개발자{' '}
+          <span className='font-semibold text-black'>Ella Choi</span>입니다.
+        </p>
+        <p className='text-base text-gray-600 leading-relaxed'>
+          새로운 기술을 배우고, 사용자 경험을 개선하는 데 열정이 있습니다. 미국
+          AI 스타트업에서 인턴십을 준비 중이며, 혁신적인 웹 애플리케이션을
+          만들어가는 것을 목표로 하고 있습니다.
+        </p>
+      </div>
     </div>
   </section>
 );

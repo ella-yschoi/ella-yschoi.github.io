@@ -10,7 +10,7 @@ const skills = [
 ];
 
 const SkillsSection = () => (
-  <section id='skills' className='py-16 px-6 w-full bg-gray-50'>
+  <section id='skills' className='py-16 px-6 w-full bg-white'>
     <div className='max-w-4xl mx-auto'>
       <h2 className='text-3xl font-bold mb-12 text-center text-black'>
         Skills

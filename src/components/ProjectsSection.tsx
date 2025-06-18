@@ -28,7 +28,7 @@ const projects = [
 ];
 
 const ProjectsSection = () => (
-  <section id='projects' className='py-16 px-6 w-full bg-white'>
+  <section id='projects' className='py-16 px-6 w-full bg-gray-50'>
     <div className='max-w-5xl mx-auto relative'>
       <h2 className='text-3xl font-bold mb-12 text-center text-black'>
         Projects
