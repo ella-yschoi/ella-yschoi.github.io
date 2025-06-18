@@ -10,21 +10,21 @@ const skills = [
 ];
 
 const SkillsSection = () => (
-  <section id='skills' className='py-24 px-6 w-full bg-white dark:bg-slate-900'>
+  <section id='skills' className='py-16 px-6 w-full bg-gray-50'>
     <div className='max-w-4xl mx-auto'>
-      <h2 className='text-4xl font-bold mb-16 text-center text-slate-900 dark:text-white'>
+      <h2 className='text-3xl font-bold mb-12 text-center text-black'>
         Skills
       </h2>
-      <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+      <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className='group bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1'
+            className='group bg-white rounded-lg p-5 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-100'
           >
-            <h3 className='text-xl font-semibold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+            <h3 className='text-lg font-semibold mb-2 text-black group-hover:text-gray-700 transition-colors'>
               {skill.name}
             </h3>
-            <span className='text-sm text-slate-500 dark:text-slate-400 font-medium'>
+            <span className='text-sm text-gray-500 font-medium'>
               {skill.level}
             </span>
           </div>
