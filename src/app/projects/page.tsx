@@ -26,8 +26,8 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <section className='py-16 px-6 w-full bg-gray-50 min-h-screen'>
-      <div className='max-w-5xl mx-auto'>
+    <section className='py-16 w-full bg-gray-50 min-h-screen'>
+      <div className='max-w-5xl mx-auto px-4 md:px-6'>
         <h1 className='text-3xl font-bold mb-10 text-black'>Projects</h1>
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {projects.map((project) => (

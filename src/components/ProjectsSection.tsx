@@ -28,8 +28,11 @@ const projects = [
 ];
 
 const ProjectsSection = () => (
-  <section id='projects' className='py-16 px-6 w-full bg-gray-50'>
-    <div className='max-w-5xl mx-auto relative'>
+  <section
+    id='projects'
+    className='w-full bg-white rounded-2xl shadow py-16 px-0'
+  >
+    <div className='max-w-5xl mx-auto px-6'>
       <h2 className='text-3xl font-bold mb-12 text-center text-black'>
         Projects
       </h2>

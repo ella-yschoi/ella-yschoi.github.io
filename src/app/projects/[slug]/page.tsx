@@ -1,5 +1,4 @@
 'use client';
-import { notFound } from 'next/navigation';
 import { use, useState } from 'react';
 
 interface Props {
@@ -104,8 +103,8 @@ export default function ProjectDetailPage({ params }: Props) {
   }
 
   return (
-    <section className='py-16 px-6 w-full bg-gray-50 min-h-screen'>
-      <div className='max-w-4xl mx-auto'>
+    <section className='py-16 w-full bg-gray-50 min-h-screen'>
+      <div className='max-w-5xl mx-auto px-4 md:px-6'>
         {/* 이미지 영역 */}
         <div className='mb-10'>
           <div
