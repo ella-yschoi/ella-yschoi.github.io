@@ -7,16 +7,16 @@ export default function Home() {
   return (
     <main className='flex flex-col items-center w-full bg-gray-50 min-h-screen'>
       <div className='w-full max-w-5xl mx-auto px-4 md:px-6 mt-10'>
-        <div className='rounded-2xl  shadow my-8'>
+        <div id='intro' className='rounded-2xl shadow my-8'>
           <IntroSection />
         </div>
-        <div className='rounded-2xl shadow my-8'>
+        <div id='projects' className='rounded-2xl shadow my-8'>
           <ProjectsSection />
         </div>
-        <div className='rounded-2xl shadow my-8'>
+        <div id='skills' className='rounded-2xl shadow my-8'>
           <SkillsSection />
         </div>
-        <div className='rounded-2xl shadow my-8'>
+        <div id='contact' className='rounded-2xl shadow my-8'>
           <ContactSection />
         </div>
       </div>

@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -27,20 +30,57 @@ const projects = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut' as const,
+    },
+  },
+};
+
 const ProjectsSection = () => (
   <section
     id='projects'
     className='w-full bg-white rounded-2xl shadow py-16 px-0'
   >
     <div className='max-w-5xl mx-auto px-6'>
-      <h2 className='text-3xl font-bold mb-12 text-center text-black'>
+      <motion.h2
+        className='text-3xl font-bold mb-12 text-center text-black'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Projects
-      </h2>
-      <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-        {projects.map((project) => (
-          <div
+      </motion.h2>
+      <motion.div
+        className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'
+        variants={containerVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        {projects.map((project, index) => (
+          <motion.div
             key={project.slug}
             className='group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 overflow-hidden border border-gray-100'
+            variants={itemVariants}
+            whileHover={{ scale: 1.02 }}
           >
             <div className='h-40 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center'>
               <div className='text-3xl text-gray-600 opacity-60'>📱</div>
@@ -69,17 +109,23 @@ const ProjectsSection = () => (
                 프로젝트 보기 →
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <div className='flex justify-end mt-8'>
+      </motion.div>
+      <motion.div
+        className='flex justify-end mt-8'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{ once: true }}
+      >
         <Link
           href='/projects'
           className='inline-block px-6 py-3 rounded-full bg-black text-white font-semibold shadow hover:bg-gray-800 transition-all duration-300 text-base'
         >
           View All Projects
         </Link>
-      </div>
+      </motion.div>
     </div>
   </section>
 );
