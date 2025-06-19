@@ -1,5 +1,6 @@
 'use client';
 import { use, useState } from 'react';
+import Image from 'next/image';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -111,9 +112,11 @@ export default function ProjectDetailPage({ params }: Props) {
             className='rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg mb-4'
             style={{ minHeight: 320 }}
           >
-            <img
+            <Image
               src={mainImage}
               alt={project.title}
+              width={800}
+              height={320}
               className='object-contain w-full h-[320px]'
             />
           </div>
@@ -128,9 +131,11 @@ export default function ProjectDetailPage({ params }: Props) {
                 style={{ width: 120, height: 80 }}
                 aria-label={`썸네일 ${idx + 1}`}
               >
-                <img
+                <Image
                   src={img}
                   alt={`썸네일 ${idx + 1}`}
+                  width={120}
+                  height={80}
                   className='object-cover w-full h-full'
                 />
               </button>
