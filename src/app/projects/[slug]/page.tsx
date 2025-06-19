@@ -57,8 +57,8 @@ const projects = {
     result:
       'npm에 성공적으로 배포되어 다른 개발자들이 쉽게 사용할 수 있게 되었고, 20명의 개발자 피드백을 바탕으로 10개의 패치 업데이트를 통해 사용성과 안정성을 크게 향상시켰습니다. Headless UI 패턴을 통해 다양한 디자인 시스템에 적용할 수 있는 유연성을 제공했으며, TypeScript를 통한 타입 안정성으로 개발자 경험을 개선했습니다.',
   },
-  'vience-migration': {
-    title: 'VIENCE CRA → Vite 마이그레이션',
+  'vience-viewer': {
+    title: 'VIENCE Viewer',
     description:
       'Create React App에서 Vite로 마이그레이션하여 빌드 시간을 82% 단축(110초 → 20초). 35개 이상의 레거시 패키지 제거 및 110개 이상의 보안 취약점 수정으로 안정적인 CI/CD 파이프라인을 구축했습니다.',
     tech: ['Vite', 'GitHub Actions', 'CI/CD', 'Security', 'npm audit'],
