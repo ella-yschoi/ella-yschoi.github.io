@@ -54,17 +54,14 @@ export default function AboutPage() {
   return (
     <section className='py-16 w-full bg-gray-50 min-h-screen'>
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
-        <div className='flex items-start justify-between mb-10'>
-          <div>
-            <h1 className='text-4xl font-bold mb-4 text-black'>About Me</h1>
-            <p className='text-lg text-gray-700 max-w-2xl leading-relaxed'>
-              My journey has been shaped by a strong academic foundation,
-              hands-on experience, and a passion for building scalable,
-              accessible web applications. I&apos;m dedicated to designing
-              solutions that blend creativity, functionality, and user-centric
-              thinking.
-            </p>
-          </div>
+        <div className='pt-8'>
+          <h1 className='text-3xl font-bold mb-6 text-black'>About Me</h1>
+          <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
+            My journey has been shaped by a strong academic foundation, hands-on
+            experience, and a passion for building scalable, accessible web
+            applications. I&apos;m dedicated to designing solutions that blend
+            creativity, functionality, and user-centric thinking.
+          </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {/* Academic Education */}
