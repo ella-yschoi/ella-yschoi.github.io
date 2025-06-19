@@ -5,6 +5,24 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
+const ViewAllButton = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
+  <Link
+    href={href}
+    className='group inline-flex items-center text-black text-base font-normal transition-all relative'
+  >
+    <span className='transition-transform duration-300'>{children}</span>
+    <span aria-hidden className='ml-2 text-xl'>
+      →
+    </span>
+  </Link>
+);
+
 const IntroSection = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -73,7 +91,7 @@ const IntroSection = () => {
         </motion.div>
 
         <motion.div
-          className='flex gap-6 mt-8 justify-center'
+          className='flex gap-10 mt-4 justify-center'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -83,7 +101,7 @@ const IntroSection = () => {
             target='_blank'
             rel='noopener noreferrer'
             aria-label='이메일'
-            className='text-2xl text-gray-500 hover:text-black transition-colors duration-300 transform hover:scale-110'
+            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
           >
             <FaEnvelope />
           </a>
@@ -92,7 +110,7 @@ const IntroSection = () => {
             target='_blank'
             rel='noopener noreferrer'
             aria-label='GitHub'
-            className='text-2xl text-gray-500 hover:text-black transition-colors duration-300 transform hover:scale-110'
+            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
           >
             <FaGithub />
           </a>
@@ -101,7 +119,7 @@ const IntroSection = () => {
             target='_blank'
             rel='noopener noreferrer'
             aria-label='LinkedIn'
-            className='text-2xl text-gray-500 hover:text-black transition-colors duration-300 transform hover:scale-110'
+            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
           >
             <FaLinkedin />
           </a>
@@ -129,6 +147,9 @@ const IntroSection = () => {
             복잡한 시스템을 이해하기 쉬운 조각으로 나누고, 공유된 언어와 맥락을
             통해 강력한 협업을 육성하는 것을 즐깁니다.
           </p>
+          <div className='flex justify-end mt-12'>
+            <ViewAllButton href='/about'>View All About Me</ViewAllButton>
+          </div>
         </motion.div>
       </motion.div>
     </section>

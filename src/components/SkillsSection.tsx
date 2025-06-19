@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const skills = [
   { name: 'JavaScript' },
@@ -40,6 +41,24 @@ const itemVariants = {
   },
 };
 
+const ViewAllButton = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
+  <Link
+    href={href}
+    className='group inline-flex items-center text-black text-base font-normal transition-all relative'
+  >
+    <span className='transition-transform duration-300'>{children}</span>
+    <span aria-hidden className='ml-2 text-xl'>
+      →
+    </span>
+  </Link>
+);
+
 const SkillsSection = () => (
   <section
     id='skills'
@@ -65,13 +84,21 @@ const SkillsSection = () => (
         {skills.map((skill) => (
           <motion.div
             key={skill.name}
-            className='group bg-white rounded-lg p-5 text-center transition-all duration-300 transform border border-gray-100 hover:shadow-lg hover:-translate-y-1'
+            className='group bg-white rounded-lg p-5 text-center transition-all duration-300 transform border border-gray-100'
             variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
           >
             <h3 className='text-lg font-light mb-2 text-black'>{skill.name}</h3>
           </motion.div>
         ))}
+      </motion.div>
+      <motion.div
+        className='flex justify-end mt-12'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <ViewAllButton href='/skills'>View All My Skills</ViewAllButton>
       </motion.div>
     </div>
   </section>
