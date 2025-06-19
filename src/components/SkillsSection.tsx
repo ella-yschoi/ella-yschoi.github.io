@@ -1,20 +1,23 @@
 const skills = [
-  { name: 'JavaScript', level: 'Advanced' },
-  { name: 'TypeScript', level: 'Advanced' },
-  { name: 'React', level: 'Advanced' },
-  { name: 'Vite', level: 'Advanced' },
-  { name: 'Zustand', level: 'Advanced' },
-  { name: 'TailwindCSS', level: 'Advanced' },
-  { name: 'Styled-Components', level: 'Advanced' },
-  { name: 'D3.js', level: 'Intermediate' },
-  { name: 'OpenSeadragon', level: 'Intermediate' },
-  { name: 'GitHub Actions', level: 'Advanced' },
-  { name: 'Jest', level: 'Intermediate' },
-  { name: 'Vitest', level: 'Intermediate' },
+  { name: 'JavaScript' },
+  { name: 'TypeScript' },
+  { name: 'React' },
+  { name: 'Vite' },
+  { name: 'Zustand' },
+  { name: 'TailwindCSS' },
+  { name: 'Styled-Components' },
+  { name: 'D3.js' },
+  { name: 'OpenSeadragon' },
+  { name: 'GitHub Actions' },
+  { name: 'Jest' },
+  { name: 'Vitest' },
 ];
 
 const SkillsSection = () => (
-  <section id='skills' className='py-16 px-6 w-full bg-white'>
+  <section
+    id='skills'
+    className='w-full bg-white rounded-2xl shadow py-16 px-8'
+  >
     <div className='max-w-4xl mx-auto'>
       <h2 className='text-3xl font-bold mb-12 text-center text-black'>
         Skills
@@ -23,14 +26,9 @@ const SkillsSection = () => (
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className='group bg-white rounded-lg p-5 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-100'
+            className='group bg-white rounded-lg  p-5 text-center transition-all duration-300 transform border border-gray-100'
           >
-            <h3 className='text-lg font-semibold mb-2 text-black group-hover:text-gray-700 transition-colors'>
-              {skill.name}
-            </h3>
-            <span className='text-sm text-gray-500 font-medium'>
-              {skill.level}
-            </span>
+            <h3 className='text-lg font-light mb-2 text-black'>{skill.name}</h3>
           </div>
         ))}
       </div>

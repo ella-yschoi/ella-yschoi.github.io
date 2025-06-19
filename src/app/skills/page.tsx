@@ -1,4 +1,4 @@
-const stackData = {
+const skillsData = {
   languages: [
     {
       name: 'JavaScript',
@@ -135,7 +135,13 @@ const stackData = {
   ],
 };
 
-const StackSection = ({ title, items }: { title: string; items: any[] }) => (
+const SkillSection = ({
+  title,
+  items,
+}: {
+  title: string;
+  items: { name: string; logo: string; description: string }[];
+}) => (
   <div className='mb-12'>
     <h2 className='text-2xl font-bold mb-6 text-black'>{title}</h2>
     <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -157,27 +163,27 @@ const StackSection = ({ title, items }: { title: string; items: any[] }) => (
   </div>
 );
 
-export default function StackPage() {
+export default function SkillsPage() {
   return (
-    <section className='py-16 px-6 w-full bg-gray-50 min-h-screen'>
-      <div className='max-w-6xl mx-auto'>
-        <h1 className='text-3xl font-bold mb-6 text-black'>Stack</h1>
+    <section className='py-16 w-full bg-gray-50 min-h-screen'>
+      <div className='max-w-5xl mx-auto px-4 md:px-6'>
+        <h1 className='text-3xl font-bold mb-6 text-black'>Skills</h1>
         <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
-          I work with a dynamic stack of modern technologies to create
+          I work with a dynamic skills of modern technologies to create
           efficient, scalable, and user-friendly web applications. My goal is to
           build solutions that are not only visually appealing but also
           optimized for performance, accessibility, and maintainability.
         </p>
 
-        <StackSection title='Languages' items={stackData.languages} />
-        <StackSection
+        <SkillSection title='Languages' items={skillsData.languages} />
+        <SkillSection
           title='Frameworks & Libraries'
-          items={stackData.frameworks}
+          items={skillsData.frameworks}
         />
-        <StackSection title='DevOps & Testing' items={stackData.devops} />
-        <StackSection
+        <SkillSection title='DevOps & Testing' items={skillsData.devops} />
+        <SkillSection
           title='Engineering Principles'
-          items={stackData.principles}
+          items={skillsData.principles}
         />
       </div>
     </section>
