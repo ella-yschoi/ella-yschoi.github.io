@@ -1,62 +1,37 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ContactSection = () => (
-  <section id='contact' className='py-24 px-6 w-full bg-gray-50'>
-    <div className='max-w-3xl mx-auto text-center'>
-      <h2 className='text-3xl font-bold mb-8 text-black'>Contact</h2>
-      <div className='space-y-6'>
-        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
-          함께 일하고 싶은 프로젝트가 있으시다면 언제든 연락해 주세요!
-        </p>
-        <div className='flex gap-6 justify-center'>
-          <a
-            href='mailto:dev.ella.choi@gmail.com'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='이메일'
-            className='group flex flex-col items-center gap-3 text-gray-600 hover:text-black transition-all duration-300 transform hover:scale-110'
-          >
-            <div className='w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:bg-gray-200'>
-              <FaEnvelope className='text-xl' />
-            </div>
-            <span className='font-medium text-sm'>이메일</span>
-          </a>
-          <a
-            href='https://github.com/ella-yschoi'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='GitHub'
-            className='group flex flex-col items-center gap-3 text-gray-600 hover:text-black transition-all duration-300 transform hover:scale-110'
-          >
-            <div className='w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:bg-gray-200'>
-              <FaGithub className='text-xl' />
-            </div>
-            <span className='font-medium text-sm'>GitHub</span>
-          </a>
-          <a
-            href='https://linkedin.com/in/ella-yschoi'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='LinkedIn'
-            className='group flex flex-col items-center gap-3 text-gray-600 hover:text-black transition-all duration-300 transform hover:scale-110'
-          >
-            <div className='w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:bg-gray-200'>
-              <FaLinkedin className='text-xl' />
-            </div>
-            <span className='font-medium text-sm'>LinkedIn</span>
-          </a>
-        </div>
-        <div className='mt-8 p-4 bg-gray-50 rounded-xl shadow-lg border border-gray-100'>
-          <p className='text-base text-gray-700'>
-            <span className='font-semibold text-black'>Email:</span>{' '}
-            dev.ella.choi@gmail.com
-          </p>
-          <p className='text-base text-gray-700 mt-1'>
-            <span className='font-semibold text-black'>Phone:</span> +82 10 7703
-            7380
-          </p>
-        </div>
-      </div>
+  <section
+    className='relative py-20 px-6 w-full bg-gray-50 flex flex-col items-center justify-center'
+    style={{ minHeight: 220 }}
+  >
+    {/* 3D 그리드 배경 */}
+    <div
+      aria-hidden
+      className='absolute inset-0 w-full h-full pointer-events-none'
+    />
+    <div className='flex flex-col items-center justify-center'>
+      <h2 className='text-lg md:text-xl font-medium text-black text-center mb-6'>
+        Do you have any project idea you
+        <br />
+        want to discuss about?
+      </h2>
+      <Link
+        href='/contact'
+        className='group mt-2 px-8 py-4 rounded-xl bg-black text-white text-lg font-light shadow-lg
+          transition-all flex items-center justify-center relative overflow-hidden'
+        style={{ minWidth: 180 }}
+      >
+        <span className='transition-transform duration-300 group-hover:-translate-x-2'>
+          Contact Me
+        </span>
+        <span
+          aria-hidden
+          className='absolute right-6 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-xl'
+        >
+          →
+        </span>
+      </Link>
     </div>
   </section>
 );
