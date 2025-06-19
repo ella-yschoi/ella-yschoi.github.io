@@ -1,3 +1,7 @@
+import { FaGraduationCap, FaCertificate } from 'react-icons/fa';
+import { PiChalkboardTeacherFill } from 'react-icons/pi';
+import { HiOutlineBriefcase } from 'react-icons/hi';
+
 const academicEducation = [
   {
     school: 'Soonchunhyang University',
@@ -17,8 +21,14 @@ const experience = [
   {
     company: 'VIENCE',
     role: 'Frontend Engineer',
-    period: 'September 2024 - Present',
-    description: "South Korea's lab-based medical AI startup",
+    period: 'Sep 2024 - Present',
+    description: 'South Korea lab-based medical AI startup',
+  },
+  {
+    company: 'Open Source',
+    role: 'DatePicker Component Maintainer',
+    period: 'Mar 2024 - Aug 2024',
+    description: 'npm 배포, Headless UI 기반 컴포넌트 개발',
   },
 ];
 
@@ -43,17 +53,31 @@ const certifications = [
 export default function AboutPage() {
   return (
     <section className='py-16 px-6 w-full bg-gray-50 min-h-screen'>
-      <div className='max-w-5xl mx-auto'>
-        <h1 className='text-3xl font-bold mb-10 text-black'>About Me</h1>
-        <div className='grid md:grid-cols-2 gap-8 mb-12'>
+      <div className='max-w-6xl mx-auto'>
+        <div className='flex items-start justify-between mb-10'>
+          <div>
+            <h1 className='text-4xl font-bold mb-4 text-black'>About Me</h1>
+            <p className='text-lg text-gray-700 max-w-2xl leading-relaxed'>
+              My journey has been shaped by a strong academic foundation,
+              hands-on experience, and a passion for building scalable,
+              accessible web applications. I&apos;m dedicated to designing
+              solutions that blend creativity, functionality, and user-centric
+              thinking.
+            </p>
+          </div>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {/* Academic Education */}
-          <div className='bg-white rounded-xl shadow border border-gray-100 p-6'>
-            <h2 className='text-xl font-semibold mb-4 text-black flex items-center gap-2'>
-              <span>🎓</span> Academic Education
-            </h2>
+          <div className='bg-white rounded-2xl shadow p-8'>
+            <div className='flex items-center gap-2 mb-4'>
+              <FaGraduationCap className='text-xl text-gray-400' />
+              <h2 className='text-lg font-semibold text-black'>
+                Academic Education
+              </h2>
+            </div>
             <ul className='space-y-3'>
               {academicEducation.map((edu) => (
-                <li key={edu.school}>
+                <li key={edu.school} className='ml-2'>
                   <div className='font-medium text-black'>{edu.school}</div>
                   <div className='text-gray-700 text-sm'>{edu.degree}</div>
                   <div className='text-gray-500 text-xs mt-1'>{edu.period}</div>
@@ -62,29 +86,31 @@ export default function AboutPage() {
             </ul>
           </div>
           {/* Non-Formal Education */}
-          <div className='bg-white rounded-xl shadow border border-gray-100 p-6'>
-            <h2 className='text-xl font-semibold mb-4 text-black flex items-center gap-2'>
-              <span>📚</span> Non-Formal Education
-            </h2>
+          <div className='bg-white rounded-2xl shadow p-8'>
+            <div className='flex items-center gap-2 mb-4'>
+              <PiChalkboardTeacherFill className='text-xl text-gray-400' />
+              <h2 className='text-lg font-semibold text-black'>
+                Non-Formal Education
+              </h2>
+            </div>
             <ul className='space-y-3'>
               {nonFormalEducation.map((edu) => (
-                <li key={edu.program}>
+                <li key={edu.program} className='ml-2'>
                   <div className='font-medium text-black'>{edu.program}</div>
                   <div className='text-gray-500 text-xs mt-1'>{edu.period}</div>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-        <div className='grid md:grid-cols-2 gap-8 mb-12'>
-          {/* Experience */}
-          <div className='bg-white rounded-xl shadow border border-gray-100 p-6'>
-            <h2 className='text-xl font-semibold mb-4 text-black flex items-center gap-2'>
-              <span>💼</span> Experience
-            </h2>
+          {/* Experience (List) */}
+          <div className='bg-white rounded-2xl shadow p-8'>
+            <div className='flex items-center gap-2 mb-4'>
+              <HiOutlineBriefcase className='text-xl text-gray-400' />
+              <h2 className='text-lg font-semibold text-black'>Experience</h2>
+            </div>
             <ul className='space-y-3'>
               {experience.map((exp) => (
-                <li key={exp.company + exp.role}>
+                <li key={exp.company + exp.role} className='ml-2'>
                   <div className='font-medium text-black'>
                     {exp.company} - {exp.role}
                   </div>
@@ -95,13 +121,16 @@ export default function AboutPage() {
             </ul>
           </div>
           {/* Certifications */}
-          <div className='bg-white rounded-xl shadow border border-gray-100 p-6'>
-            <h2 className='text-xl font-semibold mb-4 text-black flex items-center gap-2'>
-              <span>📜</span> Certifications & Achievements
-            </h2>
+          <div className='bg-white rounded-2xl shadow p-8'>
+            <div className='flex items-center gap-2 mb-4'>
+              <FaCertificate className='text-xl text-gray-400' />
+              <h2 className='text-lg font-semibold text-black'>
+                Certifications
+              </h2>
+            </div>
             <ul className='space-y-3'>
               {certifications.map((cert) => (
-                <li key={cert.name + cert.year}>
+                <li key={cert.name + cert.year} className='ml-2'>
                   <div className='font-medium text-black'>{cert.name}</div>
                   <div className='text-gray-700 text-sm'>{cert.org}</div>
                   <div className='text-gray-500 text-xs mt-1'>{cert.year}</div>
