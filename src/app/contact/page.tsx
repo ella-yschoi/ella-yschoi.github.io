@@ -32,12 +32,12 @@ export default function ContactPage() {
       <div className='max-w-4xl mx-auto'>
         {/* Header Section */}
         <div className='text-center mb-16'>
-          <h1 className='text-4xl font-bold mb-6 text-black'>Let's Connect!</h1>
+          <h1 className='text-4xl font-bold mb-6 text-black'>Let&apos;s Connect!</h1>
           <p className='text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed'>
-            Whether it's brainstorming a new project, discussing design
-            optimizations, or just sharing creative insights, I'm always excited
-            to collaborate. Reach out to me and let's craft something
-            exceptional — together!
+            Whether it&apos;s brainstorming a new project, discussing design
+            optimizations, or just sharing creative insights, I&apos;m always
+            excited to collaborate. Reach out to me and let&apos;s craft
+            something exceptional — together!
           </p>
         </div>
 
@@ -56,10 +56,10 @@ export default function ContactPage() {
                   <span className='font-medium text-black'>Email</span>
                 </div>
                 <a
-                  href='mailto:ella.choi@example.com'
+                  href='mailto:dev.ella.choi@gmail.com'
                   className='text-blue-600 hover:text-blue-800 transition-colors'
                 >
-                  ella.choi@example.com
+                  dev.ella.choi@gmail.com
                 </a>
               </div>
 
@@ -80,39 +80,36 @@ export default function ContactPage() {
               {/* Social Links */}
               <div className='space-y-4'>
                 <div className='flex items-center gap-3'>
-                  <span className='text-xl'>🐦</span>
+                  <span className='text-xl'>💻</span>
                   <a
-                    href='#'
+                    href='https://github.com/ella-yschoi'
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className='text-gray-700 hover:text-black transition-colors'
                   >
-                    Twitter
+                    GitHub
                   </a>
                 </div>
                 <div className='flex items-center gap-3'>
-                  <span className='text-xl'>💼</span>
+                  <span className='text-xl'>📝</span>
                   <a
-                    href='#'
+                    href='https://medium.com/@ella_choi'
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className='text-gray-700 hover:text-black transition-colors'
                   >
-                    LinkedIn
+                    Tech Blog in English
                   </a>
                 </div>
                 <div className='flex items-center gap-3'>
-                  <span className='text-xl'>📱</span>
+                  <span className='text-xl'>📚</span>
                   <a
-                    href='#'
+                    href='https://devella.oopy.io/'
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className='text-gray-700 hover:text-black transition-colors'
                   >
-                    Instagram
-                  </a>
-                </div>
-                <div className='flex items-center gap-3'>
-                  <span className='text-xl'>🎨</span>
-                  <a
-                    href='#'
-                    className='text-gray-700 hover:text-black transition-colors'
-                  >
-                    Framer
+                    Tech Blog in Korean
                   </a>
                 </div>
               </div>

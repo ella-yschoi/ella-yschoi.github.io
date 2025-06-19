@@ -2,11 +2,15 @@ const skills = [
   { name: 'JavaScript', level: 'Advanced' },
   { name: 'TypeScript', level: 'Advanced' },
   { name: 'React', level: 'Advanced' },
-  { name: 'Next.js', level: 'Intermediate' },
-  { name: 'Tailwind CSS', level: 'Advanced' },
-  { name: 'Git', level: 'Intermediate' },
-  { name: 'Figma', level: 'Intermediate' },
-  { name: 'Node.js', level: 'Intermediate' },
+  { name: 'Vite', level: 'Advanced' },
+  { name: 'Zustand', level: 'Advanced' },
+  { name: 'TailwindCSS', level: 'Advanced' },
+  { name: 'Styled-Components', level: 'Advanced' },
+  { name: 'D3.js', level: 'Intermediate' },
+  { name: 'OpenSeadragon', level: 'Intermediate' },
+  { name: 'GitHub Actions', level: 'Advanced' },
+  { name: 'Jest', level: 'Intermediate' },
+  { name: 'Vitest', level: 'Intermediate' },
 ];
 
 const SkillsSection = () => (

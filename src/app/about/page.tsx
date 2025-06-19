@@ -1,51 +1,42 @@
 const academicEducation = [
   {
-    school: 'University of the Arts London – London College of Communication',
-    degree: 'Master of Arts (MA) in User Experience Design',
-    period: '2020 – 2022',
+    school: 'Soonchunhyang University',
+    degree: 'B.A. in IT Finance & Business Administration',
+    period: '2017',
   },
 ];
 
 const nonFormalEducation = [
   {
-    program: 'Nielsen Norman Group [NNG] - UX Certification Program',
-    period: 'March – June 2023',
+    program: 'CodeStates Bootcamp - Frontend fundamentals & programming basics',
+    period: 'August 2023',
   },
 ];
 
 const experience = [
   {
-    company: 'Google',
-    role: 'UX Designer',
-    period: 'January 2022 - Present',
-  },
-  {
-    company: 'Adobe',
-    role: 'Web Designer',
-    period: 'June 2019 – December 2021',
+    company: 'VIENCE',
+    role: 'Frontend Engineer',
+    period: 'September 2024 - Present',
+    description: "South Korea's lab-based medical AI startup",
   },
 ];
 
 const certifications = [
   {
-    name: 'Certified Usability Analyst (CUA)',
-    org: 'Human Factors International (HFI)',
-    year: '2023',
+    name: 'Web Accessibility (WCAG AAA)',
+    org: 'Self-certified through project implementation',
+    year: '2024',
   },
   {
-    name: 'NNG UX Certification',
-    org: 'Nielsen Norman Group (NNG)',
-    year: '2022',
+    name: 'CI/CD Pipeline Automation',
+    org: 'GitHub Actions implementation',
+    year: '2024',
   },
   {
-    name: 'Adobe Certified UX Design Specialist',
-    org: 'Adobe',
-    year: '2021',
-  },
-  {
-    name: 'Professional Diploma in UX Design',
-    org: 'UX Design Institute',
-    year: '2021',
+    name: 'TDD & Testing Practices',
+    org: 'Jest & Vitest implementation',
+    year: '2024',
   },
 ];
 
@@ -97,6 +88,7 @@ export default function AboutPage() {
                   <div className='font-medium text-black'>
                     {exp.company} - {exp.role}
                   </div>
+                  <div className='text-gray-700 text-sm'>{exp.description}</div>
                   <div className='text-gray-500 text-xs mt-1'>{exp.period}</div>
                 </li>
               ))}
@@ -105,7 +97,7 @@ export default function AboutPage() {
           {/* Certifications */}
           <div className='bg-white rounded-xl shadow border border-gray-100 p-6'>
             <h2 className='text-xl font-semibold mb-4 text-black flex items-center gap-2'>
-              <span>📜</span> Certifications
+              <span>📜</span> Certifications & Achievements
             </h2>
             <ul className='space-y-3'>
               {certifications.map((cert) => (

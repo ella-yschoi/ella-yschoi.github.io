@@ -2,27 +2,27 @@ import Link from 'next/link';
 
 const projects = [
   {
-    slug: 'ai-chatbot',
-    title: 'AI 챗봇 웹앱',
+    slug: 'vience-platform',
+    title: 'VIENCE 병리 데이터 플랫폼',
     description:
-      'OpenAI API를 활용한 대화형 AI 챗봇 웹앱. 실시간 대화 기능과 사용자 친화적인 인터페이스를 제공합니다.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      'React와 TypeScript로 구축한 병리 데이터 플랫폼. 1,000개 이상의 SVS 파일 시각화를 지원하며, 고해상도 다중 이미지 오버레이가 가능한 SVS 이미지 뷰어와 패치 기반 타일 생성기를 개발했습니다.',
+    tech: ['React', 'TypeScript', 'OpenSeadragon', 'Zustand'],
     image: '/project1.jpg',
   },
   {
-    slug: 'portfolio',
-    title: '반응형 포트폴리오',
+    slug: 'datepicker-component',
+    title: 'Headless UI DatePicker',
     description:
-      'React와 Tailwind CSS로 만든 개인 포트폴리오 사이트. 모던한 디자인과 완벽한 반응형 레이아웃을 구현했습니다.',
-    tech: ['React', 'Tailwind CSS', 'TypeScript'],
+      'Headless UI 기반의 날짜 선택 컴포넌트를 개발하고 npm에 배포. 비즈니스 로직과 UI를 분리하여 컴포넌트 복잡도를 줄이고 책임을 명확히 했습니다. 20명의 개발자 피드백을 바탕으로 10개의 패치 업데이트를 릴리즈했습니다.',
+    tech: ['React', 'TypeScript', 'Headless UI', 'npm'],
     image: '/project2.jpg',
   },
   {
-    slug: 'todo-app',
-    title: 'To-Do List 앱',
+    slug: 'vience-migration',
+    title: 'VIENCE CRA → Vite 마이그레이션',
     description:
-      '간단하고 직관적인 할 일 관리 앱. 상태 관리와 로컬 스토리지를 활용한 효율적인 작업 관리 시스템입니다.',
-    tech: ['React', 'Zustand', 'TypeScript'],
+      'Create React App에서 Vite로 마이그레이션하여 빌드 시간을 82% 단축(110초 → 20초). 35개 이상의 레거시 패키지 제거 및 110개 이상의 보안 취약점 수정으로 안정적인 CI/CD 파이프라인을 구축했습니다.',
+    tech: ['Vite', 'GitHub Actions', 'CI/CD', 'Security'],
     image: '/project3.jpg',
   },
 ];

@@ -9,16 +9,16 @@ const IntroSection = () => (
           Ella Choi
         </h1>
         <h2 className='text-xl sm:text-2xl md:text-3xl font-medium text-black tracking-wide'>
-          Frontend Developer
+          Frontend Engineer
         </h2>
         <p className='text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed'>
-          AI와 함께 성장하는 프론트엔드 개발자
+          Frontend Engineer who turns complexity to clarity
         </p>
       </div>
 
       <div className='flex flex-col sm:flex-row gap-4 mt-6 w-full justify-center'>
         <a
-          href='/resume.pdf'
+          href='https://docs.google.com/document/d/1PGVhLg2CTpaw1GtNKO552sTUHiUR5ScKiWiH7xSd9aA/edit?usp=sharing'
           target='_blank'
           rel='noopener noreferrer'
           className='px-6 py-3 rounded-full bg-black text-white font-semibold shadow-lg hover:shadow-xl hover:bg-gray-800 transition-all duration-300 text-base w-full sm:w-auto transform hover:scale-105'
@@ -35,7 +35,7 @@ const IntroSection = () => (
 
       <div className='flex gap-6 mt-8 justify-center'>
         <a
-          href='mailto:ella@example.com'
+          href='mailto:dev.ella.choi@gmail.com'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='이메일'
@@ -44,7 +44,7 @@ const IntroSection = () => (
           <FaEnvelope />
         </a>
         <a
-          href='https://github.com/ella-github'
+          href='https://github.com/ella-yschoi'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='GitHub'
@@ -53,7 +53,7 @@ const IntroSection = () => (
           <FaGithub />
         </a>
         <a
-          href='https://linkedin.com/in/ella-linkedin'
+          href='https://linkedin.com/in/ella-yschoi'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='LinkedIn'
@@ -65,13 +65,20 @@ const IntroSection = () => (
 
       <div className='mt-12 space-y-4 max-w-2xl'>
         <p className='text-lg text-gray-600 leading-relaxed'>
-          안녕하세요, AI와 함께 성장하는 프론트엔드 개발자{' '}
+          안녕하세요, 마케팅과 고객 경험 배경을 가진 프론트엔드 엔지니어{' '}
           <span className='font-semibold text-black'>Ella Choi</span>입니다.
         </p>
         <p className='text-base text-gray-600 leading-relaxed'>
-          새로운 기술을 배우고, 사용자 경험을 개선하는 데 열정이 있습니다. 미국
-          AI 스타트업에서 인턴십을 준비 중이며, 혁신적인 웹 애플리케이션을
-          만들어가는 것을 목표로 하고 있습니다.
+          React, TypeScript, 모던 툴링을 활용해 확장 가능하고 접근성 높은 웹
+          애플리케이션을 구축하는 것을 전문으로 합니다. 빠르게 성장하는 의료 AI
+          스타트업에서 클라우드 기반 플랫폼의 프론트엔드 개발을 주도하고, 대규모
+          이미지 시각화 도구를 설계하며, 주간 릴리즈를 가능하게 하는 CI/CD
+          파이프라인을 개선했습니다.
+        </p>
+        <p className='text-base text-gray-600 leading-relaxed'>
+          코드 외적으로는 깨끗한 아키텍처나 문서화를 통한 명확성을 중요시하며,
+          복잡한 시스템을 이해하기 쉬운 조각으로 나누고, 공유된 언어와 맥락을
+          통해 강력한 협업을 육성하는 것을 즐깁니다.
         </p>
       </div>
     </div>

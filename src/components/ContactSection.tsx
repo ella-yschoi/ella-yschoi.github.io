@@ -10,7 +10,7 @@ const ContactSection = () => (
         </p>
         <div className='flex gap-6 justify-center'>
           <a
-            href='mailto:ella@example.com'
+            href='mailto:dev.ella.choi@gmail.com'
             target='_blank'
             rel='noopener noreferrer'
             aria-label='이메일'
@@ -22,7 +22,7 @@ const ContactSection = () => (
             <span className='font-medium text-sm'>이메일</span>
           </a>
           <a
-            href='https://github.com/ella-github'
+            href='https://github.com/ella-yschoi'
             target='_blank'
             rel='noopener noreferrer'
             aria-label='GitHub'
@@ -34,7 +34,7 @@ const ContactSection = () => (
             <span className='font-medium text-sm'>GitHub</span>
           </a>
           <a
-            href='https://linkedin.com/in/ella-linkedin'
+            href='https://linkedin.com/in/ella-yschoi'
             target='_blank'
             rel='noopener noreferrer'
             aria-label='LinkedIn'
@@ -49,7 +49,11 @@ const ContactSection = () => (
         <div className='mt-8 p-4 bg-gray-50 rounded-xl shadow-lg border border-gray-100'>
           <p className='text-base text-gray-700'>
             <span className='font-semibold text-black'>Email:</span>{' '}
-            ella@example.com
+            dev.ella.choi@gmail.com
+          </p>
+          <p className='text-base text-gray-700 mt-1'>
+            <span className='font-semibold text-black'>Phone:</span> +82 10 7703
+            7380
           </p>
         </div>
       </div>
