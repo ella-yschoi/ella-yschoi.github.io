@@ -2,20 +2,37 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiVite,
+  SiD3Dotjs,
+  SiGit,
+  SiGithubactions,
+  SiJest,
+  SiVitest,
+} from 'react-icons/si';
 
 const skills = [
-  { name: 'JavaScript' },
-  { name: 'TypeScript' },
-  { name: 'React' },
-  { name: 'Vite' },
-  { name: 'Zustand' },
-  { name: 'TailwindCSS' },
-  { name: 'Styled-Components' },
-  { name: 'D3.js' },
-  { name: 'OpenSeadragon' },
-  { name: 'GitHub Actions' },
-  { name: 'Jest' },
-  { name: 'Vitest' },
+  { name: 'HTML', icon: <SiHtml5 className='text-red-500' /> },
+  { name: 'CSS', icon: <SiCss3 className='text-blue-500' /> },
+  { name: 'JavaScript', icon: <SiJavascript className='text-yellow-400' /> },
+  { name: 'TypeScript', icon: <SiTypescript className='text-blue-500' /> },
+  { name: 'React', icon: <SiReact className='text-sky-400' /> },
+  { name: 'TailwindCSS', icon: <SiTailwindcss className='text-sky-400' /> },
+  { name: 'Vite', icon: <SiVite className='text-purple-400' /> },
+  { name: 'D3.js', icon: <SiD3Dotjs className='text-orange-500' /> },
+  { name: 'Git', icon: <SiGit className='text-gray-400' /> },
+  {
+    name: 'GitHub Actions',
+    icon: <SiGithubactions className='text-blue-400' />,
+  },
+  { name: 'Jest', icon: <SiJest className='text-rose-400' /> },
+  { name: 'Vitest', icon: <SiVitest className='text-lime-500' /> },
 ];
 
 const containerVariants = {
@@ -50,10 +67,15 @@ const ViewAllButton = ({
 }) => (
   <Link
     href={href}
-    className='group inline-flex items-center text-black text-base font-normal transition-all relative'
+    className='group inline-flex items-center text-black text-base font-normal transition-all relative hover:text-gray-700'
   >
-    <span className='transition-transform duration-300'>{children}</span>
-    <span aria-hidden className='ml-2 text-xl'>
+    <span className='transition-transform duration-300 group-hover:translate-x-1'>
+      {children}
+    </span>
+    <span
+      aria-hidden
+      className='ml-2 text-xl transition-transform duration-300 group-hover:translate-x-1'
+    >
       →
     </span>
   </Link>
@@ -84,10 +106,13 @@ const SkillsSection = () => (
         {skills.map((skill) => (
           <motion.div
             key={skill.name}
-            className='group bg-white rounded-lg p-5 text-center transition-all duration-300 transform border border-gray-100'
+            className='bg-white rounded-lg p-5 text-center border border-gray-100'
             variants={itemVariants}
           >
-            <h3 className='text-lg font-light mb-2 text-black'>{skill.name}</h3>
+            <div className='flex items-center justify-center gap-2 mb-2'>
+              {skill.icon}
+              <h3 className='text-lg font-light text-black'>{skill.name}</h3>
+            </div>
           </motion.div>
         ))}
       </motion.div>
