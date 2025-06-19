@@ -40,10 +40,15 @@ const ViewAllButton = ({
 }) => (
   <Link
     href={href}
-    className='group inline-flex items-center text-black text-base font-normal transition-all relative'
+    className='group inline-flex items-center text-black text-base font-normal transition-all relative hover:text-gray-700'
   >
-    <span className='transition-transform duration-300'>{children}</span>
-    <span aria-hidden className='ml-2 text-xl'>
+    <span className='transition-transform duration-300 group-hover:translate-x-1'>
+      {children}
+    </span>
+    <span
+      aria-hidden
+      className='ml-2 text-xl transition-transform duration-300 group-hover:translate-x-1'
+    >
       →
     </span>
   </Link>
