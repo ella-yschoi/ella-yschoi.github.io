@@ -8,6 +8,8 @@ interface ProjectCardProps {
   image?: string;
   tech?: string[];
   variant?: 'small' | 'large';
+  buttonText?: string;
+  href?: string;
 }
 
 const ProjectCard = ({
@@ -17,7 +19,12 @@ const ProjectCard = ({
   image,
   tech,
   variant = 'small',
+  buttonText = '프로젝트 보기 →',
+  href,
 }: ProjectCardProps) => {
+  const linkHref = href || `/projects/${slug}`;
+  const isExternal = !!href;
+
   if (variant === 'large') {
     return (
       <div className='group bg-white rounded-xl shadow hover:shadow-lg border border-gray-100 p-6 transition-all duration-200 hover:-translate-y-1'>
@@ -51,10 +58,12 @@ const ProjectCard = ({
               )}
             </div>
             <Link
-              href={`/projects/${slug}`}
+              href={linkHref}
+              target={isExternal ? '_blank' : undefined}
+              rel={isExternal ? 'noopener noreferrer' : undefined}
               className='inline-flex items-center text-black font-semibold hover:text-gray-700 transition-colors text-sm px-6 py-2.5 border border-black rounded-full self-start'
             >
-              프로젝트 보기 →
+              {buttonText}
             </Link>
           </div>
         </div>
@@ -89,10 +98,12 @@ const ProjectCard = ({
         </div>
       )}
       <Link
-        href={`/projects/${slug}`}
+        href={linkHref}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
         className='inline-flex items-center text-black font-semibold hover:text-gray-700 transition-colors text-sm px-4 py-2 border border-black rounded-full mt-2'
       >
-        프로젝트 보기 →
+        {buttonText}
       </Link>
     </div>
   );

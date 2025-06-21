@@ -2,6 +2,7 @@ import IntroSection from '@/components/IntroSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
 import ContactSection from '@/components/ContactSection';
+import StudySection from '@/components/StudySection';
 
 export default function Home() {
   return (
@@ -13,14 +14,17 @@ export default function Home() {
         <div id='projects' className='rounded-2xl shadow my-8'>
           <ProjectsSection />
         </div>
+        <div id='study' className='rounded-2xl shadow my-8'>
+          <StudySection />
+        </div>
         <div id='skills' className='rounded-2xl shadow my-8'>
           <SkillsSection />
         </div>
         <div id='contact' className='rounded-2xl shadow my-8'>
           <ContactSection />
         </div>
+        <div className='pb-16'></div>
       </div>
-      <div className='pb-16'></div>
     </main>
   );
 }
