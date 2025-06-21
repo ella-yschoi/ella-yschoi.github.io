@@ -1,0 +1,183 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Accessibility Standards & WCAG Compliance
+
+## Web Accessibility Guidelines
+This project follows **WCAG AAA** standards for accessibility. Reference [src/components/Header.tsx](mdc:src/components/Header.tsx) for navigation accessibility and [src/components/IntroSection.tsx](mdc:src/components/IntroSection.tsx) for semantic structure patterns.
+
+## Semantic HTML Structure
+### Proper Heading Hierarchy
+```typescript
+// Main page heading
+<h1 className='text-4xl font-bold'>Ella Choi</h1>
+
+// Section headings
+<h2 className='text-3xl font-bold'>Projects</h2>
+
+// Subsection headings
+<h3 className='text-2xl font-semibold'>Project Title</h3>
+```
+
+### Semantic Elements
+```typescript
+// Use semantic elements for structure
+<header className='fixed top-0 w-full'>
+  <nav className='flex items-center'>
+    <ul className='flex gap-4'>
+      <li><Link href='/'>Home</Link></li>
+    </ul>
+  </nav>
+</header>
+
+<section id='projects' className='py-16'>
+  <main className='max-w-5xl mx-auto'>
+    {/* Content */}
+  </main>
+</section>
+```
+
+## ARIA Attributes
+### Navigation Accessibility
+```typescript
+// Active state indication
+<Link
+  href={href}
+  className={`px-3 py-2 rounded-md ${
+    isActive ? 'text-black bg-gray-100' : 'text-gray-700'
+  }`}
+  aria-current={isActive ? 'page' : undefined}
+>
+  {label}
+</Link>
+```
+
+### Interactive Elements
+```typescript
+// Icon links with proper labels
+<a
+  href='mailto:dev.ella.choi@gmail.com'
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label='Send email to Ella Choi'
+  className='text-3xl text-gray-400 hover:text-black'
+>
+  <FaEnvelope />
+</a>
+```
+
+### Decorative Elements
+```typescript
+// Hide decorative elements from screen readers
+<span
+  aria-hidden='true'
+  className='ml-2 text-xl transition-transform'
+>
+  →
+</span>
+```
+
+## Color Contrast & Visual Design
+### Color Accessibility
+- **Primary Text**: Black on white (21:1 contrast ratio)
+- **Secondary Text**: Gray-700 on white (13:1 contrast ratio)
+- **Interactive Elements**: Clear hover states
+
+### Focus Indicators
+```typescript
+// Ensure focus is visible
+className='focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2'
+```
+
+## Keyboard Navigation
+### Tab Order
+```typescript
+// Logical tab order in navigation
+<nav>
+  <ul className='flex gap-4'>
+    {navItems.map((item, index) => (
+      <li key={item.label}>
+        <Link
+          href={item.href}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              // Handle navigation
+            }
+          }}
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</nav>
+```
+
+### Skip Links
+```typescript
+// Skip to main content link
+<a
+  href='#main-content'
+  className='sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 rounded'
+>
+  Skip to main content
+</a>
+```
+
+## Screen Reader Support
+### Alt Text for Images
+```typescript
+<Image
+  src={image}
+  alt={`Screenshot of ${title} project`}
+  fill
+  className='object-contain'
+/>
+```
+
+### Descriptive Link Text
+```typescript
+// Avoid generic link text
+<Link href='/projects'>View All Projects</Link>
+
+// Instead of
+<Link href='/projects'>Click here</Link>
+```
+
+## Animation & Motion
+### Reduced Motion Support
+```typescript
+// Respect user's motion preferences
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+<motion.div
+  initial={prefersReducedMotion ? {} : { opacity: 0 }}
+  animate={prefersReducedMotion ? {} : { opacity: 1 }}
+>
+```
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use semantic HTML elements (`<header>`, `<nav>`, `<section>`, `<main>`)
+2. **ALWAYS** provide meaningful `alt` text for all images
+3. **ALWAYS** use proper heading hierarchy (h1 → h2 → h3)
+4. **ALWAYS** add `aria-label` for icon-only links
+5. **ALWAYS** ensure keyboard navigation works
+6. **ALWAYS** maintain sufficient color contrast (minimum 4.5:1)
+7. **ALWAYS** add `aria-current` for active navigation items
+8. **ALWAYS** respect `prefers-reduced-motion` user preference
+
+## NEVER DO
+1. **NEVER** use `<div>` for semantic elements like navigation or headings
+2. **NEVER** use generic link text like "Click here" or "Read more"
+3. **NEVER** rely solely on color to convey information
+4. **NEVER** forget to add `alt` text to images
+5. **NEVER** use `aria-hidden` on interactive elements
+6. **NEVER** create keyboard traps
+7. **NEVER** use low contrast colors for text
+8. **NEVER** forget to test with screen readers
+9. **NEVER** use decorative images without `alt=""`
+10. **NEVER** create animations that can't be disabled

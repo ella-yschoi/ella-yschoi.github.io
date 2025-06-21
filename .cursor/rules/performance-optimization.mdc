@@ -1,0 +1,123 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Performance Optimization & Best Practices
+
+## Next.js Performance Guidelines
+This project uses **Next.js 15** with **Turbopack** for optimal performance. Reference [src/app/layout.tsx](mdc:src/app/layout.tsx) for font optimization and [src/components/ProjectCard.tsx](mdc:src/components/ProjectCard.tsx) for image optimization patterns.
+
+## Image Optimization
+### Next.js Image Component
+```typescript
+import Image from 'next/image';
+
+// Optimized image with proper sizing
+<Image 
+  src={image} 
+  alt={title} 
+  fill 
+  className='object-contain'
+  priority={isAboveFold}
+/>
+```
+
+### Image Best Practices
+- **ALWAYS** use `next/image` for all images
+- **ALWAYS** provide meaningful `alt` text
+- **ALWAYS** use `fill` prop for responsive images
+- **ALWAYS** add `priority` for above-the-fold images
+
+## Font Optimization
+### Google Fonts Integration
+```typescript
+import { Geist, Geist_Mono } from 'next/font/google';
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+```
+
+## Animation Performance
+### Framer Motion Optimization
+```typescript
+// Use viewport once for performance
+<motion.div
+  viewport={{ once: true, margin: '-100px' }}
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+>
+```
+
+### Animation Best Practices
+- **ALWAYS** use `viewport={{ once: true }}` for scroll animations
+- **ALWAYS** use `will-change` CSS property sparingly
+- **ALWAYS** prefer `transform` and `opacity` for animations
+- **ALWAYS** avoid animating layout properties
+
+## Bundle Optimization
+### Dynamic Imports
+```typescript
+// Lazy load heavy components
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <div>Loading...</div>,
+  ssr: false
+});
+```
+
+### Code Splitting
+- **ALWAYS** use dynamic imports for large components
+- **ALWAYS** implement proper loading states
+- **ALWAYS** consider SSR implications
+
+## CSS Optimization
+### Tailwind CSS Best Practices
+```typescript
+// Use Tailwind's built-in optimization
+className='bg-white rounded-xl shadow hover:shadow-lg'
+```
+
+### CSS Performance Rules
+- **ALWAYS** use Tailwind utility classes
+- **ALWAYS** avoid custom CSS unless necessary
+- **ALWAYS** use CSS custom properties for theming
+- **ALWAYS** minimize CSS bundle size
+
+## Loading States
+### Skeleton Loading
+```typescript
+const SkeletonCard = () => (
+  <div className='animate-pulse bg-gray-200 rounded-xl h-64'></div>
+);
+```
+
+### Progressive Enhancement
+- **ALWAYS** provide loading states for dynamic content
+- **ALWAYS** implement proper error boundaries
+- **ALWAYS** use progressive enhancement
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use `next/image` for all images
+2. **ALWAYS** implement proper loading states
+3. **ALWAYS** use `viewport={{ once: true }}` for animations
+4. **ALWAYS** optimize fonts with `next/font`
+5. **ALWAYS** use dynamic imports for heavy components
+6. **ALWAYS** implement proper error boundaries
+7. **ALWAYS** use Tailwind's built-in optimizations
+
+## NEVER DO
+1. **NEVER** use `<img>` tags - always use `next/image`
+2. **NEVER** forget to add `alt` text to images
+3. **NEVER** animate layout properties (width, height, position)
+4. **NEVER** load fonts without optimization
+5. **NEVER** bundle large dependencies without code splitting
+6. **NEVER** forget to implement loading states
+7. **NEVER** use inline styles that could be Tailwind classes
+8. **NEVER** forget to add proper error handling

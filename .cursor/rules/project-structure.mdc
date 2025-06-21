@@ -1,0 +1,44 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Structure & Architecture
+
+## Core Architecture
+This is a **Next.js 15** portfolio project using the **App Router** pattern. The main entry point is [src/app/layout.tsx](mdc:src/app/layout.tsx), which provides the root layout structure.
+
+## Directory Structure
+- **`src/app/`**: Next.js App Router pages and layouts
+  - **`page.tsx`**: Homepage with main sections
+  - **`layout.tsx`**: Root layout with fonts and metadata
+  - **`globals.css`**: Global Tailwind CSS imports and custom styles
+  - **`about/`**, **`contact/`**, **`projects/`**, **`skills/`**: Route pages
+- **`src/components/`**: Reusable React components
+  - **`Header.tsx`**: Navigation component
+  - **`IntroSection.tsx`**: Hero section with animations
+  - **`ProjectsSection.tsx`**: Projects grid layout
+  - **`ProjectCard.tsx`**: Individual project display
+  - **`SkillsSection.tsx`**: Skills grid with icons
+  - **`ContactSection.tsx`**: Contact call-to-action
+
+## Configuration Files
+- **`package.json`**: Dependencies and scripts (Next.js 15.3.3, React 19, TypeScript 5)
+- **`tsconfig.json`**: TypeScript configuration with strict mode
+- **`eslint.config.mjs`**: ESLint rules for Next.js and TypeScript
+- **`next.config.ts`**: Next.js configuration
+- **`postcss.config.mjs`**: PostCSS configuration for Tailwind CSS
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use the App Router pattern - no `pages/` directory
+2. **ALWAYS** place components in `src/components/` directory
+3. **ALWAYS** use TypeScript for all new files
+4. **ALWAYS** add `'use client'` directive for client components
+5. **ALWAYS** follow the established naming conventions
+
+## NEVER DO
+1. **NEVER** create files in `pages/` directory
+2. **NEVER** use JavaScript files - only TypeScript
+3. **NEVER** place components outside `src/components/`
+4. **NEVER** forget to add proper TypeScript interfaces
+5. **NEVER** use inline styles - always use Tailwind CSS classes

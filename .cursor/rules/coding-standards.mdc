@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Coding Standards & Conventions
+
+## File Naming Conventions
+- **Components**: PascalCase (`IntroSection.tsx`, `ProjectCard.tsx`)
+- **Pages**: kebab-case (`about/page.tsx`, `contact/page.tsx`)
+- **Dynamic Routes**: `[slug]/page.tsx` format
+- **Utilities**: camelCase (`utils.ts`, `helpers.ts`)
+
+## TypeScript Standards
+Reference the existing patterns in [src/components/ProjectCard.tsx](mdc:src/components/ProjectCard.tsx) for proper interface definitions.
+
+### Interface Patterns
+```typescript
+interface ComponentProps {
+  requiredProp: string;
+  optionalProp?: string;
+  variant?: 'small' | 'large';
+}
+```
+
+### Function Type Definitions
+```typescript
+const Component = ({
+  prop1,
+  prop2,
+}: {
+  prop1: string;
+  prop2: React.ReactNode;
+}) => { ... }
+```
+
+## Import Order (STRICT)
+1. **React directives**: `'use client'`
+2. **React hooks**: `import { useState, useEffect } from 'react'`
+3. **Next.js imports**: `import Link from 'next/link'`
+4. **External libraries**: `import { motion } from 'framer-motion'`
+5. **Internal components**: `import ProjectCard from './ProjectCard'`
+
+## Component Structure Template
+```typescript
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+interface ComponentProps {
+  // Define props here
+}
+
+const Component = ({ prop1, prop2 }: ComponentProps) => {
+  // Component logic here
+  
+  return (
+    // JSX here
+  );
+};
+
+export default Component;
+```
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use TypeScript interfaces for all props
+2. **ALWAYS** follow the exact import order above
+3. **ALWAYS** use `'use client'` for interactive components
+4. **ALWAYS** export components as default exports
+5. **ALWAYS** use PascalCase for component names
+6. **ALWAYS** define prop types at the top of the file
+
+## NEVER DO
+1. **NEVER** use `any` type - always define proper types
+2. **NEVER** mix import styles - stick to the defined order
+3. **NEVER** forget to add `'use client'` for client components
+4. **NEVER** use named exports for components
+5. **NEVER** use inline TypeScript types - always use interfaces
+6. **NEVER** use JavaScript files - only TypeScript (.tsx)

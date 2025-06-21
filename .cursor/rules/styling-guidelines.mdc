@@ -1,0 +1,104 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Styling Guidelines & Design System
+
+## Tailwind CSS Usage
+This project uses **Tailwind CSS 4.1.10** with a custom design system. Reference [src/app/globals.css](mdc:src/app/globals.css) for global styles and [src/components/IntroSection.tsx](mdc:src/components/IntroSection.tsx) for component styling patterns.
+
+## Color Palette (STRICT)
+- **Primary Text**: `text-black` (#000000)
+- **Secondary Text**: `text-gray-600`, `text-gray-700`
+- **Background**: `bg-white` (#ffffff)
+- **Light Background**: `bg-gray-50` (#fafafa)
+- **Borders**: `border-gray-100`
+- **Hover States**: `hover:text-gray-700`, `hover:bg-gray-100`
+
+## Typography System
+- **Headings**: `text-3xl font-bold` ~ `text-7xl font-bold`
+- **Body Text**: `text-base` ~ `text-lg`
+- **Small Text**: `text-sm` ~ `text-xs`
+- **Font Family**: Geist Sans (defined in [src/app/layout.tsx](mdc:src/app/layout.tsx))
+
+## Layout Patterns
+### Section Container
+```typescript
+className='w-full bg-white rounded-2xl shadow py-16 px-8'
+```
+
+### Responsive Grid
+```typescript
+className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'
+```
+
+### Centered Container
+```typescript
+className='max-w-5xl mx-auto px-4 md:px-6'
+```
+
+### Card Component
+```typescript
+className='bg-white rounded-xl shadow hover:shadow-lg border border-gray-100 p-6'
+```
+
+## Spacing System
+- **Section Padding**: `py-16 px-8`
+- **Component Spacing**: `gap-4`, `gap-8`
+- **Margins**: `my-8`, `mt-12`
+- **Padding**: `p-4`, `p-6`, `p-8`
+
+## Responsive Design
+### Breakpoints
+- **Mobile**: Default (320px+)
+- **Small**: `sm:` (640px+)
+- **Medium**: `md:` (768px+)
+- **Large**: `lg:` (1024px+)
+
+### Responsive Patterns
+```typescript
+// Text sizing
+className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl'
+
+// Layout changes
+className='flex flex-col md:flex-row'
+
+// Spacing adjustments
+className='px-4 md:px-6'
+```
+
+## Animation Classes
+### Hover Effects
+```typescript
+// Scale effect
+className='hover:scale-105 transition-all duration-300'
+
+// Transform effect
+className='hover:-translate-y-1 transition-all duration-200'
+
+// Color transitions
+className='hover:text-gray-700 transition-colors'
+```
+
+### Group Hover
+```typescript
+className='group-hover:translate-x-1 transition-transform duration-300'
+```
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use Tailwind utility classes - NO inline styles
+2. **ALWAYS** use the defined color palette above
+3. **ALWAYS** implement responsive design with breakpoints
+4. **ALWAYS** use consistent spacing values
+5. **ALWAYS** add transition classes for interactive elements
+6. **ALWAYS** use semantic class ordering (layout → spacing → typography → colors)
+
+## NEVER DO
+1. **NEVER** use inline styles (`style={{}}`)
+2. **NEVER** use custom CSS unless absolutely necessary
+3. **NEVER** use arbitrary color values - stick to the palette
+4. **NEVER** forget responsive breakpoints
+5. **NEVER** use inconsistent spacing values
+6. **NEVER** forget transition classes for hover states
+7. **NEVER** use hardcoded pixel values - use Tailwind spacing scale

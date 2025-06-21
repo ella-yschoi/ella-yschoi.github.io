@@ -1,0 +1,148 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Component Patterns & Reusable Structures
+
+## Component Architecture
+This project follows a modular component architecture. Reference [src/components/ProjectCard.tsx](mdc:src/components/ProjectCard.tsx) for component patterns and [src/components/Header.tsx](mdc:src/components/Header.tsx) for navigation patterns.
+
+## Section Component Pattern
+All main sections follow this structure:
+
+```typescript
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const SectionName = () => (
+  <section
+    id='section-id'
+    className='w-full bg-white rounded-2xl shadow py-16 px-8'
+  >
+    <div className='max-w-5xl mx-auto'>
+      <motion.h2
+        className='text-3xl font-bold mb-12 text-center text-black'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Section Title
+      </motion.h2>
+      
+      {/* Section content */}
+      
+      <motion.div
+        className='flex justify-end mt-12'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <ViewAllButton href='/section'>View All Section</ViewAllButton>
+      </motion.div>
+    </div>
+  </section>
+);
+```
+
+## ViewAllButton Component Pattern
+Consistent "View All" button pattern used across sections:
+
+```typescript
+const ViewAllButton = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
+  <Link
+    href={href}
+    className='group inline-flex items-center text-black text-base font-normal transition-all relative hover:text-gray-700'
+  >
+    <span className='transition-transform duration-300 group-hover:translate-x-1'>
+      {children}
+    </span>
+    <span
+      aria-hidden
+      className='ml-2 text-xl transition-transform duration-300 group-hover:translate-x-1'
+    >
+      →
+    </span>
+  </Link>
+);
+```
+
+## Card Component Pattern
+Reusable card structure for projects, skills, etc.:
+
+```typescript
+interface CardProps {
+  title: string;
+  description: string;
+  image?: string;
+  tech?: string[];
+  variant?: 'small' | 'large';
+}
+
+const Card = ({ title, description, image, tech, variant = 'small' }: CardProps) => (
+  <div className='group bg-white rounded-xl shadow hover:shadow-lg border border-gray-100 p-6 transition-all duration-200 hover:-translate-y-1'>
+    {/* Card content */}
+  </div>
+);
+```
+
+## Navigation Pattern
+Header navigation structure:
+
+```typescript
+const navItems = [
+  { label: 'Home', href: '/', id: 'intro' },
+  { label: 'About', href: '/about' },
+  { label: 'Projects', href: '/projects', id: 'projects' },
+  { label: 'Skills', href: '/skills', id: 'skills' },
+  { label: 'Contact', href: '/contact', id: 'contact' },
+];
+```
+
+## Icon Usage Pattern
+Consistent icon implementation with React Icons:
+
+```typescript
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { SiReact, SiTypescript } from 'react-icons/si';
+
+// Icon with link
+<a
+  href='https://github.com/username'
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label='GitHub'
+  className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
+>
+  <FaGithub />
+</a>
+```
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use the section component pattern for new sections
+2. **ALWAYS** implement ViewAllButton for section navigation
+3. **ALWAYS** use consistent card patterns for similar content
+4. **ALWAYS** add proper TypeScript interfaces for all props
+5. **ALWAYS** use semantic HTML elements (`<section>`, `<header>`, `<nav>`)
+6. **ALWAYS** implement responsive design in all components
+7. **ALWAYS** add proper accessibility attributes (`aria-label`, `rel`)
+
+## NEVER DO
+1. **NEVER** create components without TypeScript interfaces
+2. **NEVER** forget to add `'use client'` for interactive components
+3. **NEVER** use non-semantic HTML elements for layout
+4. **NEVER** forget to add proper accessibility attributes
+5. **NEVER** create components that aren't responsive
+6. **NEVER** use inline styles - always use Tailwind classes
+7. **NEVER** forget to add proper hover states and transitions
+8. **NEVER** create components without proper error boundaries

@@ -1,0 +1,117 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Animation Patterns & Framer Motion
+
+## Framer Motion Usage
+This project uses **Framer Motion 12.18.1** for animations. Reference [src/components/IntroSection.tsx](mdc:src/components/IntroSection.tsx) and [src/components/ProjectsSection.tsx](mdc:src/components/ProjectsSection.tsx) for animation patterns.
+
+## Animation Variants
+### Basic Fade In
+```typescript
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+};
+```
+
+### Staggered Animations
+```typescript
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+};
+```
+
+## Scroll-Triggered Animations
+### Viewport Animations
+```typescript
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true, margin: '-100px' }}
+>
+```
+
+### Parallax Effects
+```typescript
+const { scrollYProgress } = useScroll({
+  target: ref,
+  offset: ['start start', 'end start']
+});
+
+const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+```
+
+## Component Animation Patterns
+### Section Headers
+```typescript
+<motion.h2
+  className='text-3xl font-bold mb-12 text-center text-black'
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+```
+
+### Grid Items
+```typescript
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+```
+
+### Staggered Grid
+```typescript
+<motion.div
+  className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
+  viewport={{ once: true, margin: '-100px' }}
+>
+```
+
+## Transition Timing
+- **Fast**: `duration: 0.3` (hover effects)
+- **Standard**: `duration: 0.6` (page transitions)
+- **Slow**: `duration: 0.8` (hero animations)
+
+## Easing Functions
+- **Default**: `ease: 'easeOut'`
+- **Smooth**: `ease: [0.4, 0, 0.2, 1]`
+- **Bounce**: `ease: 'easeInOut'`
+
+## MUST FOLLOW Rules
+1. **ALWAYS** use `viewport={{ once: true }}` for scroll animations
+2. **ALWAYS** define animation variants at the top of components
+3. **ALWAYS** use consistent duration values (0.3, 0.6, 0.8)
+4. **ALWAYS** add `margin: '-100px'` to viewport for early triggering
+5. **ALWAYS** use `whileInView` for scroll-triggered animations
+6. **ALWAYS** implement staggered animations for lists/grids
+
+## NEVER DO
+1. **NEVER** use `animate` prop without proper initial state
+2. **NEVER** forget to add `viewport={{ once: true }}` for performance
+3. **NEVER** use overly complex animations that distract from content
+4. **NEVER** use animations without proper fallbacks
+5. **NEVER** forget to optimize animations for mobile devices
+6. **NEVER** use `animate` for scroll-triggered animations - use `whileInView`
+7. **NEVER** create animations that cause layout shifts
