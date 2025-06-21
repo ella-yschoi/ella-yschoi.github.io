@@ -20,6 +20,7 @@ export default function Home() {
           <ContactSection />
         </div>
       </div>
+      <div className='pb-16'></div>
     </main>
   );
 }
