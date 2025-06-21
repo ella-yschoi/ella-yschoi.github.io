@@ -11,14 +11,14 @@ export default function Home() {
         <div id='intro' className='rounded-2xl shadow my-8'>
           <IntroSection />
         </div>
+        <div id='skills' className='rounded-2xl shadow my-8'>
+          <SkillsSection />
+        </div>
         <div id='projects' className='rounded-2xl shadow my-8'>
           <ProjectsSection />
         </div>
         <div id='study' className='rounded-2xl shadow my-8'>
           <StudySection />
-        </div>
-        <div id='skills' className='rounded-2xl shadow my-8'>
-          <SkillsSection />
         </div>
         <div id='contact' className='rounded-2xl shadow my-8'>
           <ContactSection />
