@@ -4,6 +4,7 @@ import {
   SiHtml5,
   SiCss3,
   SiReact,
+  SiNextdotjs,
   SiVite,
   SiTailwindcss,
   SiStyledcomponents,
@@ -48,6 +49,12 @@ const skillsData = {
       logo: <SiReact className='text-sky-400' />,
       description:
         '함수형 컴포넌트와 Hooks를 활용한 모던 React 개발. 컴포넌트 설계와 상태 관리 최적화.',
+    },
+    {
+      name: 'Next.js',
+      logo: <SiNextdotjs className='text-black' />,
+      description:
+        'React 기반 풀스택 프레임워크. SSR, SSG, App Router를 활용한 고성능 웹 애플리케이션 개발.',
     },
     {
       name: 'Vite',

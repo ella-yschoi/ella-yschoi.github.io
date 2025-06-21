@@ -10,7 +10,7 @@ import {
   SiReact,
   SiTailwindcss,
   SiVite,
-  SiD3Dotjs,
+  SiNextdotjs,
   SiGit,
   SiGithubactions,
   SiJest,
@@ -25,7 +25,7 @@ const skills = [
   { name: 'React', icon: <SiReact className='text-sky-400' /> },
   { name: 'TailwindCSS', icon: <SiTailwindcss className='text-sky-400' /> },
   { name: 'Vite', icon: <SiVite className='text-purple-400' /> },
-  { name: 'D3.js', icon: <SiD3Dotjs className='text-orange-500' /> },
+  { name: 'Next.js', icon: <SiNextdotjs className='text-black' /> },
   { name: 'Git', icon: <SiGit className='text-gray-400' /> },
   {
     name: 'GitHub Actions',
