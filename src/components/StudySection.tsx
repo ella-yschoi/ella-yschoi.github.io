@@ -26,6 +26,7 @@ const StudySection = () => (
             title={item.title}
             description={item.description}
             tech={item.sectionTech}
+            image={item.image}
             href={item.url}
             buttonText='View More →'
           />

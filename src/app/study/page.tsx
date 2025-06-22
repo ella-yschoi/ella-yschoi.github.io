@@ -21,6 +21,7 @@ export default function StudyPage() {
               title={item.title}
               description={item.description}
               tech={item.pageTech}
+              image={item.image}
               variant='large'
               href={item.url}
               buttonText='View More →'

@@ -51,7 +51,7 @@ const experience = [
     description: 'Managed customer experience and CRM campaigns.',
   },
   {
-    company: 'Next Kitchen Corporation',
+    company: 'Next Kitchen',
     role: 'Customer Relationship Management Manager',
     period: 'Jul 2021 - Aug 2022',
     description:
