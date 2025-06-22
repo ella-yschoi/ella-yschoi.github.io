@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 import { MdCall } from 'react-icons/md';
 import { TbWorld } from 'react-icons/tb';
+import { motion } from 'framer-motion';
 
 const contacts = [
   {
@@ -12,6 +14,7 @@ const contacts = [
     href: 'mailto:dev.ella.choi@gmail.com',
     icon: <FaEnvelope className='text-2xl text-gray-400' />,
     bg: 'bg-white',
+    copyable: true,
   },
   {
     label: 'Book a Call',
@@ -19,13 +22,15 @@ const contacts = [
     href: '#',
     icon: <MdCall className='text-2xl text-yellow-400' />,
     bg: 'bg-white',
+    copyable: true,
   },
   {
     label: 'GitHub',
     value: 'ella-yschoi',
     href: 'https://github.com/ella-yschoi',
     icon: <FaGithub className='text-2xl text-gray-400' />,
-    bg: 'bg-gray-50',
+    bg: 'bg-gray-100',
+    copyable: false,
   },
   {
     label: 'LinkedIn',
@@ -33,6 +38,7 @@ const contacts = [
     href: 'https://linkedin.com/in/ella-yschoi',
     icon: <FaLinkedin className='text-2xl text-blue-400' />,
     bg: 'bg-blue-50',
+    copyable: false,
   },
   {
     label: 'Tech Blog in English',
@@ -40,6 +46,7 @@ const contacts = [
     href: 'https://medium.com/@ella_choi',
     icon: <TbWorld className='text-2xl text-green-400' />,
     bg: 'bg-green-50',
+    copyable: false,
   },
   {
     label: 'Tech Blog in Korean',
@@ -47,10 +54,34 @@ const contacts = [
     href: 'https://devella.oopy.io/',
     icon: <TbWorld className='text-2xl text-pink-400' />,
     bg: 'bg-pink-50',
+    copyable: false,
   },
 ];
 
 export default function ContactPage() {
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [showCallModal, setShowCallModal] = useState(false);
+
+  const handleEmailCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('dev.ella.choi@gmail.com');
+      setShowEmailModal(true);
+      setTimeout(() => setShowEmailModal(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  };
+
+  const handleCallCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('+82 10-7703-7380');
+      setShowCallModal(true);
+      setTimeout(() => setShowCallModal(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy phone number:', err);
+    }
+  };
+
   return (
     <section className='py-16 w-full bg-gray-50 min-h-screen'>
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
@@ -66,8 +97,7 @@ export default function ContactPage() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           {contacts.map((c) => {
-            const isClickable =
-              c.label !== 'Email' && c.label !== 'Book a Call';
+            const isClickable = !c.copyable;
 
             const content = (
               <>
@@ -85,6 +115,66 @@ export default function ContactPage() {
                 )}
               </>
             );
+
+            if (c.label === 'Email') {
+              return (
+                <div
+                  key={c.label}
+                  className={`flex items-center gap-4 p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md hover:-translate-y-1 group ${c.bg} w-full text-left relative cursor-pointer`}
+                >
+                  {content}
+                  <div className='flex-shrink-0 relative'>
+                    <button
+                      onClick={handleEmailCopy}
+                      className='text-xl text-gray-300 group-hover:text-black transition-colors cursor-pointer'
+                      aria-label={`Copy ${c.label} to clipboard`}
+                    >
+                      <FiExternalLink />
+                    </button>
+                    {showEmailModal && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-white text-black text-sm rounded-md whitespace-nowrap border border-gray-200 shadow-md z-50'
+                      >
+                        Copied to clipboard!
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+              );
+            }
+
+            if (c.label === 'Book a Call') {
+              return (
+                <div
+                  key={c.label}
+                  className={`flex items-center gap-4 p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md hover:-translate-y-1 group ${c.bg} w-full text-left relative cursor-pointer`}
+                >
+                  {content}
+                  <div className='flex-shrink-0 relative'>
+                    <button
+                      onClick={handleCallCopy}
+                      className='text-xl text-gray-300 group-hover:text-black transition-colors cursor-pointer'
+                      aria-label={`Copy ${c.label} to clipboard`}
+                    >
+                      <FiExternalLink />
+                    </button>
+                    {showCallModal && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-white text-black text-sm rounded-md whitespace-nowrap border border-gray-200 shadow-md z-50'
+                      >
+                        Copied to clipboard!
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+              );
+            }
 
             if (isClickable) {
               return (

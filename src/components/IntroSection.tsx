@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const ViewAllButton = ({
   href,
@@ -30,6 +30,7 @@ const ViewAllButton = ({
 
 const IntroSection = () => {
   const ref = useRef(null);
+  const [showCopyModal, setShowCopyModal] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -37,6 +38,16 @@ const IntroSection = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
+
+  const handleEmailCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('dev.ella.choi@gmail.com');
+      setShowCopyModal(true);
+      setTimeout(() => setShowCopyModal(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  };
 
   return (
     <section
@@ -95,20 +106,28 @@ const IntroSection = () => {
         </motion.div>
 
         <motion.div
-          className='flex gap-10 mt-4 justify-center'
+          className='flex gap-10 mt-4 justify-center relative'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <a
-            href='mailto:dev.ella.choi@gmail.com'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='이메일'
-            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
+          <button
+            onClick={handleEmailCopy}
+            aria-label='Copy email to clipboard'
+            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200 relative cursor-pointer'
           >
             <FaEnvelope />
-          </a>
+            {showCopyModal && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-white text-black text-sm rounded-md whitespace-nowrap border border-gray-200 shadow-md z-50'
+              >
+                Copied to clipboard!
+              </motion.div>
+            )}
+          </button>
           <a
             href='https://github.com/ella-yschoi'
             target='_blank'

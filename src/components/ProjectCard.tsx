@@ -101,7 +101,8 @@ const ProjectCard = ({
         href={linkHref}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
-        className='inline-flex items-center justify-center text-black font-semibold hover:text-white transition-colors text-sm px-4 py-2 border-2 border-black rounded-full mt-2 hover:bg-black'
+        className='inline-flex items-center justify-center text-black font-light hover:text-white transition-colors
+          text-sm px-4 py-2 border-1 border-black rounded-full mt-2 hover:bg-black'
       >
         {buttonText}
       </Link>
