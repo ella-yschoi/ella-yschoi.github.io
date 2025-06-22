@@ -160,7 +160,7 @@ const IntroSection = () => {
           <p className='text-base text-gray-600 leading-relaxed'>
             I specialize in building scalable and accessible web applications
             <br />
-            using React, TypeScript, and modern tooling.
+            using React, TypeScript, and modern frontend tooling.
           </p>
           <p className='text-base text-gray-600 leading-relaxed'>
             Beyond code, I value clarity through clean architecture and
