@@ -19,7 +19,7 @@ const ProjectCard = ({
   image,
   tech,
   variant = 'small',
-  buttonText = '프로젝트 보기 →',
+  buttonText = 'View Project →',
   href,
 }: ProjectCardProps) => {
   const linkHref = href || `/projects/${slug}`;
@@ -61,7 +61,7 @@ const ProjectCard = ({
               href={linkHref}
               target={isExternal ? '_blank' : undefined}
               rel={isExternal ? 'noopener noreferrer' : undefined}
-              className='inline-flex items-center text-black font-semibold hover:text-gray-700 transition-colors text-sm px-6 py-2.5 border border-black rounded-full self-start'
+              className='inline-flex items-center justify-center text-black font-semibold hover:text-white transition-colors text-sm px-6 py-2.5 border-2 border-black rounded-full self-start hover:bg-black'
             >
               {buttonText}
             </Link>
@@ -81,7 +81,7 @@ const ProjectCard = ({
           <span className='text-4xl text-gray-300'>📦</span>
         )}
       </div>
-      <h3 className='text-lg font-semibold text-black mb-2 group-hover:text-gray-700 transition-colors'>
+      <h3 className='text-lg font-normal text-black mb-2 group-hover:text-gray-700 transition-colors'>
         {title}
       </h3>
       <p className='text-sm text-gray-600 line-clamp-2 mb-4'>{description}</p>
@@ -101,7 +101,7 @@ const ProjectCard = ({
         href={linkHref}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
-        className='inline-flex items-center text-black font-semibold hover:text-gray-700 transition-colors text-sm px-4 py-2 border border-black rounded-full mt-2'
+        className='inline-flex items-center justify-center text-black font-semibold hover:text-white transition-colors text-sm px-4 py-2 border-2 border-black rounded-full mt-2 hover:bg-black'
       >
         {buttonText}
       </Link>

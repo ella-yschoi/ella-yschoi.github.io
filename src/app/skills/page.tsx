@@ -15,6 +15,7 @@ import {
   SiVitest,
 } from 'react-icons/si';
 import { MdWidgets, MdOutlineTipsAndUpdates } from 'react-icons/md';
+import { FaProjectDiagram } from 'react-icons/fa';
 
 const skillsData = {
   languages: [
@@ -22,25 +23,25 @@ const skillsData = {
       name: 'JavaScript',
       logo: <SiJavascript className='text-yellow-400' />,
       description:
-        'ES6+ 문법을 활용한 모던 JavaScript 개발. 비동기 처리, 모듈 시스템, 함수형 프로그래밍 패턴을 능숙하게 활용합니다.',
+        'Proficient in modern JavaScript (ES6+), including asynchronous programming (Promises, async/await), DOM manipulation, and REST API integration.',
     },
     {
       name: 'TypeScript',
       logo: <SiTypescript className='text-blue-500' />,
       description:
-        '타입 안정성을 통한 안전한 개발 환경 구축. 인터페이스, 제네릭, 유니온 타입을 활용한 견고한 코드 작성.',
+        'Building a safe development environment through type safety. Writing robust code using interfaces, generics, and union types.',
     },
     {
       name: 'HTML',
       logo: <SiHtml5 className='text-red-500' />,
       description:
-        '시맨틱 마크업과 웹 접근성(WCAG AAA)을 고려한 HTML 구조 설계. SEO 최적화와 사용자 경험 향상.',
+        'Designing HTML structures with semantic markup and web accessibility (WCAG AAA) in mind. Enhancing SEO and user experience.',
     },
     {
       name: 'CSS',
       logo: <SiCss3 className='text-blue-500' />,
       description:
-        '반응형 디자인과 CSS Grid/Flexbox를 활용한 레이아웃 구현. CSS 변수와 모듈화를 통한 유지보수성 향상.',
+        'Implementing layouts using responsive design with CSS Grid/Flexbox. Improving maintainability through CSS variables and modularization.',
     },
   ],
   frameworks: [
@@ -48,49 +49,55 @@ const skillsData = {
       name: 'React',
       logo: <SiReact className='text-sky-400' />,
       description:
-        '함수형 컴포넌트와 Hooks를 활용한 모던 React 개발. 컴포넌트 설계와 상태 관리 최적화.',
+        'Modern React development using functional components and Hooks. Optimizing component design and state management.',
     },
     {
       name: 'Next.js',
       logo: <SiNextdotjs className='text-black' />,
       description:
-        'React 기반 풀스택 프레임워크. SSR, SSG, App Router를 활용한 고성능 웹 애플리케이션 개발.',
+        'A React-based full-stack framework. Developing high-performance web applications using SSR, SSG, and the App Router.',
     },
     {
       name: 'Vite',
       logo: <SiVite className='text-purple-400' />,
       description:
-        '빠른 개발 서버와 빌드 도구. CRA에서 Vite로 마이그레이션하여 빌드 시간 82% 단축 경험.',
+        'Fast development server and build tool. Experience migrating from CRA to Vite, reducing build time by 82%.',
     },
     {
       name: 'Zustand',
       logo: <MdWidgets className='text-gray-400' />,
       description:
-        '가벼운 상태 관리 라이브러리. 전역/로컬 상태 분리와 복잡도 감소를 통한 애플리케이션 최적화.',
+        'A lightweight state management library. Optimizing applications by separating global/local state and reducing complexity.',
     },
     {
       name: 'TailwindCSS',
       logo: <SiTailwindcss className='text-sky-400' />,
       description:
-        '유틸리티 퍼스트 CSS 프레임워크. 빠른 프로토타이핑과 일관된 디자인 시스템 구축.',
+        'A utility-first CSS framework. Enabling rapid prototyping and consistent design system implementation.',
     },
     {
       name: 'Styled-Components',
       logo: <SiStyledcomponents className='text-pink-400' />,
       description:
-        'CSS-in-JS 라이브러리. 동적 스타일링과 테마 시스템을 활용한 컴포넌트 기반 스타일링.',
+        'A CSS-in-JS library. Component-based styling using dynamic styling and theming systems.',
     },
     {
       name: 'D3.js',
       logo: <SiD3Dotjs className='text-orange-500' />,
       description:
-        '데이터 시각화 라이브러리. 복잡한 차트와 인터랙티브 그래프 구현 경험.',
+        'A data visualization library. Experience implementing complex charts and interactive graphs.',
+    },
+    {
+      name: 'Rete.js',
+      logo: <FaProjectDiagram className='text-purple-400' />,
+      description:
+        'A TypeScript-first framework for creating node-based visual editors. Experience building dataflow-driven interfaces and custom visual programming tools.',
     },
     {
       name: 'OpenSeadragon',
       logo: <MdWidgets className='text-gray-400' />,
       description:
-        '고해상도 이미지 뷰어 라이브러리. 병리 이미지와 대용량 SVS 파일 시각화 구현.',
+        'A high-resolution image viewer library. Implemented visualization for pathology images and large SVS files.',
     },
   ],
   devops: [
@@ -98,25 +105,25 @@ const skillsData = {
       name: 'GitHub Actions',
       logo: <SiGithubactions className='text-blue-400' />,
       description:
-        'CI/CD 파이프라인 자동화. 빌드, 테스트, 배포 프로세스 자동화로 개발 효율성 향상.',
+        'CI/CD pipeline automation. Improving development efficiency by automating build, test, and deployment processes.',
     },
     {
       name: 'Git',
       logo: <SiGit className='text-gray-400' />,
       description:
-        '버전 관리와 협업 도구. 브랜치 전략과 커밋 컨벤션을 통한 체계적인 코드 관리.',
+        'Version control and collaboration tool. Systematic code management through branch strategies and commit conventions.',
     },
     {
       name: 'Jest',
       logo: <SiJest className='text-rose-400' />,
       description:
-        'JavaScript 테스팅 프레임워크. 단위 테스트와 통합 테스트를 통한 코드 품질 보장.',
+        'A JavaScript testing framework. Ensuring code quality through unit and integration tests.',
     },
     {
       name: 'Vitest',
       logo: <SiVitest className='text-lime-500' />,
       description:
-        'Vite 기반 테스팅 도구. 빠른 테스트 실행과 개발 환경 최적화.',
+        'A Vite-based testing tool. Fast test execution and development environment optimization.',
     },
   ],
   principles: [
@@ -124,37 +131,37 @@ const skillsData = {
       name: 'Web Accessibility',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        'WCAG AAA 가이드라인 준수. 다크 모드 적용과 색상 대비 최적화를 통한 포용적 웹 경험 제공.',
+        'Adhering to WCAG AAA guidelines. Providing an inclusive web experience through dark mode implementation and color contrast optimization.',
     },
     {
       name: 'Modular Architecture',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        '모듈화된 컴포넌트 설계. 재사용성과 유지보수성을 고려한 아키텍처 패턴 적용.',
+        'Designing modular components. Applying architectural patterns that consider reusability and maintainability.',
     },
     {
       name: 'Separation of Concerns',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        '관심사 분리 원칙. 비즈니스 로직과 UI 로직의 명확한 분리를 통한 코드 품질 향상.',
+        'Principle of Separation of Concerns. Improving code quality through clear separation of business logic and UI logic.',
     },
     {
       name: 'DRY Principle',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        '중복 제거 원칙. 공통 로직 추상화와 재사용 가능한 컴포넌트 설계.',
+        "Don't Repeat Yourself (DRY) principle. Abstracting common logic and designing reusable components.",
     },
     {
       name: 'Single Responsibility',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        '단일 책임 원칙. 각 컴포넌트와 함수가 하나의 명확한 책임만을 가지도록 설계.',
+        'Single Responsibility Principle. Designing each component and function to have one clear responsibility.',
     },
     {
       name: 'TDD',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        '테스트 주도 개발. 테스트 코드 작성 후 구현하는 방식으로 안정적인 코드 작성.',
+        'Test-Driven Development (TDD). Writing stable code by creating tests before implementation.',
     },
   ],
 };
@@ -192,12 +199,11 @@ export default function SkillsPage() {
     <section className='py-16 w-full bg-gray-50 min-h-screen'>
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
         <div className='pt-8'>
-          <h1 className='text-3xl font-bold mb-6 text-black'>Skills</h1>
+          <h1 className='text-3xl font-bold mb-6 text-black'>My Skills</h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
-            I work with a dynamic skills of modern technologies to create
-            efficient, scalable, and user-friendly web applications. My goal is
-            to build solutions that are not only visually appealing but also
-            optimized for performance, accessibility, and maintainability.
+            I use a modern tech stack to build efficient, scalable, and visually
+            appealing web applications, prioritizing performance, accessibility,
+            and maintainability.
           </p>
         </div>
 

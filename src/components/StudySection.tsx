@@ -27,7 +27,7 @@ const StudySection = () => (
             description={item.description}
             tech={item.tech}
             href={item.url}
-            buttonText='더보기 →'
+            buttonText='View More →'
           />
         ))}
       </div>

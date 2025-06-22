@@ -15,7 +15,7 @@ const contacts = [
   },
   {
     label: 'Book a Call',
-    value: 'Book a Call',
+    value: '+82 10-7703-7380',
     href: '#',
     icon: <MdCall className='text-2xl text-yellow-400' />,
     bg: 'bg-white',
@@ -59,31 +59,56 @@ export default function ContactPage() {
             Let&apos;s Connect!
           </h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
-            Whether it&apos;s brainstorming a new project, discussing design
-            optimizations, or just sharing creative insights, I&apos;m always
-            excited to collaborate. Reach out to me and let&apos;s craft
-            something exceptional — together!
+            I&apos;m always excited to collaborate on new projects and ideas.
+            <br />
+            Feel free to reach out. Let&apos;s build something great together!
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-          {contacts.map((c) => (
-            <a
-              key={c.label}
-              href={c.href}
-              target='_blank'
-              rel='noopener noreferrer'
-              className={`flex items-center gap-4 p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md hover:-translate-y-1 bg-white group ${c.bg}`}
-            >
-              <div className='flex-shrink-0'>{c.icon}</div>
-              <div className='flex-1 min-w-0'>
-                <div className='text-base font-medium text-black mb-1'>
-                  {c.label}
+          {contacts.map((c) => {
+            const isClickable =
+              c.label !== 'Email' && c.label !== 'Book a Call';
+
+            const content = (
+              <>
+                <div className='flex-shrink-0'>{c.icon}</div>
+                <div className='flex-1 min-w-0'>
+                  <div className='text-base font-medium text-black mb-1'>
+                    {c.label}
+                  </div>
+                  <div className='text-gray-600 text-sm truncate'>
+                    {c.value}
+                  </div>
                 </div>
-                <div className='text-gray-600 text-sm truncate'>{c.value}</div>
+                {isClickable && (
+                  <FiExternalLink className='text-xl text-gray-300 group-hover:text-black transition-colors' />
+                )}
+              </>
+            );
+
+            if (isClickable) {
+              return (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={`flex items-center gap-4 p-6 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md hover:-translate-y-1 group ${c.bg}`}
+                >
+                  {content}
+                </a>
+              );
+            }
+
+            return (
+              <div
+                key={c.label}
+                className={`flex items-center gap-4 p-6 rounded-2xl shadow-sm border border-gray-100 ${c.bg}`}
+              >
+                {content}
               </div>
-              <FiExternalLink className='text-xl text-gray-300 group-hover:text-black transition-colors' />
-            </a>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

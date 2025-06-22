@@ -57,7 +57,7 @@ const IntroSection = () => {
         style={{ opacity }}
       >
         <motion.div
-          className='space-y-4'
+          className='space-y-1'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -65,16 +65,13 @@ const IntroSection = () => {
           <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black leading-tight'>
             Ella Choi
           </h1>
-          <h2 className='text-xl sm:text-2xl md:text-3xl font-medium text-black tracking-wide'>
-            Frontend Engineer
-          </h2>
-          <p className='text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed'>
+          <p className='text-base sm:text-lg md:text-xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed'>
             Frontend Engineer who turns complexity to clarity
           </p>
         </motion.div>
 
         <motion.div
-          className='flex flex-col sm:flex-row gap-4 mt-6 w-full justify-center'
+          className='flex flex-col sm:flex-row gap-4 w-full justify-center'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -83,15 +80,17 @@ const IntroSection = () => {
             href='https://docs.google.com/document/d/1PGVhLg2CTpaw1GtNKO552sTUHiUR5ScKiWiH7xSd9aA/edit?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
-            className='px-6 py-3 rounded-full bg-black text-white font-semibold shadow-lg hover:shadow-xl hover:bg-gray-800 transition-all duration-300 text-base w-full sm:w-auto transform hover:scale-105'
+            className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold
+              hover:bg-black hover:text-white transition-all duration-300 text-base w-full sm:w-auto transform hover:scale-105'
           >
-            이력서 보기
+            Resume
           </a>
           <Link
             href='#projects'
-            className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold hover:bg-black hover:text-white transition-all duration-300 text-base w-full sm:w-auto block'
+            className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold
+              hover:bg-black hover:text-white transition-all duration-300 text-base w-full sm:w-auto block'
           >
-            프로젝트 보기
+            Projects
           </Link>
         </motion.div>
 
@@ -131,26 +130,26 @@ const IntroSection = () => {
         </motion.div>
 
         <motion.div
-          className='mt-12 space-y-4 max-w-2xl'
+          className='mt-1 space-y-4 max-w-xl'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className='text-lg text-gray-600 leading-relaxed'>
-            안녕하세요, 마케팅과 고객 경험 배경을 가진 프론트엔드 엔지니어{' '}
-            <span className='font-semibold text-black'>Ella Choi</span>입니다.
+            I have a deep interest in how people interact with technology.
           </p>
           <p className='text-base text-gray-600 leading-relaxed'>
-            React, TypeScript, 모던 툴링을 활용해 확장 가능하고 접근성 높은 웹
-            애플리케이션을 구축하는 것을 전문으로 합니다. 빠르게 성장하는 의료
-            AI 스타트업에서 클라우드 기반 플랫폼의 프론트엔드 개발을 주도하고,
-            대규모 이미지 시각화 도구를 설계하며, 주간 릴리즈를 가능하게 하는
-            CI/CD 파이프라인을 개선했습니다.
+            I specialize in building scalable and accessible web applications
+            <br />
+            using React, TypeScript, and modern tooling.
           </p>
           <p className='text-base text-gray-600 leading-relaxed'>
-            코드 외적으로는 깨끗한 아키텍처나 문서화를 통한 명확성을 중요시하며,
-            복잡한 시스템을 이해하기 쉬운 조각으로 나누고, 공유된 언어와 맥락을
-            통해 강력한 협업을 육성하는 것을 즐깁니다.
+            Beyond code, I value clarity through clean architecture and
+            documentation,
+            <br />
+            enjoy breaking down complex systems into understandable pieces,
+            <br />
+            and foster strong collaboration through shared language and context.
           </p>
           <div className='flex justify-end mt-12'>
             <ViewAllButton href='/about'>View All About Me</ViewAllButton>
