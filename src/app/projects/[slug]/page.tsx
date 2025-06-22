@@ -122,14 +122,14 @@ export default function ProjectDetailPage({ params }: Props) {
         <div className='mb-10'>
           <div
             className='rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg mb-4'
-            style={{ minHeight: 320 }}
+            style={{ minHeight: 480 }}
           >
             <Image
               src={mainImage}
               alt={project.title}
               width={800}
-              height={320}
-              className='object-contain w-full h-[320px]'
+              height={480}
+              className='object-contain w-full h-[480px]'
             />
           </div>
           <div className='flex gap-4 justify-center'>

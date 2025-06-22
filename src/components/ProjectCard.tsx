@@ -76,7 +76,7 @@ const ProjectCard = ({
     <div className='group bg-white rounded-xl shadow hover:shadow-lg border border-gray-100 p-4 transition-all duration-200 hover:-translate-y-1'>
       <div className='h-36 flex items-center justify-center mb-4 bg-gray-50 rounded-lg overflow-hidden relative'>
         {image ? (
-          <Image src={image} alt={title} fill className='object-contain' />
+          <Image src={image} alt={title} fill className='object-cover' />
         ) : (
           <span className='text-4xl text-gray-300'>📦</span>
         )}
