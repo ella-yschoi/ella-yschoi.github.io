@@ -3,7 +3,7 @@ import { HiOutlineBriefcase } from 'react-icons/hi';
 
 const education = [
   {
-    institution: 'Code States - Bootcamp, Computer Software Engineering',
+    institution: 'Code States - Engineering Bootcamp',
     degree:
       'Completed a full-time frontend training program focused on modern web development. Built a strong foundation in HTML/CSS, JavaScript, TypeScript, and React.',
     period: 'Feb 2023 - Aug 2023',
@@ -82,7 +82,7 @@ export default function AboutPage() {
           <div className='bg-white rounded-2xl shadow p-8 md:col-span-2'>
             <div className='flex items-center gap-2 mb-4'>
               <HiOutlineBriefcase className='text-xl text-gray-400' />
-              <h2 className='text-lg font-semibold text-black'>Experience</h2>
+              <h2 className='text-xl font-semibold text-black'>Experience</h2>
             </div>
             <ul className='space-y-6'>
               {experience.map((exp) => (
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <div className='bg-white rounded-2xl shadow p-8'>
             <div className='flex items-center gap-2 mb-4'>
               <FaUniversity className='text-xl text-gray-400' />
-              <h2 className='text-lg font-semibold text-black'>Education</h2>
+              <h2 className='text-xl font-semibold text-black'>Education</h2>
             </div>
             <ul className='space-y-6'>
               {education.map((edu) => (
@@ -128,7 +128,7 @@ export default function AboutPage() {
           <div className='bg-white rounded-2xl shadow p-8'>
             <div className='flex items-center gap-2 mb-4'>
               <FaHandsHelping className='text-xl text-gray-400' />
-              <h2 className='text-lg font-semibold text-black'>Volunteering</h2>
+              <h2 className='text-xl font-semibold text-black'>Volunteering</h2>
             </div>
             <ul className='space-y-6'>
               {volunteering.map((item) => (
