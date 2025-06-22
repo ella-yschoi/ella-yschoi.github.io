@@ -25,7 +25,7 @@ const StudySection = () => (
             slug={item.slug}
             title={item.title}
             description={item.description}
-            tech={item.tech}
+            tech={item.sectionTech}
             href={item.url}
             buttonText='View More →'
           />
