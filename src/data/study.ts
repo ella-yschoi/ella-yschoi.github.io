@@ -7,7 +7,7 @@ export const studyItems = [
     url: 'https://ella-yeonsu-choi.gitbook.io/today-i-learned',
     pageTech: ['JavaScript', 'TypeScript', 'React', 'Git', 'Web', 'Algorithm'],
     sectionTech: ['JavaScript', 'React', 'Web'],
-    image: '/images/study-TIL.png',
+    image: '/images/study/study-TIL.png',
   },
   {
     slug: 'book-review',
@@ -22,7 +22,7 @@ export const studyItems = [
       'Data Structure',
     ],
     sectionTech: ['Refactoring', 'Data Structure'],
-    image: '/images/study-book-review.png',
+    image: '/images/study/study-book-review.png',
   },
   {
     slug: 'cs-study',
@@ -38,6 +38,6 @@ export const studyItems = [
       'Memory',
     ],
     sectionTech: ['OS', 'CPU', 'Memory'],
-    image: '/images/study-cs-study.png',
+    image: '/images/study/study-cs-study.png',
   },
 ];

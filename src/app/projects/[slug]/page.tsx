@@ -12,7 +12,11 @@ const projects = {
     description:
       'React와 TypeScript로 구축한 병리 데이터 플랫폼. 1,000개 이상의 SVS 파일 시각화를 지원하며, 고해상도 다중 이미지 오버레이가 가능한 SVS 이미지 뷰어와 패치 기반 타일 생성기를 개발했습니다.',
     tech: ['React', 'TypeScript', 'OpenSeadragon', 'Zustand', 'TailwindCSS'],
-    images: ['/project1.jpg', '/project1-2.jpg', '/project1-3.jpg'],
+    images: [
+      '/images/project/datahub_desktop_lightmode.png',
+      '/images/project/datahub_desktop_darkmode.png',
+      '/images/project/datahub_mobile_darkmode.png',
+    ],
     features: [
       '1,000개 이상의 SVS 파일 시각화 지원',
       '고해상도 다중 이미지 오버레이 기능',
@@ -33,14 +37,18 @@ const projects = {
     approach:
       '병리 데이터의 복잡한 시각화 요구사항을 해결하기 위해 OpenSeadragon 라이브러리를 활용한 고해상도 이미지 뷰어를 구현했습니다. 상태 관리는 Zustand를 도입하여 전역/로컬 상태를 명확히 분리하고, 웹 접근성 향상을 위해 WCAG AAA 가이드라인을 준수하는 다크 모드를 적용했습니다. 개발 효율성 향상을 위해 CRA에서 Vite로 마이그레이션을 진행하고, GitHub Actions를 통한 CI/CD 파이프라인을 구축하여 주간 릴리즈 사이클을 안정화했습니다.',
     result:
-      '플랫폼은 1,000개 이상의 SVS 파일을 안정적으로 처리할 수 있게 되었고, 빌드 시간이 82% 단축되어 개발 효율성이 크게 향상되었습니다. 웹 접근성 개선으로 더 많은 사용자가 플랫폼을 이용할 수 있게 되었으며, 자동화된 CI/CD 파이프라인으로 배포 프로세스가 10단계에서 1단계로 단순화되었습니다. 또한 2,200개 이상의 오류를 해결하여 안정적인 개발 환경을 구축했습니다.',
+      '병리 데이터 플랫폼이 성공적으로 구축되어 1,000개 이상의 SVS 파일을 효율적으로 시각화할 수 있게 되었고, 고해상도 이미지 뷰어를 통해 의료진이 더 정확한 진단을 내릴 수 있도록 지원했습니다. 개발 과정에서 35개 이상의 레거시 패키지를 제거하고 110개 이상의 보안 취약점을 수정하여 안전하고 안정적인 플랫폼을 구축했으며, CRA에서 Vite로의 마이그레이션을 통해 빌드 시간을 82% 단축하여 개발 효율성을 크게 향상시켰습니다.',
   },
   'datepicker-component': {
     title: 'Headless UI DatePicker',
     description:
-      'Headless UI 기반의 날짜 선택 컴포넌트를 개발하고 npm에 배포. 비즈니스 로직과 UI를 분리하여 컴포넌트 복잡도를 줄이고 책임을 명확히 했습니다. 20명의 개발자 피드백을 바탕으로 10개의 패치 업데이트를 릴리즈했습니다.',
+      'Headless UI 패턴을 적용한 완전히 커스터마이징 가능한 React 날짜 선택 컴포넌트를 개발하고 npm에 배포했습니다. 비즈니스 로직과 UI 로직을 명확히 분리하여 다양한 디자인 시스템에 적용할 수 있는 유연성을 제공했습니다.',
     tech: ['React', 'TypeScript', 'Headless UI', 'npm', 'Git'],
-    images: ['/project2.jpg', '/project2-2.jpg', '/project2-3.jpg'],
+    images: [
+      '/images/project/calendar-thumbnail.jpeg',
+      '/images/project/calendar-props.png',
+      '/images/project/calendar-npm.png',
+    ],
     features: [
       'Headless UI 기반의 완전히 커스터마이징 가능한 날짜 선택 컴포넌트',
       '비즈니스 로직과 UI 로직의 명확한 분리',
@@ -63,7 +71,11 @@ const projects = {
     description:
       'Create React App에서 Vite로 마이그레이션하여 빌드 시간을 82% 단축(110초 → 20초). 35개 이상의 레거시 패키지 제거 및 110개 이상의 보안 취약점 수정으로 안정적인 CI/CD 파이프라인을 구축했습니다.',
     tech: ['Vite', 'GitHub Actions', 'CI/CD', 'Security', 'npm audit'],
-    images: ['/project3.jpg', '/project3-2.jpg', '/project3-3.jpg'],
+    images: [
+      '/images/project/workspace_viewer_lightmode.png',
+      '/images/project/workspace_patchgeneration_desktop_lightmode.png',
+      '/images/project/workspace_dataselector_lightmode.png',
+    ],
     features: [
       'CRA에서 Vite로 성공적인 마이그레이션',
       '빌드 시간 82% 단축 (110초 → 20초)',

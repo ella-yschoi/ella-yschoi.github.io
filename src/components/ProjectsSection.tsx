@@ -10,7 +10,7 @@ const projects = [
     title: 'VIENCE DataHub',
     description:
       'A pathology data platform built with React and TypeScript. It supports the visualization of over 1,000 SVS files and features a high-resolution image viewer based on OpenSeadragon. Manages various data types including folders, datasets, and models, and provides an efficient data workflow through a real-time progress tracking system.',
-    image: '/project1.jpg',
+    image: '/images/project/datahub_desktop_lightmode.png',
     tech: ['React', 'TypeScript', 'Vite'],
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     title: 'VIENCE Workspace',
     description:
       'A visual programming platform based on Rete.js, enabling users to construct data analysis workflows via a drag-and-drop node editor. It offers diverse node types for data selection, image processing, patch generation, and custom tasks, while supporting real-time data flow execution and result visualization. An efficient research environment was built through workspace management, a template system, and collaboration features.',
-    image: '/project3.jpg',
+    image: '/images/project/workspace_viewer_lightmode.png',
     tech: ['React', 'TypeScript', 'Vite'],
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     title: 'Simple DatePicker Calendar',
     description:
       'A customizable date picker component for React published on npm. It features easy date selection and a customizable color scheme to fit any design. Built with a headless UI approach to separate business logic from presentation, this component was iteratively improved through 10 patch releases based on user feedback.',
-    image: '/project2.jpg',
+    image: '/images/project/calendar-thumbnail.jpeg',
     tech: ['React', 'TypeScript', 'Vite'],
   },
 ];
