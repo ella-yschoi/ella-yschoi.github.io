@@ -71,7 +71,7 @@ const ProjectCard = ({
     );
   }
 
-  // Small variant (홈페이지용)
+  // Small variant (for homepage)
   return (
     <div className='group bg-white rounded-xl shadow hover:shadow-lg border border-gray-100 p-4 transition-all duration-200 hover:-translate-y-1'>
       <div className='h-36 flex items-center justify-center mb-4 bg-gray-50 rounded-lg overflow-hidden relative'>
