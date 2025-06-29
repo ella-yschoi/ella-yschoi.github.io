@@ -13,6 +13,7 @@ const projects = {
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
     description:
       'Developed a web-based platform for high-resolution visualization, analysis, and processing of pathology data using React and TypeScript at medical AI startup VIENCE. This is a service actually used by pathology researchers and medical staff at university hospitals, supporting over 1,000 SVS (slide image) files and including core features such as high-resolution viewer and accessibility-enhanced UI.',
+    projectURL: undefined,
     tech: [
       'React',
       'TypeScript',
@@ -92,6 +93,7 @@ const projects = {
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
     description:
       'Developed a node editor for a visual programming platform based on Rete.js, allowing users to configure data analysis workflows through drag-and-drop. Supports various node types including data selection, image processing, patch generation, and custom operations, providing real-time data flow execution and result visualization features.',
+    projectURL: undefined,
     tech: [
       'React',
       'TypeScript',
@@ -157,53 +159,64 @@ const projects = {
       ],
     },
   },
-  'datepicker-component': {
-    title: 'Headless UI DatePicker – React Date Selection Component',
-    subtitle: 'Published as an npm package for other developers to use.',
-    description:
-      'Developed and published a fully customizable React date selection component applying Headless UI patterns to npm. Provides flexibility to apply to various design systems by clearly separating business logic and UI logic, and continuously improved through 10 patch updates based on feedback from 20 developers.',
+  'datepicker-calendar': {
+    title: 'Simple DatePicker Calendar for React',
+    subtitle: undefined,
+    projectURL:
+      'https://www.npmjs.com/package/react-simple-datepicker-calendar',
+    description: undefined,
     tech: [
       'React',
       'TypeScript',
+      'Styled Components',
+      'Vite',
       'Headless UI',
-      'npm',
-      'Git',
+      'WCAG 2.1 AA',
       'Semantic Versioning',
     ],
     images: [
       '/images/project/calendar-thumbnail.jpeg',
-      '/images/project/calendar-props.png',
       '/images/project/calendar-npm.png',
+      '/images/project/calendar-features.png',
+      '/images/project/calendar-props.png',
     ],
     overview: {
       title: 'Project Overview',
       content: [
-        'Developed and published a fully customizable React date selection component applying Headless UI patterns to npm.',
-        'Provides flexibility to apply to various design systems by clearly separating business logic and UI logic, and continuously improved through 10 patch updates based on feedback from 20 developers.',
+        'Developed and published a fully customizable React date selection component to npm that complies with WCAG 2.1 AA accessibility standards, applies Headless UI patterns for design system flexibility, and has been continuously improved through 10 patch updates and 1 minor update based on feedback from over 20 developers.',
       ],
     },
     contributions: [
       {
         category: 'Core Feature Development',
         items: [
-          'Implemented fully customizable date selection component based on Headless UI',
+          'Implemented fully customizable date selection component based on Headless UI patterns',
           'Maximized reusability through clear separation of business logic and UI logic',
-          'Implemented various date format support and keyboard navigation considering accessibility',
+          'Added Korean/English multilingual support and localized date formatting',
+        ],
+      },
+      {
+        category: 'Accessibility and Usability Improvements',
+        items: [
+          'Implemented comprehensive accessibility features compliant with WCAG 2.1 AA standards',
+          'Complete keyboard navigation support and screen reader compatibility',
+          'High contrast mode support and mobile accessibility enhancement through touch gestures',
+          'Built automated accessibility testing tools and validation system',
         ],
       },
       {
         category: 'Package Distribution and Management',
         items: [
           'Successfully published as npm package to ensure reusability',
-          'Built stable distribution and update system through Semantic versioning',
-          'Improved developer experience by ensuring type safety through TypeScript',
+          'Built stable distribution and update system through Semantic Versioning',
+          'Enhanced developer experience by ensuring type safety through TypeScript',
         ],
       },
       {
-        category: 'Continuous Improvement',
+        category: 'Continuous Improvement and Stabilization',
         items: [
-          'Systematically collected and analyzed feedback from **20 developers**',
-          'Continuous improvement and stability enhancement through **10 patch updates**',
+          'Systematically collected and analyzed feedback from over 20 developers',
+          'Continuous improvement through 10 patch updates and 1 minor update',
           'Added responsive design support according to user requirements',
         ],
       },
@@ -212,7 +225,7 @@ const projects = {
         items: [
           'Wrote detailed README and API documentation',
           'Provided usage examples and demo code',
-          'Collected user support and feedback through GitHub Issues',
+          'Documented comprehensive accessibility guide and testing instructions',
         ],
       },
     ],
@@ -220,9 +233,28 @@ const projects = {
       title: 'Project Results',
       content: [
         'Successfully published to npm, making it easy for other developers to use',
-        'Significantly improved usability and stability through 10 patch updates based on feedback from 20 developers',
+        'Released 10 patch updates and 1 minor update based on feedback from over 20 developers, significantly improving usability and stability',
         'Provided flexibility to apply to various design systems through Headless UI patterns',
-        'Improved developer experience and reduced error rates through type safety with TypeScript',
+        'Ensured comprehensive accessibility for all users through WCAG 2.1 AA standard compliance',
+      ],
+    },
+    technicalDetails: {
+      title: 'Technical Details',
+      content: [
+        'Built on React 18.2.0, TypeScript 5.4.2, Styled Components 6.1.8',
+        'Fast development environment and optimized production build using Vite',
+        'State management and business logic separation through custom hooks',
+        'Modularized component structure (containers, units, grids, displays, buttons, inputs)',
+        'Automated accessibility testing scripts and validation tools',
+      ],
+    },
+    metrics: {
+      title: 'Key Metrics',
+      content: [
+        'Version: v0.2.0 (latest) - 10 patch updates, 1 minor update',
+        'Accessibility: 100% compliant with WCAG 2.1 AA standards',
+        'Language Support: Korean and English multilingual support',
+        'Type Safety: 100% type safety guaranteed through TypeScript strict mode',
       ],
     },
   },
@@ -287,9 +319,29 @@ export default function ProjectDetailPage({ params }: Props) {
         </div>
 
         <div className='mb-14'>
-          <h1 className='text-4xl font-bold mt-14 mb-4 text-black'>
-            {project.title}
-          </h1>
+          <div className='flex items-center justify-between mt-14 mb-4'>
+            <h1 className='text-4xl font-bold text-black'>{project.title}</h1>
+            {project.projectURL && (
+              <a
+                href={project.projectURL}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-medium text-sm'
+                aria-label='View on npm'
+              >
+                <svg
+                  width='16'
+                  height='16'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  className='flex-shrink-0'
+                >
+                  <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' />
+                </svg>
+                View on npm
+              </a>
+            )}
+          </div>
           {project.subtitle && (
             <div className='flex items-center gap-2 mb-4'>
               <Image src='/info.svg' alt='Information' width={16} height={16} />
@@ -297,6 +349,7 @@ export default function ProjectDetailPage({ params }: Props) {
             </div>
           )}
           <p className='text-lg text-gray-600 mb-6'>{project.description}</p>
+
           <div className='flex flex-wrap gap-2 mb-6'>
             {project.tech.map((tech) => (
               <span

@@ -22,10 +22,10 @@ const projects = [
     tech: ['React', 'TypeScript', 'Vite'],
   },
   {
-    slug: 'datepicker-component',
+    slug: 'datepicker-calendar',
     title: 'Simple DatePicker Calendar',
     description:
-      'A customizable date picker component for React published on npm. It features easy date selection and a customizable color scheme to fit any design. Built with a headless UI approach to separate business logic from presentation, this component was iteratively improved through 10 patch releases based on user feedback.',
+      'Developed and published a fully customizable React date selection component to npm that complies with WCAG 2.1 AA accessibility standards, applies Headless UI patterns for design system flexibility, and has been continuously improved through 10 patch updates and 1 minor update based on feedback from over 20 developers.',
     image: '/images/project/calendar-thumbnail.jpeg',
     tech: ['React', 'TypeScript', 'Vite'],
   },
