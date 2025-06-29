@@ -9,17 +9,17 @@ const projects = [
     slug: 'vience-datahub',
     title: 'VIENCE DataHub',
     description:
-      'A pathology data platform built with React and TypeScript. It supports the visualization of over 1,000 SVS files and features a high-resolution image viewer based on OpenSeadragon. Manages various data types including folders, datasets, and models, and provides an efficient data workflow through a real-time progress tracking system.',
+      'A cloud-based pathology data management service built with React and TypeScript. Supports efficient organization of large-scale files through features like drag-and-drop upload, folder management, and list/grid view switching. Provides a performant interface for navigating deeply nested directory structures and displaying metadata for high-resolution image datasets.',
     image: '/images/project/datahub_desktop_lightmode.png',
-    tech: ['React', 'TypeScript', 'Vite'],
+    tech: ['TypeScript', 'React', 'Vite'],
   },
   {
     slug: 'vience-workspace',
     title: 'VIENCE Workspace',
     description:
-      'A visual programming platform based on Rete.js, enabling users to construct data analysis workflows via a drag-and-drop node editor. It offers diverse node types for data selection, image processing, patch generation, and custom tasks, while supporting real-time data flow execution and result visualization. An efficient research environment was built through workspace management, a template system, and collaboration features.',
+      'A visual programming platform that enables researchers to construct image processing workflows through a drag-and-drop node editor. Includes core nodes such as Data Selector, Patch Generator, and High-Resolution Viewer, allowing users to configure and preview data pipelines in real time within a single interface.',
     image: '/images/project/workspace_viewer_lightmode.png',
-    tech: ['React', 'TypeScript', 'Vite'],
+    tech: ['TypeScript', 'React', 'Vite'],
   },
   {
     slug: 'datepicker-calendar',
@@ -27,7 +27,7 @@ const projects = [
     description:
       'Developed and published a fully customizable React date selection component to npm that complies with WCAG 2.1 AA accessibility standards, applies Headless UI patterns for design system flexibility, and has been continuously improved through 10 patch updates and 1 minor update based on feedback from over 20 developers.',
     image: '/images/project/calendar-thumbnail.jpeg',
-    tech: ['React', 'TypeScript', 'Vite'],
+    tech: ['TypeScript', 'React', 'Vite'],
   },
 ];
 

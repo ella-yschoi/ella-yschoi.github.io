@@ -8,16 +8,13 @@ interface Props {
 
 const projects = {
   'vience-datahub': {
-    title: 'VIENCE DataHub – Pathology Data Visualization Platform',
+    title: 'VIENCE DataHub',
     subtitle:
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
-    description:
-      'Developed a web-based platform for high-resolution visualization, analysis, and processing of pathology data using React and TypeScript at medical AI startup VIENCE. This is a service actually used by pathology researchers and medical staff at university hospitals, supporting over 1,000 SVS (slide image) files and including core features such as high-resolution viewer and accessibility-enhanced UI.',
     projectURL: undefined,
     tech: [
-      'React',
       'TypeScript',
-      'OpenSeadragon',
+      'React',
       'Zustand',
       'TailwindCSS',
       'Vitest',
@@ -34,69 +31,68 @@ const projects = {
     overview: {
       title: 'Project Overview',
       content: [
-        'Developed a web-based platform for high-resolution visualization, analysis, and processing of pathology data using React and TypeScript at medical AI startup VIENCE.',
-        'This is a service actually used by pathology researchers and medical staff at university hospitals, supporting over 1,000 SVS (slide image) files and including core features such as high-resolution viewer and accessibility-enhanced UI.',
+        'At medical AI startup VIENCE, developed a cloud-based service for managing and processing large-scale pathology image data using React and TypeScript.',
+        'This internal service supports over 1,000 SVS (slide image) files and enables pathology researchers and medical staff at university hospitals to manage files and process data efficiently.',
       ],
     },
     contributions: [
       {
         category: 'Frontend Development',
         items: [
-          'Developed interface for managing pathology images based on directory structure',
-          'Implemented cloud-based viewer supporting over 1,000 high-resolution pathology images (SVS) using OpenSeadragon',
+          'Built a file management interface with features such as drag-and-drop upload, folder CRUD operations, and both list and grid views to support seamless organization of large-scale pathology datasets',
+          'Implemented performant UI logic to render deeply nested directory structures and dynamically display metadata for large files, ensuring smooth interaction even with thousands of entries',
         ],
       },
       {
         category: 'UI/UX and Accessibility Improvements',
         items: [
-          'Designed dark mode and accessibility-enhanced UI complying with **WCAG AAA** color contrast standards',
-          'Implemented responsive layout supporting both desktop and mobile environments',
+          'Designed a dark mode UI and improved accessibility to meet **WCAG AAA** color contrast standards',
+          'Implemented a responsive layout optimized for both desktop and mobile environments',
         ],
       },
       {
         category: 'Codebase Optimization',
         items: [
-          'Introduced global/local state management structure using Zustand → Reduced code complexity',
-          'Removed over 35 legacy packages and fixed over 110 security vulnerabilities',
-          'Migrated from CRA to Vite → **82% reduction in build time** (110 seconds → 20 seconds)',
+          'Refactored global and local state management using Zustand → Reduced complexity and improved maintainability',
+          'Removed 35+ deprecated packages and resolved 110+ security issues from legacy code',
+          'Migrated from CRA to Vite → Achieved **82% faster build time** (from 110s to 20s)',
         ],
       },
       {
         category: 'DevOps and Test Automation',
         items: [
-          'Built **CI/CD pipeline** using GitHub Actions → Automated deployment process (10 steps → 1 step)',
-          'Resolved over 2,200 lint, test, compile, and build errors',
-          'Introduced Husky + lint-staged for automatic code convention application on commit',
-          'Introduced unit testing with **Vitest** to automate manual QA',
+          'Set up a CI/CD pipeline using GitHub Actions → Streamlined deployment process (10 steps → 1 step)',
+          'Resolved over 2,200 lint, test, compile, and build errors across the codebase',
+          'Enforced code style consistency with Husky + lint-staged at commit time',
+          'Adopted **Vitest** to introduce unit tests and reduce reliance on manual QA',
         ],
       },
       {
         category: 'Collaboration and Team Leadership',
         items: [
-          'Led sprint planning with CTO to achieve **beta launch within 4 weeks**',
-          'Operated internal seminars and organized dev wiki → Documented technical decision criteria and processes',
+          'Co-led sprint planning with the CTO to deliver the **beta version within 4 weeks**',
+          'Conducted internal dev seminars and authored dev wiki documentation to share architectural decisions and coding conventions',
         ],
       },
     ],
     result: {
       title: 'Project Results',
       content: [
-        'Successfully built a high-resolution data platform usable by medical staff and pathology researchers',
-        'Resolved technical debt and reduced build time → Stabilized release cycles and improved productivity',
-        'As a junior developer, **experienced the entire E2E process from planning to design, development, and deployment**',
+        'Launched a high-resolution pathology data service tailored to the needs of medical researchers and practitioners',
+        'Resolved legacy technical debt and dramatically improved developer experience and release stability',
+        'As a junior developer, **gained hands-on experience in the full E2E cycle** — from planning and design to development and deployment',
       ],
     },
   },
+
   'vience-workspace': {
-    title: 'VIENCE Workspace – Visual Programming Platform',
+    title: 'VIENCE Workspace',
     subtitle:
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
-    description:
-      'Developed a node editor for a visual programming platform based on Rete.js, allowing users to configure data analysis workflows through drag-and-drop. Supports various node types including data selection, image processing, patch generation, and custom operations, providing real-time data flow execution and result visualization features.',
     projectURL: undefined,
     tech: [
-      'React',
       'TypeScript',
+      'React',
       'Rete.js',
       'OpenSeadragon',
       'Vite',
@@ -111,63 +107,53 @@ const projects = {
     overview: {
       title: 'Project Overview',
       content: [
-        'Developed a node editor for a visual programming platform based on Rete.js, allowing users to configure data analysis workflows through drag-and-drop.',
-        'Supports various node types including data selection, image processing, patch generation, and custom operations, providing real-time data flow execution and result visualization features.',
+        'Developed a visual programming platform that allows researchers to build and customize data processing workflows using a node-based editor built with Rete.js.',
+        'Supports interactive configuration of image preprocessing pipelines through components such as data selector, patch generator, and high-resolution slide viewer.',
       ],
     },
     contributions: [
       {
         category: 'Core Feature Development',
         items: [
-          'Implemented drag-and-drop node editor using Rete.js',
-          'Developed various node types including data selection, image processing, and patch generation',
-          'Implemented real-time data flow execution and result visualization features',
+          'Implemented a Data Selector node that enables users to browse and select pathology images and metadata stored in the cloud',
+          'Developed a Patch Generation node that allows users to define patch size, overlap, and sampling strategies for SVS images',
+          'Built a high-resolution pathology slide viewer using OpenSeadragon, supporting zoom, pan, and multi-layer overlays within workflow context',
+          'Integrated all nodes into a dynamic drag-and-drop workflow system using Rete.js, enabling real-time data flow updates and step-by-step preview',
         ],
       },
       {
-        category: 'Performance Optimization',
+        category: 'UI/UX Enhancements',
         items: [
-          'Migrated from CRA to Vite → **82% reduction in build time** (110 seconds → 20 seconds)',
-          'Removed over 35 legacy packages and fixed over 110 security vulnerabilities',
-          'Optimized memory usage to improve performance for large-scale data processing',
+          'Designed responsive and intuitive node UI components to guide users through complex data preprocessing steps',
+          'Enhanced user feedback with loading indicators, real-time node validation, and visual error states',
         ],
       },
       {
-        category: 'Development Environment Improvement',
+        category: 'Workflow Interactivity & State Management',
         items: [
-          'Built **CI/CD pipeline** using GitHub Actions',
-          'Implemented automated build, test, and deployment processes',
-          'Stabilized weekly release cycles and improved development efficiency',
-        ],
-      },
-      {
-        category: 'Security and Stability',
-        items: [
-          'Systematically analyzed and fixed security vulnerabilities through npm audit',
-          'Improved dependency management and automated security scanning',
-          'Built safe and stable development environment',
+          'Implemented context-aware state syncing between multiple nodes using centralized state logic',
+          'Enabled inter-node communication to allow downstream updates (e.g., auto-refreshing viewer after patch generation)',
         ],
       },
     ],
     result: {
       title: 'Project Results',
       content: [
-        'Build time reduced by 82%, significantly improving development efficiency',
-        'Removed over 35 legacy packages and fixed over 110 security vulnerabilities, building a safe and stable development environment',
-        'Automated CI/CD pipeline through GitHub Actions stabilized weekly release cycles',
-        'Visual programming platform enabled researchers to configure data analysis workflows more intuitively',
+        'Successfully built a node-based visual programming interface tailored for pathology data processing',
+        'Enabled researchers to intuitively configure data pipelines using Data Selector, Patch Generation, and Viewer nodes',
+        'Improved experimentation efficiency by allowing real-time preview and flexible reconfiguration of workflows',
       ],
     },
   },
+
   'datepicker-calendar': {
     title: 'Simple DatePicker Calendar for React',
     subtitle: undefined,
     projectURL:
       'https://www.npmjs.com/package/react-simple-datepicker-calendar',
-    description: undefined,
     tech: [
-      'React',
       'TypeScript',
+      'React',
       'Styled Components',
       'Vite',
       'Headless UI',
@@ -348,7 +334,6 @@ export default function ProjectDetailPage({ params }: Props) {
               <p className='text-sm text-gray-500'>{project.subtitle}</p>
             </div>
           )}
-          <p className='text-lg text-gray-600 mb-6'>{project.description}</p>
 
           <div className='flex flex-wrap gap-2 mb-6'>
             {project.tech.map((tech) => (
