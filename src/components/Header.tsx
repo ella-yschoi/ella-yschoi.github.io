@@ -47,9 +47,13 @@ const Header = () => {
                 className='mr-1 rounded-full bg-white'
                 priority
               />
-              <span className='font-bold text-xl text-black tracking-tight'>
+              <Link
+                href='/'
+                className='font-bold text-xl text-black tracking-tight'
+                aria-label='Go to home'
+              >
                 Ella Choi
-              </span>
+              </Link>
             </>
           ) : (
             <>
@@ -60,9 +64,13 @@ const Header = () => {
               >
                 <IoArrowBack className='w-6 h-6 text-gray-700' />
               </button>
-              <span className='font-bold text-xl text-black tracking-tight'>
+              <Link
+                href='/'
+                className='font-bold text-xl text-black tracking-tight'
+                aria-label='Go to home'
+              >
                 Ella Choi
-              </span>
+              </Link>
             </>
           )}
         </div>
