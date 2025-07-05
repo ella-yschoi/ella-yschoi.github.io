@@ -64,20 +64,20 @@ const Header = () => {
           className='md:hidden p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-100 transition-colors'
           aria-label='Toggle menu'
         >
-          <div className='w-6 h-6 flex flex-col justify-center items-center'>
+          <div className='w-6 h-6 flex flex-col justify-center items-center relative'>
             <span
-              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
+              className={`block absolute w-5 h-0.5 bg-current transition-all duration-300 ${
+                isMenuOpen ? 'rotate-45' : '-translate-y-1.5'
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+              className={`block absolute w-5 h-0.5 bg-current transition-all duration-300 ${
                 isMenuOpen ? 'opacity-0' : 'opacity-100'
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
+              className={`block absolute w-5 h-0.5 bg-current transition-all duration-300 ${
+                isMenuOpen ? '-rotate-45' : 'translate-y-1.5'
               }`}
             />
           </div>
