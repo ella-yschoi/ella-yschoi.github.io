@@ -196,14 +196,13 @@ const SkillSection = ({
 
 export default function SkillsPage() {
   return (
-    <section className='py-16 w-full bg-gray-50 min-h-screen'>
+    <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
         <div className='pt-8'>
-          <h1 className='text-3xl font-bold mb-6 text-black'>My Skills</h1>
+          <h1 className='text-3xl font-bold mb-6 text-black'>Skills</h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
-            I use a modern tech stack to build efficient, scalable, and visually
-            appealing web applications, prioritizing performance, accessibility,
-            and maintainability.
+            A comprehensive overview of my technical skills, development
+            principles, and tools I use to build modern web applications.
           </p>
         </div>
 
@@ -212,9 +211,9 @@ export default function SkillsPage() {
           title='Frameworks & Libraries'
           items={skillsData.frameworks}
         />
-        <SkillSection title='DevOps & Testing' items={skillsData.devops} />
+        <SkillSection title='DevOps & Tools' items={skillsData.devops} />
         <SkillSection
-          title='Engineering Principles'
+          title='Development Principles'
           items={skillsData.principles}
         />
       </div>

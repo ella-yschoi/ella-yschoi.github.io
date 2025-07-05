@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { IoArrowBack } from 'react-icons/io5';
 
 const navItems = [
   { label: 'Home', href: '/', id: 'intro' },
@@ -16,6 +18,7 @@ const navItems = [
 
 const Header = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -26,10 +29,49 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  // Mobile: profile image + Ella Choi on home, back button + Ella Choi on other pages
+  const isHome = pathname === '/';
+
   return (
     <header className='fixed top-0 left-0 w-full bg-white border-b border-gray-100 z-50'>
       <nav className='max-w-5xl mx-auto flex items-center justify-between px-4 py-3'>
-        <Link href='/' className='font-bold text-xl text-black tracking-tight'>
+        {/* Mobile header left */}
+        <div className='flex items-center gap-2 md:hidden'>
+          {isHome ? (
+            <>
+              <Image
+                src='/images/ella-profile.png'
+                alt='Ella Choi Profile'
+                width={32}
+                height={32}
+                className='mr-1 rounded-full bg-white'
+                priority
+              />
+              <span className='font-bold text-xl text-black tracking-tight'>
+                Ella Choi
+              </span>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => router.back()}
+                className='p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-all mr-1'
+                aria-label='Go back to previous page'
+              >
+                <IoArrowBack className='w-6 h-6 text-gray-700' />
+              </button>
+              <span className='font-bold text-xl text-black tracking-tight'>
+                Ella Choi
+              </span>
+            </>
+          )}
+        </div>
+
+        {/* Desktop header left */}
+        <Link
+          href='/'
+          className='font-bold text-xl text-black tracking-tight hidden md:block'
+        >
           Ella Choi
         </Link>
 

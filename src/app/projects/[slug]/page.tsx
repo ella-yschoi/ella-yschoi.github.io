@@ -253,93 +253,87 @@ export default function ProjectDetailPage({ params }: Props) {
 
   if (!project) {
     return (
-      <section className='py-16 px-6 w-full bg-gray-50 min-h-screen'>
-        <div className='max-w-4xl mx-auto'>
-          <h1 className='text-3xl font-bold mb-6 text-black'>
-            Project Not Found
-          </h1>
-          <p className='text-gray-600'>The requested project does not exist.</p>
+      <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
+        <div className='max-w-5xl mx-auto px-4 md:px-6'>
+          <div className='pt-8'>
+            <h1 className='text-3xl font-bold mb-6 text-black'>
+              Project Not Found
+            </h1>
+            <p className='text-lg text-gray-700'>
+              The project you're looking for doesn't exist.
+            </p>
+          </div>
         </div>
       </section>
     );
   }
 
   return (
-    <section className='py-16 w-full bg-gray-50 min-h-screen'>
+    <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
-        {/* Image Section */}
-        <div className='mb-10'>
-          <div
-            className='rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg mb-4'
-            style={{ minHeight: 480 }}
-          >
-            <Image
-              src={mainImage}
-              alt={project.title}
-              width={800}
-              height={480}
-              className='object-contain w-full h-[480px]'
-            />
-          </div>
-          <div className='flex gap-4 justify-center'>
-            {project.images.map((img, idx) => (
-              <button
-                key={img}
-                onClick={() => setMainImage(img)}
-                className={`rounded-lg overflow-hidden border-2 ${
-                  mainImage === img ? 'border-black' : 'border-transparent'
-                } focus:outline-none`}
-                style={{ width: 120, height: 80 }}
-                aria-label={`Thumbnail ${idx + 1}`}
+        <div className='pt-8'>
+          <h1 className='text-3xl font-bold mb-6 text-black'>
+            {project.title}
+          </h1>
+          {project.subtitle && (
+            <p className='text-gray-600 mb-8 italic'>{project.subtitle}</p>
+          )}
+        </div>
+
+        {/* Project Images */}
+        <div className='mb-12'>
+          <div className='grid gap-6'>
+            {project.images.map((image, index) => (
+              <div
+                key={index}
+                className='relative w-full h-64 md:h-80 lg:h-96 bg-white rounded-2xl shadow overflow-hidden'
               >
                 <Image
-                  src={img}
-                  alt={`Thumbnail ${idx + 1}`}
-                  width={120}
-                  height={80}
-                  className='object-cover w-full h-full'
+                  src={image}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  fill
+                  className='object-contain'
                 />
-              </button>
+              </div>
             ))}
           </div>
         </div>
 
-        <div className='mb-14'>
-          <div className='flex items-center justify-between mt-14 mb-4'>
-            <h1 className='text-4xl font-bold text-black'>{project.title}</h1>
-            {project.projectURL && (
-              <a
-                href={project.projectURL}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-medium text-sm'
-                aria-label='View on npm'
+        {/* Project URL */}
+        {project.projectURL && (
+          <div className='mb-12'>
+            <a
+              href={project.projectURL}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors'
+            >
+              View Project
+              <svg
+                className='w-4 h-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
               >
-                <svg
-                  width='16'
-                  height='16'
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                  className='flex-shrink-0'
-                >
-                  <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' />
-                </svg>
-                View on npm
-              </a>
-            )}
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                />
+              </svg>
+            </a>
           </div>
-          {project.subtitle && (
-            <div className='flex items-center gap-2 mb-4'>
-              <Image src='/info.svg' alt='Information' width={16} height={16} />
-              <p className='text-sm text-gray-500'>{project.subtitle}</p>
-            </div>
-          )}
+        )}
 
-          <div className='flex flex-wrap gap-2 mb-6'>
+        {/* Tech Stack */}
+        <div className='mb-12'>
+          <h2 className='text-2xl font-bold mb-6 text-black'>Tech Stack</h2>
+          <div className='flex flex-wrap gap-3'>
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className='px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium border border-gray-200'
+                className='px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-200 text-sm font-medium'
               >
                 {tech}
               </span>
@@ -347,64 +341,64 @@ export default function ProjectDetailPage({ params }: Props) {
           </div>
         </div>
 
-        <div className='space-y-12'>
-          <section>
-            <h2 className='text-2xl font-bold mb-6 text-black border-b border-gray-200 pb-2'>
-              {project.overview.title}
-            </h2>
-            <div className='bg-white rounded-lg p-6 border border-gray-100'>
-              <div className='space-y-3'>
-                {project.overview.content.map((content, index) => (
-                  <p
-                    key={index}
-                    className='text-gray-700 text-base leading-relaxed'
-                  >
-                    {content}
-                  </p>
-                ))}
+        {/* Project Overview */}
+        <div className='mb-12'>
+          <h2 className='text-2xl font-bold mb-6 text-black'>
+            {project.overview.title}
+          </h2>
+          <div className='bg-white rounded-2xl shadow p-8'>
+            {project.overview.content.map((paragraph, index) => (
+              <p
+                key={index}
+                className='text-gray-700 leading-relaxed mb-4 last:mb-0'
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        {/* Contributions */}
+        <div className='mb-12'>
+          <h2 className='text-2xl font-bold mb-6 text-black'>
+            Key Contributions
+          </h2>
+          <div className='space-y-8'>
+            {project.contributions.map((contribution, index) => (
+              <div key={index} className='bg-white rounded-2xl shadow p-8'>
+                <h3 className='text-xl font-semibold mb-4 text-black'>
+                  {contribution.category}
+                </h3>
+                <ul className='space-y-3'>
+                  {contribution.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className='flex items-start gap-3'>
+                      <span className='text-blue-500 mt-1'>•</span>
+                      <span className='text-gray-700 leading-relaxed'>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
+        </div>
 
-          <section>
-            <h2 className='text-2xl font-bold mb-6 text-black border-b border-gray-200 pb-2'>
-              Key Contributions and Achievements
-            </h2>
-            <div className='space-y-6'>
-              {project.contributions.map((contribution, index) => (
-                <div
-                  key={index}
-                  className='bg-white rounded-lg p-6 border border-gray-100'
-                >
-                  <h3 className='text-lg font-semibold text-gray-800 mb-4'>
-                    {contribution.category}
-                  </h3>
-                  <ul className='list-disc pl-5 text-gray-700 text-base space-y-2'>
-                    {contribution.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className='leading-relaxed'>
-                        {item.replace(/\*\*/g, '')}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <h2 className='text-2xl font-bold mb-6 text-black border-b border-gray-200 pb-2'>
-              {project.result.title}
-            </h2>
-            <div className='bg-white rounded-lg p-6 border border-gray-100'>
-              <ul className='list-disc pl-5 text-gray-700 text-base space-y-2'>
-                {project.result.content.map((content, index) => (
-                  <li key={index} className='leading-relaxed'>
-                    {content.replace(/\*\*/g, '')}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
+        {/* Project Results */}
+        <div className='mb-12'>
+          <h2 className='text-2xl font-bold mb-6 text-black'>
+            {project.result.title}
+          </h2>
+          <div className='bg-white rounded-2xl shadow p-8'>
+            {project.result.content.map((paragraph, index) => (
+              <p
+                key={index}
+                className='text-gray-700 leading-relaxed mb-4 last:mb-0'
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

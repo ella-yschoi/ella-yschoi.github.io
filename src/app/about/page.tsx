@@ -67,7 +67,7 @@ const experience = [
 
 export default function AboutPage() {
   return (
-    <section className='py-16 w-full bg-gray-50 min-h-screen'>
+    <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
         <div className='pt-8'>
           <h1 className='text-3xl font-bold mb-6 text-black'>About Me</h1>
