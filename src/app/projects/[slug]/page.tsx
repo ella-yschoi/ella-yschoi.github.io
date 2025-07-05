@@ -24,9 +24,9 @@ const projects = {
       'lint-staged',
     ],
     images: [
-      '/images/project/datahub_desktop_lightmode.png',
-      '/images/project/datahub_desktop_darkmode.png',
-      '/images/project/datahub_mobile_darkmode.png',
+      '/images/project/datahub-desktop-lightmode.png',
+      '/images/project/datahub-desktop-darkmode.png',
+      '/images/project/datahub-mobile-darkmode.png',
     ],
     overview: {
       title: 'Project Overview',
@@ -100,9 +100,9 @@ const projects = {
       'GitHub Actions',
     ],
     images: [
-      '/images/project/workspace_viewer_lightmode.png',
-      '/images/project/workspace_patchgeneration_desktop_lightmode.png',
-      '/images/project/workspace_dataselector_lightmode.png',
+      '/images/project/workspace-viewer-lightmode.png',
+      '/images/project/workspace-patchgeneration-desktop-lightmode.png',
+      '/images/project/workspace-dataselector-lightmode.png',
     ],
     overview: {
       title: 'Project Overview',
