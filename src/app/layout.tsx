@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Header from '../components/Header';
-import SwipeGestureProvider from '../components/SwipeGestureProvider';
+import Header from '@/components/Header';
+import SwipeGestureProvider from '@/components/SwipeGestureProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,7 +16,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Ella Choi',
-  description: 'Ella Choi - Frontend Engineer',
+  description: "Frontend Engineer Ella Choi's portfolio",
+  openGraph: {
+    title: 'Ella Choi',
+    description: "Frontend Engineer Ella Choi's portfolio",
+    url: 'https://ella-choi.vercel.app/',
+    siteName: 'Ella Choi Portfolio',
+    images: [
+      {
+        url: 'https://ella-choi.vercel.app/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ella Choi Portfolio Thumbnail',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
