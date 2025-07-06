@@ -1,5 +1,6 @@
 import { FaHandsHelping, FaUniversity } from 'react-icons/fa';
 import { HiOutlineBriefcase } from 'react-icons/hi';
+import { calculateDuration } from '@/utils/dateUtils';
 
 const education = [
   {
@@ -42,6 +43,7 @@ const experience = [
     company: 'VIENCE',
     role: 'Frontend Engineer',
     period: 'Sep 2024 - Present',
+    startDate: '2024-09-01',
     description: 'South Korea lab-based medical AI startup',
   },
   {
@@ -99,7 +101,14 @@ export default function AboutPage() {
                     )}
                   </div>
                   <div className='text-gray-700 text-sm'>{exp.description}</div>
-                  <div className='text-gray-500 text-xs mt-1'>{exp.period}</div>
+                  <div className='text-gray-500 text-xs mt-1'>
+                    {exp.period}
+                    {exp.period.includes('Present') && exp.startDate && (
+                      <span className='ml-1'>
+                        ({calculateDuration(exp.startDate)})
+                      </span>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
