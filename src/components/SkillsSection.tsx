@@ -97,7 +97,7 @@ const SkillsSection = () => (
         Skills
       </motion.h2>
       <motion.div
-        className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'
+        className='grid gap-3 md:gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-4'
         variants={containerVariants}
         initial='hidden'
         whileInView='visible'
@@ -106,12 +106,14 @@ const SkillsSection = () => (
         {skills.map((skill) => (
           <motion.div
             key={skill.name}
-            className='bg-white rounded-lg p-5 text-center border border-gray-100'
+            className='bg-white rounded-lg p-3 md:p-5 text-center border border-gray-100'
             variants={itemVariants}
           >
             <div className='flex items-center justify-center gap-2 mb-2'>
-              {skill.icon}
-              <h3 className='text-lg font-light text-black'>{skill.name}</h3>
+              <div className='text-lg md:text-xl'>{skill.icon}</div>
+              <h3 className='text-sm md:text-lg font-light text-black'>
+                {skill.name}
+              </h3>
             </div>
           </motion.div>
         ))}
