@@ -29,6 +29,14 @@ const projects = [
     image: '/images/project/calendar-thumbnail.jpeg',
     tech: ['TypeScript', 'React', 'Vite'],
   },
+  {
+    slug: 'personal-portfolio',
+    title: 'Personal Portfolio Website',
+    description:
+      'Built a comprehensive developer portfolio website using Next.js 15 and modern frontend technologies to showcase my projects, skills, and professional journey. Implemented accessibility-first design with WCAG AAA compliance.',
+    image: '/images/project/portfolio-thumbnail.png',
+    tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+  },
 ];
 
 const ViewAllButton = ({
@@ -70,7 +78,7 @@ const ProjectsSection = () => (
         Projects
       </motion.h2>
       <motion.div
-        className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'
+        className='grid gap-8 md:grid-cols-2'
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}

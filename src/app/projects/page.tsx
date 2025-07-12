@@ -39,6 +39,14 @@ const projects = [
     image: '/images/project/calendar-thumbnail.jpeg',
     tech: ['TypeScript', 'React', 'Vite', 'Styled Components'],
   },
+  {
+    slug: 'personal-portfolio',
+    title: 'Personal Portfolio Website',
+    description:
+      'Built a comprehensive developer portfolio website using Next.js 15 and modern frontend technologies to showcase my projects, skills, and professional journey. Implemented accessibility-first design with WCAG AAA compliance.',
+    image: '/images/project/portfolio-thumbnail.png',
+    tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+  },
 ];
 
 export default function ProjectsPage() {

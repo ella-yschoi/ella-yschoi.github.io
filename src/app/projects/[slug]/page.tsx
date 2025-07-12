@@ -244,6 +244,95 @@ const projects = {
       ],
     },
   },
+
+  'personal-portfolio': {
+    title: 'Personal Portfolio Website',
+    subtitle: undefined,
+    projectURL: 'https://ella-choi.vercel.app/',
+    tech: [
+      'TypeScript',
+      'React',
+      'Next.js',
+      'Tailwind CSS',
+      'Framer Motion',
+      'React Icons',
+      'WCAG AAA',
+    ],
+    images: [
+      '/images/project/portfolio-lighthouse-1.png',
+      '/images/project/portfolio-lighthouse-2.png',
+      '/images/project/portfolio-mobile.png',
+    ],
+    overview: {
+      title: 'Project Overview',
+      content: [
+        'Built a comprehensive developer portfolio website using Next.js 15 and modern frontend technologies to showcase my projects, skills, and professional journey.',
+        'Implemented accessibility-first design with WCAG AAA compliance and optimized performance for exceptional user experience.',
+      ],
+    },
+    contributions: [
+      {
+        category: 'Modern Tech Stack Implementation',
+        items: [
+          'Leveraged Next.js 15.3.3, React 19, and TypeScript 5 for type-safe development',
+          'Implemented component-based architecture with reusable components and proper TypeScript interfaces',
+          'Used Tailwind CSS 4.1.10 for consistent design system and rapid development',
+        ],
+      },
+      {
+        category: 'Accessibility-First Design',
+        items: [
+          'Implemented WCAG AAA compliance with semantic HTML structure and proper heading hierarchy',
+          'Added comprehensive ARIA attributes and keyboard navigation support',
+          'Ensured screen reader compatibility with descriptive link text and alt attributes',
+        ],
+      },
+      {
+        category: 'Performance & User Experience',
+        items: [
+          'Optimized Core Web Vitals with efficient image handling and font optimization',
+          'Implemented smooth scroll-triggered animations using Framer Motion 12.18.1',
+          'Created responsive design that works seamlessly across mobile, tablet, and desktop',
+        ],
+      },
+      {
+        category: 'SEO & Technical Architecture',
+        items: [
+          'Implemented App Router pattern with dynamic routing for better navigation',
+          'Added optimized metadata and structured data for improved search engine visibility',
+          'Used next/font for Geist Sans font optimization and improved loading performance',
+        ],
+      },
+    ],
+    result: {
+      title: 'Project Results',
+      content: [
+        'Successfully built a modern, accessible portfolio website that effectively showcases professional skills and projects',
+        'Demonstrated expertise in Next.js 15, React 19, and modern frontend development practices',
+        'Created a scalable foundation for continuous content updates and feature additions',
+        'Established a strong example of accessibility-first design and performance optimization',
+      ],
+    },
+    technicalDetails: {
+      title: 'Technical Details',
+      content: [
+        'Built on Next.js 15.3.3, React 19, TypeScript 5, Tailwind CSS 4.1.10',
+        'Framer Motion 12.18.1 for smooth scroll-triggered animations',
+        'React Icons 5.5.0 for consistent iconography',
+        'App Router pattern with dynamic routing and optimized image handling',
+        'Geist Sans font optimization with next/font for improved performance',
+      ],
+    },
+    metrics: {
+      title: 'Key Features',
+      content: [
+        'Accessibility: WCAG AAA compliance with full keyboard and screen reader support',
+        'Performance: Optimized Core Web Vitals and efficient resource loading',
+        'Responsive Design: Adaptive layouts for mobile, tablet, and desktop',
+        'Modern Stack: Next.js 15, React 19, TypeScript 5, Tailwind CSS 4.1.10',
+      ],
+    },
+  },
 };
 
 export default function ProjectDetailPage({ params }: Props) {
