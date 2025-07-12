@@ -248,7 +248,7 @@ const projects = {
   'personal-portfolio': {
     title: 'Personal Portfolio Website',
     subtitle: undefined,
-    projectURL: 'https://ella-choi.vercel.app/',
+    projectURL: undefined,
     tech: [
       'TypeScript',
       'React',
