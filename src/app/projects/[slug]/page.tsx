@@ -8,7 +8,7 @@ interface Props {
 
 const projects = {
   'vience-datahub': {
-    title: 'VIENCE DataHub',
+    title: 'DataHub',
     subtitle:
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
     projectURL: undefined,
@@ -86,7 +86,7 @@ const projects = {
   },
 
   'vience-workspace': {
-    title: 'VIENCE Workspace',
+    title: 'Workspace',
     subtitle:
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
     projectURL: undefined,

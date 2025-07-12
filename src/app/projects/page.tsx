@@ -3,7 +3,7 @@ import ProjectCard from '../../components/ProjectCard';
 const projects = [
   {
     slug: 'vience-datahub',
-    title: 'VIENCE DataHub',
+    title: 'DataHub',
     description:
       'A cloud-based pathology data management service built with React and TypeScript. Supports efficient organization of large-scale files through features like drag-and-drop upload, folder management, and list/grid view switching. Provides a performant interface for navigating deeply nested directory structures and displaying metadata for high-resolution image datasets.',
     image: '/images/project/datahub-desktop-lightmode.png',
@@ -18,7 +18,7 @@ const projects = [
   },
   {
     slug: 'vience-workspace',
-    title: 'VIENCE Workspace',
+    title: 'Workspace',
     description:
       'A visual programming platform that enables researchers to construct image processing workflows through a drag-and-drop node editor. Includes core nodes such as Data Selector, Patch Generator, and High-Resolution Viewer, allowing users to configure and preview data pipelines in real time within a single interface.',
     image: '/images/project/workspace-viewer-lightmode.png',
