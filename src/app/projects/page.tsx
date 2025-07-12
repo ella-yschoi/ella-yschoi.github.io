@@ -44,7 +44,7 @@ const projects = [
     title: 'Personal Portfolio Website',
     description:
       'Built a comprehensive developer portfolio website using Next.js 15 and modern frontend technologies to showcase my projects, skills, and professional journey. Implemented accessibility-first design with WCAG AAA compliance.',
-    image: '/images/project/portfolio-thumbnail.png',
+    image: '/images/project/portfolio-home.png',
     tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
   },
 ];
