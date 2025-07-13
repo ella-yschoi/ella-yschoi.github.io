@@ -106,12 +106,12 @@ const SkillsSection = () => (
         {skills.map((skill) => (
           <motion.div
             key={skill.name}
-            className='bg-white rounded-lg p-3 md:p-5 text-center border border-gray-100'
+            className='bg-white rounded-lg p-3 pb-1 md:p-5 text-center border border-gray-100'
             variants={itemVariants}
           >
             <div className='flex items-center justify-center gap-2 mb-2'>
               <div className='text-lg md:text-xl'>{skill.icon}</div>
-              <h3 className='text-sm md:text-lg font-light text-black'>
+              <h3 className='text-[13px] md:text-lg font-light text-black'>
                 {skill.name}
               </h3>
             </div>
