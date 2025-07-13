@@ -32,7 +32,8 @@ const projects = {
       title: 'Project Overview',
       content: [
         'At medical AI startup VIENCE, developed a cloud-based service for managing and processing large-scale pathology image data using React and TypeScript.',
-        'This internal service supports over 1,000 SVS (slide image) files and enables pathology researchers and medical staff at university hospitals to manage files and process data efficiently.',
+        'This internal service supports over 1,000 SVS files and enables pathology researchers and medical staff at university hospitals to manage files and process data efficiently.',
+        'Reduced pathology data preparation time by 90% (6 hours to 30 minutes), enabling demo meetings with 2 major hospitals and generating $1M+ in enterprise leads.',
       ],
     },
     contributions: [
@@ -41,12 +42,13 @@ const projects = {
         items: [
           'Built a file management interface with features such as drag-and-drop upload, folder CRUD operations, and both list and grid views to support seamless organization of large-scale pathology datasets',
           'Implemented performant UI logic to render deeply nested directory structures and dynamically display metadata for large files, ensuring smooth interaction even with thousands of entries',
+          'Designed reusable core logic applied across three features, reducing component development time by 67% and requiring no training for medical staff',
         ],
       },
       {
         category: 'UI/UX and Accessibility Improvements',
         items: [
-          'Designed a dark mode UI and improved accessibility to meet **WCAG AAA** color contrast standards',
+          'Designed a dark mode UI and improved accessibility to meet WCAG AAA color contrast standards',
           'Implemented a responsive layout optimized for both desktop and mobile environments',
         ],
       },
@@ -55,23 +57,23 @@ const projects = {
         items: [
           'Refactored global and local state management using Zustand → Reduced complexity and improved maintainability',
           'Removed 35+ deprecated packages and resolved 110+ security issues from legacy code',
-          'Migrated from CRA to Vite → Achieved **82% faster build time** (from 110s to 20s)',
+          'Migrated from CRA to Vite → Achieved 82% faster build time (from 110s to 20s)',
         ],
       },
       {
         category: 'DevOps and Test Automation',
         items: [
-          'Set up a CI/CD pipeline using GitHub Actions → Streamlined deployment process (10 steps → 1 step)',
+          'Set up a CI/CD pipeline using GitHub Actions → Streamlined deployment process (10 steps → 1 step), reduced CI time from 3 minutes to 50 seconds',
           'Resolved over 2,200 lint, test, compile, and build errors across the codebase',
-          'Enforced code style consistency with Husky + lint-staged at commit time',
-          'Adopted **Vitest** to introduce unit tests and reduce reliance on manual QA',
+          'Enforced code style consistency with Husky + lint-staged at commit time, reducing style-related PR comments by 60%',
+          'Adopted Vitest to introduce unit tests and reduce reliance on manual QA',
         ],
       },
       {
         category: 'Collaboration and Team Leadership',
         items: [
-          'Co-led sprint planning with the CTO to deliver the **beta version within 4 weeks**',
-          'Conducted internal dev seminars and authored dev wiki documentation to share architectural decisions and coding conventions',
+          'Co-led sprint planning with the CTO to deliver the beta version within 4 weeks, prioritizing and organizing 150+ issues under tight timelines',
+          'Conducted 3 internal tech seminars and authored dev wiki documentation to share architectural decisions and recurring issue resolutions, improving team-wide knowledge sharing and onboarding efficiency',
         ],
       },
     ],
@@ -80,7 +82,21 @@ const projects = {
       content: [
         'Launched a high-resolution pathology data service tailored to the needs of medical researchers and practitioners',
         'Resolved legacy technical debt and dramatically improved developer experience and release stability',
-        'As a junior developer, **gained hands-on experience in the full E2E cycle** — from planning and design to development and deployment',
+        'As a junior developer, gained hands-on experience in the full E2E cycle from planning and design to development and deployment',
+        'Enabled stable weekly releases and improved test reliability for all major UI modules by replacing manual QA with Vitest-based unit testing',
+      ],
+    },
+    metrics: {
+      title: 'Key Metrics',
+      content: [
+        '1,000+ SVS files processed and managed',
+        '90% reduction in data preparation time (6h → 30m)',
+        '$1M+ in enterprise leads generated',
+        'CI/CD: 10+ steps → 1, CI time 3m → 50s',
+        '2,200+ issues and 110+ security vulnerabilities resolved',
+        '67% reduction in component development time',
+        '150+ issues prioritized for beta launch in 4 weeks',
+        '3 internal tech seminars and dev wiki for onboarding',
       ],
     },
   },
@@ -109,6 +125,7 @@ const projects = {
       content: [
         'Developed a visual programming platform that allows researchers to build and customize data processing workflows using a node-based editor built with Rete.js.',
         'Supports interactive configuration of image preprocessing pipelines through components such as data selector, patch generator, and high-resolution slide viewer.',
+        'Migrated from CRA to Vite in 2 days (build time 110s → 20s), enabling stable weekly releases and rapid feature delivery.',
       ],
     },
     contributions: [
@@ -133,6 +150,7 @@ const projects = {
         items: [
           'Implemented context-aware state syncing between multiple nodes using centralized state logic',
           'Enabled inter-node communication to allow downstream updates (e.g., auto-refreshing viewer after patch generation)',
+          'Prioritized 150+ issues with the CTO and launched beta in 4 weeks under tight timelines',
         ],
       },
     ],
@@ -142,6 +160,14 @@ const projects = {
         'Successfully built a node-based visual programming interface tailored for pathology data processing',
         'Enabled researchers to intuitively configure data pipelines using Data Selector, Patch Generation, and Viewer nodes',
         'Improved experimentation efficiency by allowing real-time preview and flexible reconfiguration of workflows',
+      ],
+    },
+    metrics: {
+      title: 'Key Metrics',
+      content: [
+        'Migrated from CRA to Vite in 2 days (build time 110s → 20s)',
+        'Stable weekly releases and rapid feature delivery',
+        '150+ issues prioritized for beta launch in 4 weeks',
       ],
     },
   },
@@ -169,7 +195,7 @@ const projects = {
     overview: {
       title: 'Project Overview',
       content: [
-        'Developed and published a fully customizable React date selection component to npm that complies with WCAG 2.1 AA accessibility standards, applies Headless UI patterns for design system flexibility, and has been continuously improved through 10 patch updates and 1 minor update based on feedback from over 20 developers.',
+        'Built and published a customizable Headless UI–based date picker calendar on npm in 2 weeks. Achieved 200+ weekly downloads, shipped 1 minor and 10 patch updates based on feedback from 20+ developers (avg. 3-day turnaround), and implemented full WCAG 2.1 AA accessibility.',
       ],
     },
     contributions: [
@@ -179,6 +205,7 @@ const projects = {
           'Implemented fully customizable date selection component based on Headless UI patterns',
           'Maximized reusability through clear separation of business logic and UI logic',
           'Added Korean/English multilingual support and localized date formatting',
+          'Developed and published the library in just 2 weeks',
         ],
       },
       {
@@ -187,7 +214,6 @@ const projects = {
           'Implemented comprehensive accessibility features compliant with WCAG 2.1 AA standards',
           'Complete keyboard navigation support and screen reader compatibility',
           'High contrast mode support and mobile accessibility enhancement through touch gestures',
-          'Built automated accessibility testing tools and validation system',
         ],
       },
       {
@@ -196,6 +222,7 @@ const projects = {
           'Successfully published as npm package to ensure reusability',
           'Built stable distribution and update system through Semantic Versioning',
           'Enhanced developer experience by ensuring type safety through TypeScript',
+          'Achieved 200+ weekly downloads, 1 minor and 10 patch releases, and 20+ developer feedback with an average 3-day turnaround',
         ],
       },
       {
@@ -222,6 +249,7 @@ const projects = {
         'Released 10 patch updates and 1 minor update based on feedback from over 20 developers, significantly improving usability and stability',
         'Provided flexibility to apply to various design systems through Headless UI patterns',
         'Ensured comprehensive accessibility for all users through WCAG 2.1 AA standard compliance',
+        'Achieved 200+ weekly downloads and rapid feedback cycles (avg. 3 days) from 20+ developers',
       ],
     },
     technicalDetails: {
@@ -241,6 +269,7 @@ const projects = {
         'Accessibility: 100% compliant with WCAG 2.1 AA standards',
         'Language Support: Korean and English multilingual support',
         'Type Safety: 100% type safety guaranteed through TypeScript strict mode',
+        '200+ weekly downloads, 1 minor and 10 patch releases, 20+ developer feedback, avg. 3-day turnaround',
       ],
     },
   },
@@ -266,8 +295,9 @@ const projects = {
     overview: {
       title: 'Project Overview',
       content: [
-        'Built a comprehensive developer portfolio website using Next.js 15 and modern frontend technologies to showcase my projects, skills, and professional journey.',
+        'Built and deployed an accessible and responsive portfolio with Next.js and React in just 3 days.',
         'Implemented accessibility-first design with WCAG AAA compliance and optimized performance for exceptional user experience.',
+        'Achieved Lighthouse scores of 100 in accessibility, best practices, and SEO (performance 99), and fast load performance (First Contentful Paint (FCP) 0.6s, Largest Contentful Paint (LCP) 0.7s, Total Blocking Time (TBT) 10ms, Speed Index 1.1s).',
       ],
     },
     contributions: [
@@ -293,6 +323,7 @@ const projects = {
           'Optimized Core Web Vitals with efficient image handling and font optimization',
           'Implemented smooth scroll-triggered animations using Framer Motion 12.18.1',
           'Created responsive design that works seamlessly across mobile, tablet, and desktop',
+          'Built and deployed the site in just 3 days, achieving Lighthouse scores of 100/100/100/99 and First Contentful Paint (FCP) 0.6s, Largest Contentful Paint (LCP) 0.7s, Total Blocking Time (TBT) 10ms, Speed Index 1.1s',
         ],
       },
       {
@@ -308,9 +339,7 @@ const projects = {
       title: 'Project Results',
       content: [
         'Successfully built a modern, accessible portfolio website that effectively showcases professional skills and projects',
-        'Demonstrated expertise in Next.js 15, React 19, and modern frontend development practices',
-        'Created a scalable foundation for continuous content updates and feature additions',
-        'Established a strong example of accessibility-first design and performance optimization',
+        'Served as a living documentation and demonstration platform for my frontend engineering principles and best practices.',
       ],
     },
     technicalDetails: {
@@ -330,6 +359,9 @@ const projects = {
         'Performance: Optimized Core Web Vitals and efficient resource loading',
         'Responsive Design: Adaptive layouts for mobile, tablet, and desktop',
         'Modern Stack: Next.js 15, React 19, TypeScript 5, Tailwind CSS 4.1.10',
+        'Lighthouse: Accessibility/Best Practices/SEO 100, Performance 99',
+        'Core Web Vitals: First Contentful Paint (FCP) 0.6s, Largest Contentful Paint (LCP) 0.7s, Total Blocking Time (TBT) 10ms, Speed Index 1.1s',
+        'Built and deployed in 3 days',
       ],
     },
   },

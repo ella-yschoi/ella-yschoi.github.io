@@ -5,16 +5,9 @@ const projects = [
     slug: 'vience-datahub',
     title: 'DataHub',
     description:
-      'A cloud-based pathology data management service built with React and TypeScript. Supports efficient organization of large-scale files through features like drag-and-drop upload, folder management, and list/grid view switching. Provides a performant interface for navigating deeply nested directory structures and displaying metadata for high-resolution image datasets.',
+      'A cloud-based pathology data management service built with React and TypeScript. Optimized for 1,000+ SVS files and large-scale medical data. Reduced data prep time by 90% (6h→30m), enabling $1M+ in enterprise leads. Automated CI/CD (10+ steps→1, CI 3m→50s), resolved 2,200+ issues, and delivered a no-training UI for medical staff.',
     image: '/images/project/datahub-desktop-lightmode.png',
-    tech: [
-      'TypeScript',
-      'React',
-      'Zustand',
-      'OpenSeadragon',
-      'Vite',
-      'Tailwind CSS',
-    ],
+    tech: ['TypeScript', 'React', 'Vite'],
   },
   {
     slug: 'vience-workspace',
@@ -33,17 +26,17 @@ const projects = [
   },
   {
     slug: 'datepicker-calendar',
-    title: 'Simple DatePicker Calendar for React',
+    title: 'Simple DatePicker Calendar',
     description:
-      'Developed and published a fully customizable React date selection component to npm that complies with WCAG 2.1 AA accessibility standards, applies Headless UI patterns for design system flexibility, and has been continuously improved through 10 patch updates and 1 minor update based on feedback from over 20 developers.',
+      'Built and published a customizable Headless UI–based date picker calendar on npm in 2 weeks. Achieved 200+ weekly downloads, shipped 1 minor and 10 patch updates based on feedback from 20+ developers (avg. 3-day turnaround), and implemented full WCAG 2.1 AA accessibility.',
     image: '/images/project/calendar-thumbnail.jpeg',
-    tech: ['TypeScript', 'React', 'Vite', 'Styled Components'],
+    tech: ['TypeScript', 'React', 'Vite'],
   },
   {
     slug: 'personal-portfolio',
     title: 'Personal Portfolio Website',
     description:
-      'Built a comprehensive developer portfolio website using Next.js 15 and modern frontend technologies to showcase my projects, skills, and professional journey. Implemented accessibility-first design with WCAG AAA compliance.',
+      'Built and deployed an accessible and responsive portfolio with Next.js and React in 3 days. Achieved Lighthouse scores of 100 in accessibility, best practices, and SEO (performance 99), and fast load performance (FCP 0.6s, LCP 0.7s, TBT 10ms, Speed Index 1.1s).',
     image: '/images/project/portfolio-home.png',
     tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
   },
