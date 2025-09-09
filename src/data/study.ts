@@ -1,3 +1,5 @@
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export const studyItems = [
   {
     slug: 'today-i-learned',
@@ -7,7 +9,7 @@ export const studyItems = [
     url: 'https://ella-yeonsu-choi.gitbook.io/today-i-learned',
     pageTech: ['JavaScript', 'TypeScript', 'React', 'Git', 'Web', 'Algorithm'],
     sectionTech: ['JavaScript', 'React', 'Web'],
-    image: '/images/study/study-TIL.png',
+    image: `${prefix}/images/study/study-TIL.png`,
   },
   {
     slug: 'book-review',
@@ -22,7 +24,7 @@ export const studyItems = [
       'Data Structure',
     ],
     sectionTech: ['Refactoring', 'Data Structure'],
-    image: '/images/study/study-book-review.png',
+    image: `${prefix}/images/study/study-book-review.png`,
   },
   {
     slug: 'cs-study',
@@ -38,6 +40,6 @@ export const studyItems = [
       'Memory',
     ],
     sectionTech: ['OS', 'CPU', 'Memory'],
-    image: '/images/study/study-cs-study.png',
+    image: `${prefix}/images/study/study-cs-study.png`,
   },
 ];
