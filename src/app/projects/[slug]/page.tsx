@@ -1,4 +1,17 @@
 import Image from 'next/image';
+import datahubLight from 'public/images/project/datahub-desktop-lightmode.png';
+import datahubDark from 'public/images/project/datahub-desktop-darkmode.png';
+import datahubMobile from 'public/images/project/datahub-mobile-darkmode.png';
+import workspaceViewer from 'public/images/project/workspace-viewer-lightmode.png';
+import workspacePatch from 'public/images/project/workspace-patchgeneration-desktop-lightmode.png';
+import workspaceSelector from 'public/images/project/workspace-dataselector-lightmode.png';
+import calThumb from 'public/images/project/calendar-thumbnail.jpeg';
+import calNpm from 'public/images/project/calendar-npm.png';
+import calFeatures from 'public/images/project/calendar-features.png';
+import calProps from 'public/images/project/calendar-props.png';
+import pfLh1 from 'public/images/project/portfolio-lighthouse-1.png';
+import pfLh2 from 'public/images/project/portfolio-lighthouse-2.png';
+import pfMobile from 'public/images/project/portfolio-mobile.png';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,15 +45,15 @@ const projects = {
       'lint-staged',
     ],
     images: [
-      '/images/project/datahub-desktop-lightmode.png',
-      '/images/project/datahub-desktop-darkmode.png',
-      '/images/project/datahub-mobile-darkmode.png',
+      datahubLight as unknown as string,
+      datahubDark as unknown as string,
+      datahubMobile as unknown as string,
     ],
     overview: {
       title: 'Project Overview',
       content: [
         'At medical AI startup VIENCE, developed a cloud-based service for managing and processing large-scale pathology image data using React and TypeScript.',
-        'This internal service supports over 1,000 SVS files and enables pathology researchers and medical staff at university hospitals to manage files and process data efficiently.',
+        'This internal service supports over 1,000 SVS (slide image) files and enables pathology researchers and medical staff at university hospitals to manage files and process data efficiently.',
         'Reduced pathology data preparation time by 90% (6 hours to 30 minutes), enabling demo meetings with 2 major hospitals and generating $1M+ in enterprise leads.',
       ],
     },
@@ -124,9 +137,9 @@ const projects = {
       'GitHub Actions',
     ],
     images: [
-      '/images/project/workspace-viewer-lightmode.png',
-      '/images/project/workspace-patchgeneration-desktop-lightmode.png',
-      '/images/project/workspace-dataselector-lightmode.png',
+      workspaceViewer as unknown as string,
+      workspacePatch as unknown as string,
+      workspaceSelector as unknown as string,
     ],
     overview: {
       title: 'Project Overview',
@@ -195,10 +208,10 @@ const projects = {
       'Semantic Versioning',
     ],
     images: [
-      '/images/project/calendar-thumbnail.jpeg',
-      '/images/project/calendar-npm.png',
-      '/images/project/calendar-features.png',
-      '/images/project/calendar-props.png',
+      calThumb as unknown as string,
+      calNpm as unknown as string,
+      calFeatures as unknown as string,
+      calProps as unknown as string,
     ],
     overview: {
       title: 'Project Overview',
@@ -222,6 +235,7 @@ const projects = {
           'Implemented comprehensive accessibility features compliant with WCAG 2.1 AA standards',
           'Complete keyboard navigation support and screen reader compatibility',
           'High contrast mode support and mobile accessibility enhancement through touch gestures',
+          'Built automated accessibility testing tools and validation system',
         ],
       },
       {
@@ -296,9 +310,9 @@ const projects = {
       'WCAG AAA',
     ],
     images: [
-      '/images/project/portfolio-lighthouse-1.png',
-      '/images/project/portfolio-lighthouse-2.png',
-      '/images/project/portfolio-mobile.png',
+      pfLh1 as unknown as string,
+      pfLh2 as unknown as string,
+      pfMobile as unknown as string,
     ],
     overview: {
       title: 'Project Overview',
