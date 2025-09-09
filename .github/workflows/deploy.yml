@@ -21,12 +21,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # Pages 환경 준비 (필수)
       - uses: actions/configure-pages@v5
-      # Next 정적 빌드 (Next 15는 build만 하면 out/ 생성됨)
       - run: npm ci
       - run: npm run build
-      # out/를 Pages 아티팩트로 업로드
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
