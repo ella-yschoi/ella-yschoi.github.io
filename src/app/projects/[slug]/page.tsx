@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ImageGallery from './ImageGallery';
 
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -407,35 +408,11 @@ export default async function ProjectDetailPage({ params }: Props) {
       <div className='max-w-4xl mx-auto'>
         {/* Image Section */}
         <div className='mb-10'>
-          <div className='rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg mb-4 min-h-[240px] md:min-h-[480px]'>
-            <Image
-              src={mainImage}
-              alt={project.title + ' main screenshot'}
-              width={800}
-              height={480}
-              className='object-contain w-full h-[240px] md:h-[480px]'
-              priority
-            />
-          </div>
-          <div className='flex gap-2 md:gap-4 justify-center flex-wrap md:flex-nowrap'>
-            {project.images.map((img, idx) => (
-              <div
-                key={img}
-                className={`rounded-lg overflow-hidden border-2 ${
-                  mainImage === img ? 'border-black' : 'border-transparent'
-                }`}
-                style={{ width: 120, height: 80 }}
-              >
-                <Image
-                  src={img}
-                  alt={project.title + ' thumbnail ' + (idx + 1)}
-                  width={120}
-                  height={80}
-                  className='object-cover w-full h-full'
-                />
-              </div>
-            ))}
-          </div>
+          <ImageGallery
+            images={project.images}
+            title={project.title}
+            mainImage={mainImage}
+          />
         </div>
 
         {/* Title, Info, Tags */}
@@ -469,7 +446,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           {project.subtitle && (
             <div className='flex items-center gap-2 mb-4'>
               <Image
-                src='/info.svg'
+                src={`${prefix}/info.svg`}
                 alt='Information'
                 width={16}
                 height={16}
