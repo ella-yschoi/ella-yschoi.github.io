@@ -1,17 +1,6 @@
 import Image from 'next/image';
-import datahubLight from 'public/images/project/datahub-desktop-lightmode.png';
-import datahubDark from 'public/images/project/datahub-desktop-darkmode.png';
-import datahubMobile from 'public/images/project/datahub-mobile-darkmode.png';
-import workspaceViewer from 'public/images/project/workspace-viewer-lightmode.png';
-import workspacePatch from 'public/images/project/workspace-patchgeneration-desktop-lightmode.png';
-import workspaceSelector from 'public/images/project/workspace-dataselector-lightmode.png';
-import calThumb from 'public/images/project/calendar-thumbnail.jpeg';
-import calNpm from 'public/images/project/calendar-npm.png';
-import calFeatures from 'public/images/project/calendar-features.png';
-import calProps from 'public/images/project/calendar-props.png';
-import pfLh1 from 'public/images/project/portfolio-lighthouse-1.png';
-import pfLh2 from 'public/images/project/portfolio-lighthouse-2.png';
-import pfMobile from 'public/images/project/portfolio-mobile.png';
+
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -45,9 +34,9 @@ const projects = {
       'lint-staged',
     ],
     images: [
-      datahubLight as unknown as string,
-      datahubDark as unknown as string,
-      datahubMobile as unknown as string,
+      `${prefix}/images/project/datahub-desktop-lightmode.png`,
+      `${prefix}/images/project/datahub-desktop-darkmode.png`,
+      `${prefix}/images/project/datahub-mobile-darkmode.png`,
     ],
     overview: {
       title: 'Project Overview',
@@ -137,9 +126,9 @@ const projects = {
       'GitHub Actions',
     ],
     images: [
-      workspaceViewer as unknown as string,
-      workspacePatch as unknown as string,
-      workspaceSelector as unknown as string,
+      `${prefix}/images/project/workspace-viewer-lightmode.png`,
+      `${prefix}/images/project/workspace-patchgeneration-desktop-lightmode.png`,
+      `${prefix}/images/project/workspace-dataselector-lightmode.png`,
     ],
     overview: {
       title: 'Project Overview',
@@ -208,10 +197,10 @@ const projects = {
       'Semantic Versioning',
     ],
     images: [
-      calThumb as unknown as string,
-      calNpm as unknown as string,
-      calFeatures as unknown as string,
-      calProps as unknown as string,
+      `${prefix}/images/project/calendar-thumbnail.jpeg`,
+      `${prefix}/images/project/calendar-npm.png`,
+      `${prefix}/images/project/calendar-features.png`,
+      `${prefix}/images/project/calendar-props.png`,
     ],
     overview: {
       title: 'Project Overview',
@@ -310,9 +299,9 @@ const projects = {
       'WCAG AAA',
     ],
     images: [
-      pfLh1 as unknown as string,
-      pfLh2 as unknown as string,
-      pfMobile as unknown as string,
+      `${prefix}/images/project/portfolio-lighthouse-1.png`,
+      `${prefix}/images/project/portfolio-lighthouse-2.png`,
+      `${prefix}/images/project/portfolio-mobile.png`,
     ],
     overview: {
       title: 'Project Overview',

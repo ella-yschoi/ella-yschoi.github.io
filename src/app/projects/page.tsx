@@ -1,8 +1,6 @@
 import ProjectCard from '../../components/ProjectCard';
-import datahubImg from 'public/images/project/datahub-desktop-lightmode.png';
-import workspaceImg from 'public/images/project/workspace-viewer-lightmode.png';
-import calendarThumb from 'public/images/project/calendar-thumbnail.jpeg';
-import portfolioHome from 'public/images/project/portfolio-home.png';
+
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const projects = [
   {
@@ -10,7 +8,7 @@ const projects = [
     title: 'DataHub',
     description:
       'A cloud-based pathology data management service built with React and TypeScript. Optimized for 1,000+ SVS files and large-scale medical data. Reduced data prep time by 90% (6h→30m), enabling $1M+ in enterprise leads. Automated CI/CD (10+ steps→1, CI 3m→50s), resolved 2,200+ issues, and delivered a no-training UI for medical staff.',
-    image: datahubImg,
+    image: `${prefix}/images/project/datahub-desktop-lightmode.png`,
     tech: ['TypeScript', 'React', 'Vite'],
   },
   {
@@ -18,7 +16,7 @@ const projects = [
     title: 'Workspace',
     description:
       'A visual programming platform for building image processing workflows. Migrated from CRA to Vite in 2 days (build 110s→20s), enabled stable weekly releases, and introduced Vitest-based unit testing to improve reliability. Prioritized 150+ issues and launched beta in 4 weeks.',
-    image: workspaceImg,
+    image: `${prefix}/images/project/workspace-viewer-lightmode.png`,
     tech: ['TypeScript', 'React', 'Vite'],
   },
   {
@@ -26,7 +24,7 @@ const projects = [
     title: 'Simple DatePicker Calendar',
     description:
       'Built and published a customizable Headless UI–based date picker calendar on npm in 2 weeks. Achieved 200+ weekly downloads, shipped 1 minor and 10 patch updates based on feedback from 20+ developers (avg. 3-day turnaround), and implemented full WCAG 2.1 AA accessibility.',
-    image: calendarThumb,
+    image: `${prefix}/images/project/calendar-thumbnail.jpeg`,
     tech: ['TypeScript', 'React', 'Vite'],
   },
   {
@@ -34,7 +32,7 @@ const projects = [
     title: 'Personal Portfolio Website',
     description:
       'Built and deployed an accessible and responsive portfolio with Next.js and React in 3 days. Achieved Lighthouse scores of 100 in accessibility, best practices, and SEO (performance 99), and fast load performance (FCP 0.6s, LCP 0.7s, TBT 10ms, Speed Index 1.1s).',
-    image: portfolioHome,
+    image: `${prefix}/images/project/portfolio-home.png`,
     tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
   },
 ];
