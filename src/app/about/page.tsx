@@ -42,7 +42,7 @@ const experience = [
   {
     company: 'VIENCE',
     role: 'Frontend Engineer',
-    period: 'Sep 2024 - Present',
+    period: 'Sep 2024 - Aug 2025',
     startDate: '2024-09-01',
     description: 'South Korea lab-based medical AI startup',
   },
@@ -93,7 +93,7 @@ export default function AboutPage() {
                     <div className='font-medium text-black'>
                       {exp.company} - {exp.role}
                     </div>
-                    {exp.period.includes('Present') && (
+                    {exp.period.includes('Aug 2025') && (
                       <span className='relative flex h-3 w-3'>
                         <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75'></span>
                         <span className='relative inline-flex rounded-full h-3 w-3 bg-green-500'></span>

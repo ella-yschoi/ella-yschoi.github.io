@@ -1,9 +1,17 @@
-'use client';
-import { use, useState } from 'react';
 import Image from 'next/image';
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+// Generate static params for all project slugs
+export async function generateStaticParams() {
+  return [
+    { slug: 'vience-datahub' },
+    { slug: 'vience-workspace' },
+    { slug: 'datepicker-calendar' },
+    { slug: 'personal-portfolio' },
+  ];
 }
 
 const projects = {
@@ -367,10 +375,10 @@ const projects = {
   },
 };
 
-export default function ProjectDetailPage({ params }: Props) {
-  const { slug } = use(params);
+export default async function ProjectDetailPage({ params }: Props) {
+  const { slug } = await params;
   const project = projects[slug as keyof typeof projects];
-  const [mainImage, setMainImage] = useState(project?.images?.[0] || '');
+  const mainImage = project?.images?.[0] || '';
 
   if (!project) {
     return (
@@ -408,14 +416,12 @@ export default function ProjectDetailPage({ params }: Props) {
           </div>
           <div className='flex gap-2 md:gap-4 justify-center flex-wrap md:flex-nowrap'>
             {project.images.map((img, idx) => (
-              <button
+              <div
                 key={img}
-                onClick={() => setMainImage(img)}
                 className={`rounded-lg overflow-hidden border-2 ${
                   mainImage === img ? 'border-black' : 'border-transparent'
-                } focus:outline-none`}
+                }`}
                 style={{ width: 120, height: 80 }}
-                aria-label={`View screenshot ${idx + 1}`}
               >
                 <Image
                   src={img}
@@ -424,7 +430,7 @@ export default function ProjectDetailPage({ params }: Props) {
                   height={80}
                   className='object-cover w-full h-full'
                 />
-              </button>
+              </div>
             ))}
           </div>
         </div>
