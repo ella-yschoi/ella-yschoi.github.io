@@ -88,7 +88,7 @@ const IntroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <a
-            href='https://drive.google.com/file/d/1etZnLsiSvBr97nAM2rdGsli6voFygti2/view?usp=sharing'
+            href='https://drive.google.com/file/d/1VghfplJCZzPSLFcMPgcozdjzAbXDZI6D/view?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
             className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold
@@ -155,20 +155,9 @@ const IntroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className='text-lg text-gray-600 leading-relaxed'>
-            I focus on UI/UX and turning user needs into product outcomes.
-          </p>
-          <p className='text-base text-gray-600 leading-relaxed'>
-            Led cloud development at a startup, reducing data processing time
-            from 6h to 30m and resolving 2,200+ issues. Helped retain users and
-            generate over $1M in leads by delivering a no-training UI and
-            accelerating product validation.
-          </p>
-
-          <p className='text-base text-gray-600 leading-relaxed'>
-            Built accessible and responsive UIs, deployed a personal portfolio
-            site and an open source project in just 3 days, and continued to
-            improve them through rapid feedback cycles, ongoing learning, and
-            hands-on experimentation.
+            I enjoy building products that balance technical excellence with
+            real user needs. My work often sits at the intersection of design,
+            engineering, and business, turning ideas into practical solutions.
           </p>
           <div className='flex justify-end mt-12'>
             <ViewAllButton href='/about'>View All About Me</ViewAllButton>
