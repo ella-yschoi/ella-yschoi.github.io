@@ -19,7 +19,7 @@ const contacts = [
   {
     label: 'Resume',
     value: 'View Resume',
-    href: 'https://drive.google.com/file/d/14veSnChXSH5OyzVZhpRKrJAL7zN6F55u/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/18plrv2Mvknrg-Vvy70NNz455ukBlme-n/view?usp=sharing',
     icon: <IoIosDocument className='text-2xl text-gray-500' />,
     bg: 'bg-white',
     copyable: false,
