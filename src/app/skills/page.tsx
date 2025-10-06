@@ -13,7 +13,13 @@ import {
   SiGit,
   SiJest,
   SiVitest,
+  SiPython,
+  SiExpress,
+  SiStorybook,
+  SiSocketdotio,
+  SiReactquery,
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 import { MdWidgets, MdOutlineTipsAndUpdates } from 'react-icons/md';
 import { FaProjectDiagram } from 'react-icons/fa';
 
@@ -30,6 +36,12 @@ const skillsData = {
       logo: <SiTypescript className='text-blue-500' />,
       description:
         'Building a safe development environment through type safety. Writing robust code using interfaces, generics, and union types.',
+    },
+    {
+      name: 'Python',
+      logo: <SiPython className='text-blue-500' />,
+      description:
+        'Batch scripting and GitHub Actions deployment automation. Experience building small CLI tools and release workflows.',
     },
     {
       name: 'HTML',
@@ -58,6 +70,12 @@ const skillsData = {
         'A React-based full-stack framework. Developing high-performance web applications using SSR, SSG, and the App Router.',
     },
     {
+      name: 'Express.js',
+      logo: <SiExpress className='text-black' />,
+      description:
+        'Building REST APIs, WebSocket signaling servers, and backend services. Experience with Socket.io integration and PDF generation pipelines.',
+    },
+    {
       name: 'Vite',
       logo: <SiVite className='text-purple-400' />,
       description:
@@ -68,6 +86,18 @@ const skillsData = {
       logo: <MdWidgets className='text-gray-400' />,
       description:
         'A lightweight state management library. Optimizing applications by separating global/local state and reducing complexity.',
+    },
+    {
+      name: 'TanStack Query',
+      logo: <SiReactquery className='text-amber-500' />,
+      description:
+        'Server-state management with caching, background refetching, and optimistic updates for resilient data fetching.',
+    },
+    {
+      name: 'Socket.io',
+      logo: <SiSocketdotio className='text-black' />,
+      description:
+        'Real-time communication for chat and signaling. Implementing rooms, presence, and reliability strategies with backoff.',
     },
     {
       name: 'TailwindCSS',
@@ -100,7 +130,13 @@ const skillsData = {
         'A high-resolution image viewer library. Implemented visualization for pathology images and large SVS files.',
     },
   ],
-  devops: [
+  tools: [
+    {
+      name: 'AWS',
+      logo: <FaAws className='text-orange-500' />,
+      description:
+        'Basic EC2 usage and SSH connection experience. Comfortable connecting and operating instances for simple deployments.',
+    },
     {
       name: 'GitHub Actions',
       logo: <SiGithubactions className='text-blue-400' />,
@@ -112,6 +148,12 @@ const skillsData = {
       logo: <SiGit className='text-gray-400' />,
       description:
         'Version control and collaboration tool. Systematic code management through branch strategies and commit conventions.',
+    },
+    {
+      name: 'Storybook',
+      logo: <SiStorybook className='text-pink-500' />,
+      description:
+        'UI component development environment. Documenting states and interactions with isolated stories and visual regression readiness.',
     },
     {
       name: 'Jest',
@@ -211,7 +253,7 @@ export default function SkillsPage() {
           title='Frameworks & Libraries'
           items={skillsData.frameworks}
         />
-        <SkillSection title='DevOps & Tools' items={skillsData.devops} />
+        <SkillSection title='Tools & Testing' items={skillsData.tools } />
         <SkillSection
           title='Development Principles'
           items={skillsData.principles}

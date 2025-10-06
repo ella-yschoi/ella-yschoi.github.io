@@ -9,13 +9,17 @@ import {
   SiTypescript,
   SiReact,
   SiTailwindcss,
-  SiVite,
   SiNextdotjs,
   SiGit,
   SiGithubactions,
   SiJest,
   SiVitest,
+  SiPython,
+  SiExpress,
+  SiStorybook,
+  SiSocketdotio,
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 
 const skills = [
   { name: 'HTML', icon: <SiHtml5 className='text-red-500' /> },
@@ -23,9 +27,13 @@ const skills = [
   { name: 'JavaScript', icon: <SiJavascript className='text-yellow-400' /> },
   { name: 'TypeScript', icon: <SiTypescript className='text-blue-500' /> },
   { name: 'React', icon: <SiReact className='text-sky-400' /> },
-  { name: 'TailwindCSS', icon: <SiTailwindcss className='text-sky-400' /> },
-  { name: 'Vite', icon: <SiVite className='text-purple-400' /> },
   { name: 'Next.js', icon: <SiNextdotjs className='text-black' /> },
+  { name: 'Express.js', icon: <SiExpress className='text-black' /> },
+  { name: 'Python', icon: <SiPython className='text-blue-500' /> },
+  { name: 'TailwindCSS', icon: <SiTailwindcss className='text-sky-400' /> },
+  { name: 'Storybook', icon: <SiStorybook className='text-pink-500' /> },
+  { name: 'Socket.io', icon: <SiSocketdotio className='text-black' /> },
+  { name: 'AWS', icon: <FaAws className='text-orange-500' /> },
   { name: 'Git', icon: <SiGit className='text-gray-400' /> },
   {
     name: 'GitHub Actions',

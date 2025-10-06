@@ -20,6 +20,40 @@ const projects = [
     tech: ['TypeScript', 'React', 'Vite'],
   },
   {
+    slug: 'github-pulse',
+    title: 'GitHub Pulse',
+    description:
+      'A GitHub repository analytics dashboard with OAuth login, KPI cards, charts, AI activity summaries, and weekly PDF report generation.',
+    image: undefined,
+    tech: [
+      'TypeScript',
+      'Next.js',
+      'React',
+      'Tailwind CSS',
+      'NextAuth.js',
+      'TanStack Query',
+      'Recharts',
+      'OpenAI',
+    ],
+    href: 'https://github-pulse.vercel.app',
+  },
+  {
+    slug: 'peer-connect',
+    title: 'PeerConnect - WebRTC P2P Video Chat',
+    description:
+      'P2P video chat built with WebRTC, using Express + Socket.io for signaling. Supports local/remote streams, room codes, and real-time connection status.',
+    image: undefined,
+    tech: [
+      'TypeScript',
+      'React',
+      'WebRTC',
+      'Socket.io',
+      'Express',
+      'Tailwind CSS',
+    ],
+    href: 'https://peer-cnct.vercel.app',
+  },
+  {
     slug: 'datepicker-calendar',
     title: 'Simple DatePicker Calendar',
     description:
@@ -35,6 +69,14 @@ const projects = [
     image: `${prefix}/images/project/portfolio-home.png`,
     tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
   },
+  {
+    slug: 'random-picker',
+    title: 'Random Picker',
+    description:
+      'A simple and accessible random selection tool with clean UI and quick interactions.',
+    image: undefined,
+    tech: ['TypeScript', 'React', 'Vite', 'Emotion'],
+  },
 ];
 
 export default function ProjectsPage() {
@@ -49,10 +91,52 @@ export default function ProjectsPage() {
             clean code, performance, and accessibility.
           </p>
         </div>
-        <div className='grid gap-8'>
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} {...project} variant='large' />
-          ))}
+        <div className='space-y-12'>
+          <section aria-labelledby='professional-projects-heading'>
+            <h2
+              id='professional-projects-heading'
+              className='text-2xl font-medium mb-6 text-black'
+            >
+              Professional Projects
+            </h2>
+            <div className='grid gap-8'>
+              {projects
+                .filter(
+                  (p) =>
+                    p.slug === 'vience-datahub' || p.slug === 'vience-workspace'
+                )
+                .map((project) => (
+                  <ProjectCard
+                    key={project.slug}
+                    {...project}
+                    variant='large'
+                  />
+                ))}
+            </div>
+          </section>
+
+          <section aria-labelledby='personal-projects-heading'>
+            <h2
+              id='personal-projects-heading'
+              className='text-2xl font-medium mb-6 text-black'
+            >
+              Personal Projects
+            </h2>
+            <div className='grid gap-8'>
+              {projects
+                .filter(
+                  (p) =>
+                    p.slug !== 'vience-datahub' && p.slug !== 'vience-workspace'
+                )
+                .map((project) => (
+                  <ProjectCard
+                    key={project.slug}
+                    {...project}
+                    variant='large'
+                  />
+                ))}
+            </div>
+          </section>
         </div>
       </div>
     </section>
