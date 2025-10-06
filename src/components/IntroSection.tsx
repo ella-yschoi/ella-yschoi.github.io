@@ -77,7 +77,7 @@ const IntroSection = () => {
             Ella Choi
           </h1>
           <p className='text-base sm:text-lg md:text-xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed'>
-            Frontend Engineer bridging UX and business impact
+            Software Engineer bridging UX and business impact
           </p>
         </motion.div>
 

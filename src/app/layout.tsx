@@ -16,15 +16,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Ella Choi',
-  description: "Frontend Engineer Ella Choi's portfolio",
+  description: "Software Engineer Ella Choi's portfolio",
   openGraph: {
     title: 'Ella Choi',
-    description: "Frontend Engineer Ella Choi's portfolio",
-    url: 'https://ella-choi.vercel.app/',
+    description: "Software Engineer Ella Choi's portfolio",
+    url: 'https://ella-yschoi.github.io/',
     siteName: 'Ella Choi Portfolio',
     images: [
       {
-        url: 'https://ella-choi.vercel.app/og-image.png',
+        url: 'https://ella-yschoi.github.io/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Ella Choi Portfolio Thumbnail',
