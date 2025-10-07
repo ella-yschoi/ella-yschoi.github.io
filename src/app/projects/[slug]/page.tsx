@@ -300,9 +300,9 @@ const projects = {
       'WCAG AAA',
     ],
     images: [
-      `${prefix}/images/project/-lighthouse-1.png`,
-      `${prefix}/images/project/-lighthouse-2.png`,
-      `${prefix}/images/project/-mobile.png`,
+      `${prefix}/images/project/portfolio-lighthouse-1.png`,
+      `${prefix}/images/project/portfolio-lighthouse-2.png`,
+      `${prefix}/images/project/portfolio-mobile.png`,
     ],
     overview: {
       title: 'Project Overview',

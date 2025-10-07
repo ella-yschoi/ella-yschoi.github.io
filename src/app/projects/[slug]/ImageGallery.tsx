@@ -46,7 +46,7 @@ const ImageGallery = ({
               alt={title + ' thumbnail ' + (idx + 1)}
               width={120}
               height={80}
-              className='object-cover w-full h-full'
+              className='object-contain w-full h-full'
             />
           </button>
         ))}

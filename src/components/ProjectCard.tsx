@@ -31,7 +31,7 @@ const ProjectCard = ({
         <div className='flex flex-col md:flex-row gap-6'>
           <div className='w-full md:w-1/3 h-64 md:h-80 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden relative'>
             {image ? (
-              <Image src={image} alt={title} fill className='object-contain' />
+              <Image src={image} alt={title} fill className='object-cover' />
             ) : (
               <span className='text-6xl text-gray-300'>📦</span>
             )}

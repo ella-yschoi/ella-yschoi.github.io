@@ -28,7 +28,7 @@ const projects = [
     title: 'P2P Video Chat - PeerConnect',
     description:
       'A peer-to-peer video chat app exploring WebRTC with real-time signaling via Socket.io and an Express server.',
-    image: undefined,
+    image: `${prefix}/images/project/peer-connect-thumbnail.png`,
     tech: [
       'TypeScript',
       'React',
@@ -44,7 +44,7 @@ const projects = [
     title: 'Dashboard - GitHub Pulse',
     description:
       'A personal GitHub analytics dashboard with OAuth, OG image sharing, AI activity summaries, charts, and weekly PDF reports.',
-    image: undefined,
+    image: `${prefix}/images/project/github-pulse-thumbnail.png`,
     tech: [
       'TypeScript',
       'Next.js',
@@ -70,7 +70,7 @@ const projects = [
     title: 'Open Source - Random Picker',
     description:
       'A lightweight random selection utility app for quick choices with a simple, accessible UI.',
-    image: undefined,
+    image: `${prefix}/images/project/random-picker-thumbnail.png`,
     tech: ['TypeScript', 'React', 'Vite', 'Emotion'],
     href: 'https://random-picker-zeta.vercel.app',
   },

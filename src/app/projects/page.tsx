@@ -24,7 +24,7 @@ const projects = [
     title: 'GitHub Pulse',
     description:
       'A GitHub repository analytics dashboard with OAuth login, KPI cards, charts, AI activity summaries, and weekly PDF report generation.',
-    image: undefined,
+    image: `${prefix}/images/project/github-pulse-thumbnail.png`,
     tech: [
       'TypeScript',
       'Next.js',
@@ -42,7 +42,7 @@ const projects = [
     title: 'PeerConnect - WebRTC P2P Video Chat',
     description:
       'P2P video chat built with WebRTC, using Express + Socket.io for signaling. Supports local/remote streams, room codes, and real-time connection status.',
-    image: undefined,
+    image: `${prefix}/images/project/peer-connect-thumbnail.png`,
     tech: [
       'TypeScript',
       'React',
@@ -74,7 +74,7 @@ const projects = [
     title: 'Random Picker',
     description:
       'A simple and accessible random selection tool with clean UI and quick interactions.',
-    image: undefined,
+    image: `${prefix}/images/project/random-picker-thumbnail.png`,
     tech: ['TypeScript', 'React', 'Vite', 'Emotion'],
   },
 ];
