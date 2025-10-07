@@ -88,7 +88,7 @@ const IntroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <a
-            href='https://drive.google.com/file/d/18plrv2Mvknrg-Vvy70NNz455ukBlme-n/view?usp=sharing'
+            href='https://drive.google.com/file/d/1S81inwvNIDEr-upwlHFzlGAuMZIbPRhr/view?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
             className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold
