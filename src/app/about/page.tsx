@@ -2,11 +2,39 @@ import { FaHandsHelping, FaUniversity } from 'react-icons/fa';
 import { HiOutlineBriefcase } from 'react-icons/hi';
 import { calculateDuration } from '@/utils/dateUtils';
 
+const experience = [
+  {
+    company: 'VIENCE',
+    role: 'Frontend Engineer',
+    period: 'Sep 2024 - Aug 2025',
+    startDate: '2024-09-01',
+    description: 'AI-powered medical imaging and digital pathology startup',
+  },
+  {
+    company: 'Channel Talk',
+    role: 'Customer Experience Manager',
+    period: 'Aug 2022 - Jan 2023',
+    description: 'AI-driven messenger and CRM platform startup',
+  },
+  {
+    company: 'NEXT KITCHEN',
+    role: 'Customer Relationship Management Manager',
+    period: 'Jul 2021 - Aug 2022',
+    description: 'HMR and juice manufacturing and e-commerce platform',
+  },
+  {
+    company: 'BROWNBAG',
+    role: 'Marketing Manager',
+    period: 'Jul 2018 - Nov 2020',
+    description: 'Coffee e-commerce startup offering beans and machine rentals',
+  },
+];
+
 const education = [
   {
     institution: 'Code States - Engineering Bootcamp',
     degree:
-      'Completed a full-time frontend training program focused on modern web development. Built a strong foundation in HTML/CSS, JavaScript, TypeScript, and React.',
+      'Completed a full-time frontend training program focused on modern web development.',
     period: 'Feb 2023 - Aug 2023',
   },
   {
@@ -27,7 +55,7 @@ const volunteering = [
     role: 'Community Lead',
     period: 'Jul 2021 - Aug 2022',
     description:
-      'Built and led a startup-focused community of early-career developers and entrepreneurs, organizing regular meetups and workshops, building the community website, and facilitating peer-to-peer knowledge sharing.',
+      'Built and led a startup-focused community of early-career developers and entrepreneurs, organizing regular meetups and workshops, building the community website, and facilitating knowledge sharing.',
   },
   {
     organization: 'Algoma University',
@@ -35,35 +63,6 @@ const volunteering = [
     period: 'Dec 2015 - Apr 2016',
     description:
       'Volunteered to teach Korean to three Canadian students during a study abroad semester in Canada, fostering cultural exchange and improving their conversational skills.',
-  },
-];
-
-const experience = [
-  {
-    company: 'VIENCE',
-    role: 'Frontend Engineer',
-    period: 'Sep 2024 - Aug 2025',
-    startDate: '2024-09-01',
-    description: 'South Korea lab-based medical AI startup',
-  },
-  {
-    company: 'Channel Talk',
-    role: 'Customer Experience Manager',
-    period: 'Aug 2022 - Jan 2023',
-    description: 'Managed customer experience and CRM campaigns.',
-  },
-  {
-    company: 'Next Kitchen',
-    role: 'Customer Relationship Management Manager',
-    period: 'Jul 2021 - Aug 2022',
-    description:
-      'Focused on content marketing and customer experience management.',
-  },
-  {
-    company: 'BROWNBAG',
-    role: 'Marketing Manager',
-    period: 'Jul 2018 - Nov 2020',
-    description: 'Designed B2C/B2B onboarding flows, led marketing campaigns.',
   },
 ];
 
