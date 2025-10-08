@@ -32,7 +32,7 @@ const projects = [
       'React',
       'WebRTC',
       'Socket.io',
-      'Express',
+      'Express.js',
       'Tailwind CSS',
     ],
     period: 'Oct 2025 - Present',

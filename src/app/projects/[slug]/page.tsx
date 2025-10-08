@@ -178,7 +178,7 @@ const projects = {
       'React',
       'WebRTC',
       'Socket.io',
-      'Express',
+      'Express.js',
       'Tailwind CSS',
       'Vite',
     ],
@@ -190,7 +190,7 @@ const projects = {
     overview: {
       title: 'Project Overview',
       content: [
-        'Developed a peer-to-peer video chat application using WebRTC technology with Express and Socket.io for signaling.',
+        'Developed a peer-to-peer video chat application using WebRTC technology with Express.js and Socket.io for signaling.',
         'Built with TypeScript and React, featuring real-time video communication, room-based connection, and connection status monitoring.',
         'Implemented local and remote stream management with responsive design optimized for desktop and mobile devices.',
       ],
@@ -200,7 +200,7 @@ const projects = {
         category: 'WebRTC Implementation',
         items: [
           'Implemented peer-to-peer video communication using WebRTC APIs for direct browser-to-browser connections',
-          'Built signaling server with Express and Socket.io to facilitate connection establishment and room management',
+          'Built signaling server with Express.js and Socket.io to facilitate connection establishment and room management',
           'Created connection state monitoring with real-time status updates and debugging capabilities',
           'Implemented STUN server configuration for NAT traversal and ICE candidate exchange',
         ],

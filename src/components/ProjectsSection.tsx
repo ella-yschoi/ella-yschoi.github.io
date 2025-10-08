@@ -34,7 +34,7 @@ const projects = [
       'React',
       'WebRTC',
       'Socket.io',
-      'Express',
+      'Express.js',
       'Tailwind CSS',
     ],
   },
