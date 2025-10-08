@@ -258,9 +258,10 @@ const projects = {
     images: [
       `${prefix}/images/project/github-pulse-ai.png`,
       `${prefix}/images/project/github-pulse-graph.png`,
-      `${prefix}/images/project/github-pulse-report.png`,
       `${prefix}/images/project/github-pulse-share-modal.png`,
       `${prefix}/images/project/github-pulse-share-screen.png`,
+      `${prefix}/images/project/github-pulse-download-modal.png`,
+      `${prefix}/images/project/github-pulse-report.png`,
     ],
     overview: {
       title: 'Project Overview',
