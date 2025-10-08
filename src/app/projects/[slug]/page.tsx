@@ -12,17 +12,21 @@ export async function generateStaticParams() {
   return [
     { slug: 'vience-datahub' },
     { slug: 'vience-workspace' },
+    { slug: 'peer-connect' },
+    { slug: 'github-pulse' },
     { slug: 'datepicker-calendar' },
     { slug: 'personal-portfolio' },
+    { slug: 'random-picker' },
   ];
 }
 
 const projects = {
   'vience-datahub': {
-    title: 'DataHub',
+    title: 'VIENCE - DataHub',
     subtitle:
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
-    projectURL: undefined,
+    projectURL: 'https://vience.io/',
+    period: 'Sep 2024 - Aug 2025',
     tech: [
       'TypeScript',
       'React',
@@ -97,26 +101,14 @@ const projects = {
         'Enabled stable weekly releases and improved test reliability for all major UI modules by replacing manual QA with Vitest-based unit testing',
       ],
     },
-    metrics: {
-      title: 'Key Metrics',
-      content: [
-        '1,000+ SVS files processed and managed',
-        '90% reduction in data preparation time (6h → 30m)',
-        '$1M+ in enterprise leads generated',
-        'CI/CD: 10+ steps → 1, CI time 3m → 50s',
-        '2,200+ issues and 110+ security vulnerabilities resolved',
-        '67% reduction in component development time',
-        '150+ issues prioritized for beta launch in 4 weeks',
-        '3 internal tech seminars and dev wiki for onboarding',
-      ],
-    },
   },
 
   'vience-workspace': {
-    title: 'Workspace',
+    title: 'VIENCE - Workspace',
     subtitle:
       'Note: Currently in closed beta service, so the images above have been reconstructed using AI.',
-    projectURL: undefined,
+    projectURL: 'https://vience.io/',
+    period: 'Sep 2024 - Aug 2025',
     tech: [
       'TypeScript',
       'React',
@@ -173,21 +165,175 @@ const projects = {
         'Improved experimentation efficiency by allowing real-time preview and flexible reconfiguration of workflows',
       ],
     },
-    metrics: {
-      title: 'Key Metrics',
+  },
+
+  'peer-connect': {
+    title: 'PeerConnect - WebRTC P2P Video Chat',
+    subtitle: undefined,
+    projectURL: 'https://peer-cnct.vercel.app',
+    period: 'Oct 2025 - Present',
+    githubURL: 'https://github.com/ella-yschoi/peer-connect',
+    tech: [
+      'TypeScript',
+      'React',
+      'WebRTC',
+      'Socket.io',
+      'Express',
+      'Tailwind CSS',
+      'Vite',
+    ],
+    images: [
+      `${prefix}/images/project/peer-connect-home.png`,
+      `${prefix}/images/project/peer-connect-waiting.png`,
+      `${prefix}/images/project/peer-connect-thumbnail.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
       content: [
-        'Migrated from CRA to Vite in 2 days (build time 110s → 20s)',
-        'Stable weekly releases and rapid feature delivery',
-        '150+ issues prioritized for beta launch in 4 weeks',
+        'Developed a peer-to-peer video chat application using WebRTC technology with Express and Socket.io for signaling.',
+        'Built with TypeScript and React, featuring real-time video communication, room-based connection, and connection status monitoring.',
+        'Implemented local and remote stream management with responsive design optimized for desktop and mobile devices.',
       ],
     },
+    contributions: [
+      {
+        category: 'WebRTC Implementation',
+        items: [
+          'Implemented peer-to-peer video communication using WebRTC APIs for direct browser-to-browser connections',
+          'Built signaling server with Express and Socket.io to facilitate connection establishment and room management',
+          'Created connection state monitoring with real-time status updates and debugging capabilities',
+          'Implemented STUN server configuration for NAT traversal and ICE candidate exchange',
+        ],
+      },
+      {
+        category: 'Real-Time Communication Features',
+        items: [
+          'Developed room-based connection system where users can join with custom room codes',
+          'Implemented real-time connection status monitoring with visual indicators for connection quality',
+          'Built local and remote stream management with proper media device handling and permissions',
+          'Created offer/answer exchange mechanism for WebRTC peer connection establishment',
+        ],
+      },
+      {
+        category: 'Frontend Development',
+        items: [
+          'Built responsive React frontend with TypeScript for type-safe development and better maintainability',
+          'Implemented modern UI components using Tailwind CSS with clean, intuitive design patterns',
+          'Created responsive layouts that work seamlessly across desktop and mobile devices',
+          'Developed custom useWebRTC hook for encapsulating WebRTC logic and state management',
+        ],
+      },
+      {
+        category: 'User Experience & Performance',
+        items: [
+          'Designed intuitive user interface with clear connection status indicators and room management',
+          'Implemented proper error handling and user feedback for connection issues and media permissions',
+          'Added comprehensive connection state monitoring and debugging capabilities',
+          'Created responsive video grid layout with proper stream display and loading states',
+        ],
+      },
+    ],
+    result: undefined,
+  },
+
+  'github-pulse': {
+    title: 'Dashboard - GitHub Pulse',
+    subtitle: undefined,
+    projectURL: 'https://github-pulse.vercel.app/',
+    githubURL: 'https://github.com/ella-yschoi/github-pulse',
+    period: 'Sep 2025 - Present',
+    tech: [
+      'TypeScript',
+      'Next.js 15',
+      'React 19',
+      'Tailwind CSS',
+      'NextAuth.js',
+      'TanStack Query',
+      'Recharts',
+      'OpenAI GPT-4o-mini',
+      'Express.js',
+      'Puppeteer',
+      'Vercel OG',
+    ],
+    images: [
+      `${prefix}/images/project/github-pulse-ai.png`,
+      `${prefix}/images/project/github-pulse-graph.png`,
+      `${prefix}/images/project/github-pulse-report.png`,
+      `${prefix}/images/project/github-pulse-share-modal.png`,
+      `${prefix}/images/project/github-pulse-share-screen.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
+      content: [
+        'Developed a comprehensive GitHub repository analytics dashboard with OAuth authentication, real-time KPI visualization, AI-powered activity summaries, and automated PDF report generation.',
+        'Built as a full-stack monorepo with Next.js frontend and Express.js backend, featuring secure GitHub API integration and intelligent data processing using OpenAI GPT-4o-mini.',
+        'Implemented advanced features including interactive charts, shareable OG images, public sharing pages, and automated weekly report generation with Puppeteer.',
+      ],
+    },
+    contributions: [
+      {
+        category: 'Frontend Development',
+        items: [
+          'Built responsive dashboard with real-time GitHub data visualization using Recharts and custom React components',
+          'Implemented mobile-first responsive design with Tailwind CSS and modern UI patterns',
+          'Created interactive KPI cards, line charts, and top repositories table with sparkline visualizations',
+          'Developed reusable chart components with TypeScript interfaces for type safety and maintainability',
+          'Implemented dynamic brand copy generation based on user metrics and activity patterns',
+        ],
+      },
+      {
+        category: 'Authentication & API Integration',
+        items: [
+          'Integrated NextAuth.js for secure GitHub OAuth authentication with 30-day session management',
+          'Implemented TanStack Query for efficient data fetching, caching, and synchronization with GitHub REST API',
+          'Built comprehensive data transformation utilities to process raw GitHub data into meaningful analytics',
+          'Created robust error handling with graceful degradation for rate limits and API failures',
+          'Implemented memory caching with 5-minute TTL for improved performance and reduced API calls',
+        ],
+      },
+      {
+        category: 'AI Integration & Analytics',
+        items: [
+          'Integrated OpenAI GPT-4o-mini API to generate intelligent activity summaries and coding pattern analysis',
+          'Implemented automated weekly PDF report generation with comprehensive repository metrics using Puppeteer',
+          'Created AI-powered insights that analyze recent issues, pull requests, and commits for productivity trends',
+          'Built server-side AI processing with proper input validation and security measures',
+          'Developed intelligent filtering to analyze only user-owned repositories excluding forks and organizations',
+        ],
+      },
+      {
+        category: 'Backend Development & PDF Generation',
+        items: [
+          'Built Express.js backend with TypeScript for robust API endpoints and data processing',
+          'Implemented Puppeteer-based PDF generation with optimized HTML templates and responsive layouts',
+          'Created comprehensive report service for weekly analytics aggregation and data processing',
+          'Developed GitHub API service with proper error handling and rate limit management',
+          'Implemented file system management for PDF storage and retrieval with proper cleanup',
+        ],
+      },
+      {
+        category: 'User Experience & Performance',
+        items: [
+          'Designed intuitive user interface with clear data hierarchy and interactive elements',
+          'Implemented comprehensive loading states, error handling, and user feedback mechanisms',
+          'Created shareable links with custom OG image generation using Vercel OG',
+          'Built public sharing pages for external GitHub activity showcase',
+          'Optimized bundle size and implemented code splitting for faster initial load times',
+          'Implemented skeleton UI components for improved perceived performance',
+        ],
+      },
+    ],
+    result: undefined,
   },
 
   'datepicker-calendar': {
-    title: 'Simple DatePicker Calendar for React',
+    title: 'Open Source - DatePicker Calendar',
     subtitle: undefined,
     projectURL:
       'https://www.npmjs.com/package/react-simple-datepicker-calendar',
+    githubURL:
+      'https://github.com/ella-yschoi/react-simple-datepicker-calendar',
+    period: 'Mar 2024 - Present',
     tech: [
       'TypeScript',
       'React',
@@ -257,10 +403,7 @@ const projects = {
     result: {
       title: 'Project Results',
       content: [
-        'Successfully published to npm, making it easy for other developers to use',
         'Released 10 patch updates and 1 minor update based on feedback from over 20 developers, significantly improving usability and stability',
-        'Provided flexibility to apply to various design systems through Headless UI patterns',
-        'Ensured comprehensive accessibility for all users through WCAG 2.1 AA standard compliance',
         'Achieved 200+ weekly downloads and rapid feedback cycles (avg. 3 days) from 20+ developers',
       ],
     },
@@ -274,22 +417,14 @@ const projects = {
         'Automated accessibility testing scripts and validation tools',
       ],
     },
-    metrics: {
-      title: 'Key Metrics',
-      content: [
-        'Version: v0.2.0 (latest) - 10 patch updates, 1 minor update',
-        'Accessibility: 100% compliant with WCAG 2.1 AA standards',
-        'Language Support: Korean and English multilingual support',
-        'Type Safety: 100% type safety guaranteed through TypeScript strict mode',
-        '200+ weekly downloads, 1 minor and 10 patch releases, 20+ developer feedback, avg. 3-day turnaround',
-      ],
-    },
   },
 
   'personal-portfolio': {
     title: 'Personal Portfolio Website',
     subtitle: undefined,
-    projectURL: undefined,
+    projectURL: 'https://ella-yschoi.github.io',
+    githubURL: 'https://github.com/ella-yschoi/ella-yschoi.github.io',
+    period: 'Jun 2025',
     tech: [
       'TypeScript',
       'React',
@@ -347,13 +482,7 @@ const projects = {
         ],
       },
     ],
-    result: {
-      title: 'Project Results',
-      content: [
-        'Successfully built a modern, accessible portfolio website that effectively showcases professional skills and projects',
-        'Served as a living documentation and demonstration platform for my frontend engineering principles and best practices.',
-      ],
-    },
+    result: undefined,
     technicalDetails: {
       title: 'Technical Details',
       content: [
@@ -364,18 +493,72 @@ const projects = {
         'Geist Sans font optimization with next/font for improved performance',
       ],
     },
-    metrics: {
-      title: 'Key Features',
+  },
+
+  'random-picker': {
+    title: 'Open Source - Random Picker',
+    subtitle: undefined,
+    projectURL: 'https://random-picker-zeta.vercel.app',
+    githubURL: 'https://github.com/ella-yschoi/random-picker',
+    period: 'Feb 2024',
+    tech: ['TypeScript', 'React', 'Vite', 'Emotion', 'React Router'],
+    images: [
+      `${prefix}/images/project/random-picker-home.png`,
+      `${prefix}/images/project/random-picker-pick.png`,
+      `${prefix}/images/project/random-picker-waiting.png`,
+      `${prefix}/images/project/random-picker-result.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
       content: [
-        'Accessibility: WCAG AAA compliance with full keyboard and screen reader support',
-        'Performance: Optimized Core Web Vitals and efficient resource loading',
-        'Responsive Design: Adaptive layouts for mobile, tablet, and desktop',
-        'Modern Stack: Next.js 15, React 19, TypeScript 5, Tailwind CSS 4.1.10',
-        'Lighthouse: Accessibility/Best Practices/SEO 100, Performance 99',
-        'Core Web Vitals: First Contentful Paint (FCP) 0.6s, Largest Contentful Paint (LCP) 0.7s, Total Blocking Time (TBT) 10ms, Speed Index 1.1s',
-        'Built and deployed in 3 days',
+        'Built a simple and intuitive random selection tool for fair decision-making with clean UI and smooth user experience.',
+        'Developed with React and TypeScript using Vite for fast development and optimized production builds.',
+        'Implemented with Emotion for styled components and responsive design that works seamlessly across all devices.',
       ],
     },
+    contributions: [
+      {
+        category: 'Core Feature Development',
+        items: [
+          'Created participant management system with input validation (max 10 participants, 6 characters each)',
+          'Implemented simple random winner selection algorithm using Math.random()',
+          'Built multi-step user flow: Settings → Confirmation → Loading → Results',
+        ],
+      },
+      {
+        category: 'User Interface & Experience',
+        items: [
+          'Designed clean, intuitive interface with clear visual feedback and smooth page transitions',
+          'Implemented responsive design using Emotion styled components for consistent styling across devices',
+          'Added engaging animations and GIFs for loading and celebration states to enhance user experience',
+        ],
+      },
+      {
+        category: 'State Management & Routing',
+        items: [
+          'Implemented React Context API for global theme state management',
+          'Used React Router DOM for seamless single-page application navigation',
+          'Integrated localStorage for persistent theme preference across sessions',
+        ],
+      },
+      {
+        category: 'Performance & Optimization',
+        items: [
+          'Optimized bundle size with Vite for fast development and efficient production builds',
+          'Implemented proper TypeScript typing for better developer experience and code reliability',
+          'Used React hooks for component state management and lifecycle handling',
+        ],
+      },
+      {
+        category: 'Theme & Visual Design',
+        items: [
+          'Implemented dark/light mode toggle with persistent user preference storage',
+          'Created consistent color scheme using CSS custom properties for theme switching',
+          'Added visual feedback with loading animations and celebration effects',
+        ],
+      },
+    ],
+    result: undefined,
   },
 };
 
@@ -417,30 +600,62 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         {/* Title, Info, Tags */}
         <div className='mb-14'>
-          <div className='flex flex-col md:flex-row md:items-center md:justify-between mt-10 mb-4 gap-4'>
-            <h1 className='text-3xl md:text-4xl font-bold text-black break-words'>
-              {project.title}
-            </h1>
-            {project.projectURL && (
-              <a
-                href={project.projectURL}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-medium text-sm'
-                aria-label='View on npm'
-              >
-                <svg
-                  width='16'
-                  height='16'
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                  className='flex-shrink-0'
-                  aria-hidden='true'
-                >
-                  <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' />
-                </svg>
-                View on npm
-              </a>
+          <div className='flex flex-col md:flex-row md:items-start md:justify-between mt-10 mb-4 gap-4'>
+            <div>
+              <h1 className='text-3xl md:text-3xl font-bold text-black break-words'>
+                {project.title}
+              </h1>
+              {project.period && (
+                <p className='text-sm text-gray-500 font-medium mt-2'>
+                  {project.period}
+                </p>
+              )}
+            </div>
+            {(project.projectURL || 'githubURL' in project) && (
+              <div className='flex gap-3 flex-wrap'>
+                {project.projectURL && (
+                  <a
+                    href={project.projectURL}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-medium text-sm'
+                    aria-label='View live demo'
+                  >
+                    <svg
+                      width='16'
+                      height='16'
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      className='flex-shrink-0'
+                      aria-hidden='true'
+                    >
+                      <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' />
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
+                {'githubURL' in project && project.githubURL && (
+                  <a
+                    href={project.githubURL}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-200 transition-colors duration-200 font-medium text-sm'
+                    aria-label='View source code on GitHub'
+                  >
+                    <svg
+                      width='16'
+                      height='16'
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      className='flex-shrink-0'
+                      aria-hidden='true'
+                    >
+                      <path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z' />
+                    </svg>
+                    Source Code
+                  </a>
+                )}
+              </div>
             )}
           </div>
           {project.subtitle && (
@@ -514,20 +729,22 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           </section>
 
-          <section>
-            <h2 className='text-2xl font-bold mb-6 text-black border-b border-gray-200 pb-2'>
-              {project.result.title}
-            </h2>
-            <div className='bg-white rounded-lg p-6 border border-gray-100'>
-              <ul className='list-disc pl-5 text-gray-700 text-base space-y-2'>
-                {project.result.content.map((content, index) => (
-                  <li key={index} className='leading-relaxed'>
-                    {content.replace(/\*\*/g, '')}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
+          {project.result && (
+            <section>
+              <h2 className='text-2xl font-bold mb-6 text-black border-b border-gray-200 pb-2'>
+                {project.result.title}
+              </h2>
+              <div className='bg-white rounded-lg p-6 border border-gray-100'>
+                <ul className='list-disc pl-5 text-gray-700 text-base space-y-2'>
+                  {project.result.content.map((content, index) => (
+                    <li key={index} className='leading-relaxed'>
+                      {content.replace(/\*\*/g, '')}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </section>

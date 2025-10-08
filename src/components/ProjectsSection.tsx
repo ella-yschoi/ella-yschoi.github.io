@@ -11,23 +11,23 @@ const projects = [
     slug: 'vience-datahub',
     title: 'VIENCE - DataHub',
     description:
-      'A cloud-based pathology data management service built with React and TypeScript. Supports efficient organization of large-scale files through features like drag-and-drop upload, folder management, and list/grid view switching. Provides a performant interface for navigating deeply nested directory structures and displaying metadata for high-resolution image datasets.',
+      'Cloud-based service for managing and processing large-scale pathology image data using React and TypeScript',
     image: `${prefix}/images/project/datahub-desktop-lightmode.png`,
-    tech: ['TypeScript', 'React', 'Vite'],
+    tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
   },
   {
     slug: 'vience-workspace',
     title: 'VIENCE - Workspace',
     description:
-      'A visual programming platform that enables researchers to construct image processing workflows through a drag-and-drop node editor. Includes core nodes such as Data Selector, Patch Generator, and High-Resolution Viewer, allowing users to configure and preview data pipelines in real time within a single interface.',
+      'Visual programming platform for image processing workflows using React and TypeScript',
     image: `${prefix}/images/project/workspace-viewer-lightmode.png`,
-    tech: ['TypeScript', 'React', 'Vite'],
+    tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
   },
   {
     slug: 'peer-connect',
     title: 'P2P Video Chat - PeerConnect',
     description:
-      'A peer-to-peer video chat app exploring WebRTC with real-time signaling via Socket.io and an Express server.',
+      'WebRTC-based video chat with room codes and real-time connection monitoring',
     image: `${prefix}/images/project/peer-connect-thumbnail.png`,
     tech: [
       'TypeScript',
@@ -37,31 +37,30 @@ const projects = [
       'Express',
       'Tailwind CSS',
     ],
-    href: 'https://peer-cnct.vercel.app',
   },
   {
     slug: 'github-pulse',
     title: 'Dashboard - GitHub Pulse',
     description:
-      'A personal GitHub analytics dashboard with OAuth, OG image sharing, AI activity summaries, charts, and weekly PDF reports.',
+      'GitHub activity dashboard with AI-powered insights and automated PDF reports',
     image: `${prefix}/images/project/github-pulse-thumbnail.png`,
     tech: [
       'TypeScript',
       'Next.js',
       'React',
+      'Express.js',
       'Tailwind CSS',
       'NextAuth.js',
       'TanStack Query',
       'Recharts',
       'OpenAI',
     ],
-    href: 'https://github-pulse.vercel.app',
   },
   {
     slug: 'datepicker-calendar',
     title: 'Open Source - DatePicker Calendar',
     description:
-      'Developed and published a fully customizable React date selection component to npm that complies with WCAG 2.1 AA accessibility standards, applies Headless UI patterns for design system flexibility, and has been continuously improved through 10 patch updates and 1 minor update based on feedback from over 20 developers.',
+      'Published npm package with 200+ weekly downloads and WCAG 2.1 AA accessibility compliance',
     image: `${prefix}/images/project/calendar-thumbnail.jpeg`,
     tech: ['TypeScript', 'React', 'Vite'],
   },
@@ -69,10 +68,9 @@ const projects = [
     slug: 'random-picker',
     title: 'Open Source - Random Picker',
     description:
-      'A lightweight random selection utility app for quick choices with a simple, accessible UI.',
+      'Simple random selection tool with clean UI and smooth user experience',
     image: `${prefix}/images/project/random-picker-thumbnail.png`,
     tech: ['TypeScript', 'React', 'Vite', 'Emotion'],
-    href: 'https://random-picker-zeta.vercel.app',
   },
 ];
 

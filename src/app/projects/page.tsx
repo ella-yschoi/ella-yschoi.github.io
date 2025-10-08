@@ -5,43 +5,27 @@ const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const projects = [
   {
     slug: 'vience-datahub',
-    title: 'DataHub',
+    title: 'VIENCE - DataHub',
     description:
-      'A cloud-based pathology data management service built with React and TypeScript. Optimized for 1,000+ SVS files and large-scale medical data. Reduced data prep time by 90% (6h→30m), enabling $1M+ in enterprise leads. Automated CI/CD (10+ steps→1, CI 3m→50s), resolved 2,200+ issues, and delivered a no-training UI for medical staff.',
+      'Cloud-based service for managing and processing large-scale pathology image data using React and TypeScript',
     image: `${prefix}/images/project/datahub-desktop-lightmode.png`,
-    tech: ['TypeScript', 'React', 'Vite'],
+    tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
+    period: 'Sep 2024 - Aug 2025',
   },
   {
     slug: 'vience-workspace',
-    title: 'Workspace',
+    title: 'VIENCE - Workspace',
     description:
-      'A visual programming platform for building image processing workflows. Migrated from CRA to Vite in 2 days (build 110s→20s), enabled stable weekly releases, and introduced Vitest-based unit testing to improve reliability. Prioritized 150+ issues and launched beta in 4 weeks.',
+      'Visual programming platform for image processing workflows using React and TypeScript',
     image: `${prefix}/images/project/workspace-viewer-lightmode.png`,
-    tech: ['TypeScript', 'React', 'Vite'],
-  },
-  {
-    slug: 'github-pulse',
-    title: 'GitHub Pulse',
-    description:
-      'A GitHub repository analytics dashboard with OAuth login, KPI cards, charts, AI activity summaries, and weekly PDF report generation.',
-    image: `${prefix}/images/project/github-pulse-thumbnail.png`,
-    tech: [
-      'TypeScript',
-      'Next.js',
-      'React',
-      'Tailwind CSS',
-      'NextAuth.js',
-      'TanStack Query',
-      'Recharts',
-      'OpenAI',
-    ],
-    href: 'https://github-pulse.vercel.app',
+    tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
+    period: 'Sep 2024 - Aug 2025',
   },
   {
     slug: 'peer-connect',
-    title: 'PeerConnect - WebRTC P2P Video Chat',
+    title: 'P2P Video Chat - PeerConnect',
     description:
-      'P2P video chat built with WebRTC, using Express + Socket.io for signaling. Supports local/remote streams, room codes, and real-time connection status.',
+      'WebRTC-based video chat with room codes and real-time connection monitoring',
     image: `${prefix}/images/project/peer-connect-thumbnail.png`,
     tech: [
       'TypeScript',
@@ -51,31 +35,53 @@ const projects = [
       'Express',
       'Tailwind CSS',
     ],
-    href: 'https://peer-cnct.vercel.app',
+    period: 'Oct 2025 - Present',
+  },
+  {
+    slug: 'github-pulse',
+    title: 'Dashboard - GitHub Pulse',
+    description:
+      'GitHub activity dashboard with AI-powered insights and automated PDF reports',
+    image: `${prefix}/images/project/github-pulse-thumbnail.png`,
+    tech: [
+      'TypeScript',
+      'Next.js',
+      'React',
+      'Express.js',
+      'Tailwind CSS',
+      'NextAuth.js',
+      'TanStack Query',
+      'Recharts',
+      'OpenAI',
+    ],
+    period: 'Sep 2025 - Present',
   },
   {
     slug: 'datepicker-calendar',
-    title: 'Simple DatePicker Calendar',
+    title: 'Open Source - DatePicker Calendar',
     description:
-      'Built and published a customizable Headless UI–based date picker calendar on npm in 2 weeks. Achieved 200+ weekly downloads, shipped 1 minor and 10 patch updates based on feedback from 20+ developers (avg. 3-day turnaround), and implemented full WCAG 2.1 AA accessibility.',
+      'Published npm package with 200+ weekly downloads and WCAG 2.1 AA accessibility compliance',
     image: `${prefix}/images/project/calendar-thumbnail.jpeg`,
     tech: ['TypeScript', 'React', 'Vite'],
+    period: 'Mar 2024 - Present',
   },
   {
     slug: 'personal-portfolio',
     title: 'Personal Portfolio Website',
     description:
-      'Built and deployed an accessible and responsive portfolio with Next.js and React in 3 days. Achieved Lighthouse scores of 100 in accessibility, best practices, and SEO (performance 99), and fast load performance (FCP 0.6s, LCP 0.7s, TBT 10ms, Speed Index 1.1s).',
+      'Accessible portfolio with Lighthouse scores of 100/100/100/99 and fast load performance',
     image: `${prefix}/images/project/portfolio-home.png`,
     tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+    period: 'Jun 2025',
   },
   {
     slug: 'random-picker',
-    title: 'Random Picker',
+    title: 'Open Source - Random Picker',
     description:
-      'A simple and accessible random selection tool with clean UI and quick interactions.',
+      'Simple random selection tool with clean UI and smooth user experience',
     image: `${prefix}/images/project/random-picker-thumbnail.png`,
     tech: ['TypeScript', 'React', 'Vite', 'Emotion'],
+    period: 'Feb 2024',
   },
 ];
 
@@ -95,7 +101,7 @@ export default function ProjectsPage() {
           <section aria-labelledby='professional-projects-heading'>
             <h2
               id='professional-projects-heading'
-              className='text-2xl font-medium mb-6 text-black'
+              className='text-2xl font-medium mb-6 text-gray-700'
             >
               Professional Projects
             </h2>
@@ -118,7 +124,7 @@ export default function ProjectsPage() {
           <section aria-labelledby='personal-projects-heading'>
             <h2
               id='personal-projects-heading'
-              className='text-2xl font-medium mb-6 text-black'
+              className='text-2xl font-medium mb-6 text-gray-700'
             >
               Personal Projects
             </h2>

@@ -7,6 +7,7 @@ interface ProjectCardProps {
   description: string;
   image?: string;
   tech?: string[];
+  period?: string;
   variant?: 'small' | 'large';
   buttonText?: string;
   href?: string;
@@ -18,6 +19,7 @@ const ProjectCard = ({
   description,
   image,
   tech,
+  period,
   variant = 'small',
   buttonText = 'View Project →',
   href,
@@ -38,9 +40,16 @@ const ProjectCard = ({
           </div>
           <div className='w-full md:w-2/3 flex flex-col justify-between min-h-[320px] md:min-h-[320px]'>
             <div>
-              <h3 className='text-2xl font-semibold text-black mb-4 group-hover:text-gray-700 transition-colors'>
-                {title}
-              </h3>
+              <div className='flex items-center justify-between mb-2'>
+                <h3 className='text-2xl font-semibold text-black group-hover:text-gray-700 transition-colors'>
+                  {title}
+                </h3>
+                {period && (
+                  <span className='text-sm text-gray-500 font-medium'>
+                    {period}
+                  </span>
+                )}
+              </div>
               <p className='text-gray-600 mb-6 leading-relaxed'>
                 {description}
               </p>
@@ -81,9 +90,14 @@ const ProjectCard = ({
           <span className='text-4xl text-gray-300'>📦</span>
         )}
       </div>
-      <h3 className='text-lg font-normal text-black mb-2 group-hover:text-gray-700 transition-colors'>
-        {title}
-      </h3>
+      <div className='flex items-center justify-between mb-2'>
+        <h3 className='text-lg font-normal text-black group-hover:text-gray-700 transition-colors'>
+          {title}
+        </h3>
+        {period && (
+          <span className='text-xs text-gray-500 font-medium'>{period}</span>
+        )}
+      </div>
       <p className='text-sm text-gray-600 line-clamp-2 mb-4'>{description}</p>
       {tech && tech.length > 0 && (
         <div className='flex flex-wrap gap-2 mb-4'>
