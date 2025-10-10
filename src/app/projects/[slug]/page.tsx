@@ -48,7 +48,6 @@ const projects = {
       content: [
         'At medical AI startup VIENCE, developed a cloud-based service for managing and processing large-scale pathology image data using React and TypeScript.',
         'This internal service supports over 1,000 SVS (slide image) files and enables pathology researchers and medical staff at university hospitals to manage files and process data efficiently.',
-        'Reduced pathology data preparation time by 90% (6 hours to 30 minutes), enabling demo meetings with 2 major hospitals and generating $1M+ in enterprise leads.',
       ],
     },
     contributions: [
@@ -96,7 +95,7 @@ const projects = {
       title: 'Project Results',
       content: [
         'Launched a high-resolution pathology data service tailored to the needs of medical researchers and practitioners',
-        'Resolved legacy technical debt and dramatically improved developer experience and release stability',
+        'Reduced pathology data preparation time by 90% (6 hours to 30 minutes), enabling demo meetings with 2 major hospitals and generating $1M+ in enterprise leads.',
         'As a junior developer, gained hands-on experience in the full E2E cycle from planning and design to development and deployment',
         'Enabled stable weekly releases and improved test reliability for all major UI modules by replacing manual QA with Vitest-based unit testing',
       ],
@@ -128,7 +127,6 @@ const projects = {
       content: [
         'Developed a visual programming platform that allows researchers to build and customize data processing workflows using a node-based editor built with Rete.js.',
         'Supports interactive configuration of image preprocessing pipelines through components such as data selector, patch generator, and high-resolution slide viewer.',
-        'Migrated from CRA to Vite in 2 days (build time 110s → 20s), enabling stable weekly releases and rapid feature delivery.',
       ],
     },
     contributions: [
@@ -191,8 +189,6 @@ const projects = {
       title: 'Project Overview',
       content: [
         'Developed a peer-to-peer video chat application using WebRTC technology with Express.js and Socket.io for signaling.',
-        'Built with TypeScript and React, featuring real-time video communication, room-based connection, and connection status monitoring.',
-        'Implemented local and remote stream management with responsive design optimized for desktop and mobile devices.',
       ],
     },
     contributions: [
@@ -443,9 +439,7 @@ const projects = {
     overview: {
       title: 'Project Overview',
       content: [
-        'Built and deployed an accessible and responsive portfolio with Next.js and React in just 3 days.',
-        'Implemented accessibility-first design with WCAG AAA compliance and optimized performance for exceptional user experience.',
-        'Achieved Lighthouse scores of 100 in accessibility, best practices, and SEO (performance 99), and fast load performance (First Contentful Paint (FCP) 0.6s, Largest Contentful Paint (LCP) 0.7s, Total Blocking Time (TBT) 10ms, Speed Index 1.1s).',
+        'Built and deployed an accessible and responsive portfolio with Next.js and React',
       ],
     },
     contributions: [
@@ -513,8 +507,6 @@ const projects = {
       title: 'Project Overview',
       content: [
         'Built a simple and intuitive random selection tool for fair decision-making with clean UI and smooth user experience.',
-        'Developed with React and TypeScript using Vite for fast development and optimized production builds.',
-        'Implemented with Emotion for styled components and responsive design that works seamlessly across all devices.',
       ],
     },
     contributions: [

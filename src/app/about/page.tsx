@@ -1,32 +1,117 @@
-import { FaHandsHelping, FaUniversity } from 'react-icons/fa';
+'use client';
+
+import {
+  FaHandsHelping,
+  FaUniversity,
+  FaRocket,
+  FaChartLine,
+  FaCog,
+  FaUsers,
+} from 'react-icons/fa';
 import { HiOutlineBriefcase } from 'react-icons/hi';
-import { calculateDuration } from '@/utils/dateUtils';
+import { motion } from 'framer-motion';
+// import { calculateDuration } from '@/utils/dateUtils';
 
 const experience = [
   {
-    company: 'VIENCE',
+    company: 'Vience',
     role: 'Frontend Engineer',
     period: 'Sep 2024 - Aug 2025',
     startDate: '2024-09-01',
-    description: 'AI-powered medical imaging and digital pathology startup',
+    description:
+      'AI-powered medical imaging and digital pathology startup (Seed, ~10 people)',
+    achievements: [
+      {
+        icon: <FaRocket className='text-blue-500' />,
+        title: 'Scalable Platform Development',
+        description:
+          'Built a scalable cloud-based pathology platform using TypeScript and React, collaborating with backend teams to integrate APIs handling 1,000+ SVS files for optimized performance and navigation of large data.',
+      },
+      {
+        icon: <FaChartLine className='text-green-500' />,
+        title: '90% Efficiency Improvement',
+        description:
+          'Reduced pathology data prep time by 90% (6h → 30m), helping secure demo meetings with 2 major hospitals and generating $1M+ in enterprise leads.',
+      },
+      {
+        icon: <FaCog className='text-purple-500' />,
+        title: 'CI/CD Automation',
+        description:
+          'Automated CI/CD workflows using GitHub Actions, reducing manual steps from 10 to 1 and cutting CI time from 3min to 50s, while stabilizing pipelines by resolving 2,200+ issues and security vulnerabilities.',
+      },
+      {
+        icon: <FaUsers className='text-orange-500' />,
+        title: 'User-Friendly Interface',
+        description:
+          'Delivered a user-friendly list and grid UI that required no training for medical staff by designing reusable core logic, which was applied across three features and reduced component development time by 67%.',
+      },
+      {
+        icon: <FaRocket className='text-indigo-500' />,
+        title: 'Build Optimization',
+        description:
+          'Migrated from Create React App to Vite with esbuild-based bundling and tree shaking, reducing build time from 110s to 20s and enabling weekly releases.',
+      },
+    ],
   },
   {
     company: 'Channel Talk',
     role: 'Customer Experience Manager',
     period: 'Aug 2022 - Jan 2023',
-    description: 'AI-driven messenger and CRM platform startup',
+    startDate: '2022-08-01',
+    description:
+      'AI-driven messenger and CRM platform startup (Series D, ~200 people)',
+    achievements: [
+      {
+        icon: <FaHandsHelping className='text-green-500' />,
+        title: 'Technical Issue Resolution',
+        description:
+          'Collaborated with developers to resolve technical issues for B2B customers by translating complex tech concepts into user-friendly language.',
+      },
+      {
+        icon: <FaCog className='text-yellow-500' />,
+        title: 'Feature Launch & Coordination',
+        description:
+          'Acted as a bridge between design, engineering, and sales by managing feature launches, coordinating requirements, writing customer guides, and publishing release notes for features like Naver Login and Roles & Permissions.',
+      },
+      {
+        icon: <FaUniversity className='text-red-500' />,
+        title: 'Content Migration & UX Planning',
+        description:
+          'Contributed to migrating support content from Notion to a public help site by planning the information architecture and UX with frontend engineers.',
+      },
+    ],
   },
   {
     company: 'NEXT KITCHEN',
-    role: 'Customer Relationship Management Manager',
+    role: 'CRM Manager',
     period: 'Jul 2021 - Aug 2022',
-    description: 'HMR and juice manufacturing and e-commerce platform',
+    startDate: '2021-07-01',
+    description:
+      'HMR and juice manufacturing and e-commerce platform (Series A, ~50 people)',
+    achievements: [
+      {
+        icon: <FaChartLine className='text-orange-500' />,
+        title: 'Customer Relationship Management & A/B Testing',
+        description:
+          'Collaborated with the manufacturing team on product launches and quality improvements, conducting A/B testing and user feedback analysis to boost sales.',
+      },
+    ],
   },
   {
-    company: 'BROWNBAG',
-    role: 'Marketing Manager',
+    company: 'Brownbag',
+    role: 'Marketer',
     period: 'Jul 2018 - Nov 2020',
-    description: 'Coffee e-commerce startup offering beans and machine rentals',
+    startDate: '2018-07-01',
+    description:
+      'Coffee e-commerce startup offering beans and machine rentals (Series A, ~50 people)',
+    achievements: [
+      {
+        icon: <FaChartLine className='text-green-500' />,
+        title: 'Growth & User Research',
+        description:
+          'Designed onboarding flows, ran user research (100+ interviews), and led marketing campaigns that grew the customer base 10x and secured the first 500 business clients.',
+      },
+    ],
   },
 ];
 
@@ -68,92 +153,180 @@ const volunteering = [
 
 export default function AboutPage() {
   return (
-    <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
+    <section
+      className='py-16 w-full bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50 min-h-screen'
+      data-scrollable
+    >
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
-        <div className='pt-8'>
-          <h1 className='text-3xl font-bold mb-6 text-black'>About Me</h1>
+        <motion.div
+          className='pt-8'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>
+            About Me
+          </h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
             I leverage my academic foundation and practical experience to build
             scalable and accessible web applications, focusing on creative,
             user-centric solutions.
           </p>
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {/* Experience (Full Width) */}
-          <div className='bg-white rounded-2xl shadow p-8 md:col-span-2'>
-            <div className='flex items-center gap-2 mb-4'>
-              <HiOutlineBriefcase className='text-xl text-gray-400' />
-              <h2 className='text-xl font-semibold text-black'>Experience</h2>
+        </motion.div>
+
+        {/* Experience Section */}
+        <motion.div
+          className='bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100/50 p-8 mb-8'
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className='flex items-center gap-3 mb-8'>
+            <div className='p-2 bg-blue-100 rounded-lg'>
+              <HiOutlineBriefcase className='text-xl text-blue-600' />
             </div>
-            <ul className='space-y-6'>
-              {experience.map((exp) => (
-                <li key={exp.company + exp.role} className='ml-2'>
-                  <div className='flex items-center gap-2'>
-                    <div className='font-medium text-black'>
-                      {exp.company} - {exp.role}
-                    </div>
-                    {exp.period.includes('Aug 2025') && (
-                      <span className='relative flex h-3 w-3'>
-                        <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75'></span>
-                        <span className='relative inline-flex rounded-full h-3 w-3 bg-green-500'></span>
-                      </span>
-                    )}
-                  </div>
-                  <div className='text-gray-700 text-sm'>{exp.description}</div>
-                  <div className='text-gray-500 text-xs mt-1'>
-                    {exp.period}
-                    {exp.period.includes('Present') && exp.startDate && (
-                      <span className='ml-1'>
-                        ({calculateDuration(exp.startDate)})
-                      </span>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <h2 className='text-2xl font-bold text-gray-900'>
+              Work Experience
+            </h2>
           </div>
 
-          {/* Education (Combined) */}
-          <div className='bg-white rounded-2xl shadow p-8'>
-            <div className='flex items-center gap-2 mb-4'>
-              <FaUniversity className='text-xl text-gray-400' />
-              <h2 className='text-xl font-semibold text-black'>Education</h2>
-            </div>
-            <ul className='space-y-6'>
-              {education.map((edu) => (
-                <li key={edu.institution} className='ml-2'>
-                  <div className='font-medium text-black'>
-                    {edu.institution}
+          <div className='space-y-12'>
+            {experience.map((exp, expIndex) => (
+              <motion.div
+                key={exp.company + exp.role}
+                className='relative'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: expIndex * 0.1 }}
+              >
+                {/* Timeline line */}
+                {expIndex < experience.length - 1 && (
+                  <div className='absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 to-transparent'></div>
+                )}
+
+                <div className='flex items-start gap-6'>
+                  {/* Timeline dot */}
+                  <div className='flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold text-sm'>
+                    {expIndex + 1}
                   </div>
-                  <div className='text-gray-700 text-sm mt-1'>{edu.degree}</div>
-                  <div className='text-gray-500 text-xs mt-1'>{edu.period}</div>
-                </li>
-              ))}
-            </ul>
+
+                  <div className='flex-1'>
+                    <div className='flex items-center gap-3 mb-2'>
+                      <h3 className='text-xl font-bold text-gray-900'>
+                        {exp.role} at {exp.company}
+                      </h3>
+                      {exp.period.includes('Aug 2025') && (
+                        <span className='relative flex h-3 w-3'>
+                          <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75'></span>
+                          <span className='relative inline-flex rounded-full h-3 w-3 bg-green-500'></span>
+                        </span>
+                      )}
+                    </div>
+
+                    <p className='text-blue-600 font-medium mb-2'>
+                      {exp.description}
+                    </p>
+                    <p className='text-gray-500 text-sm mb-6'>{exp.period}</p>
+
+                    {/* Achievements */}
+                    <div className='space-y-4'>
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <motion.div
+                          key={achIndex}
+                          className='bg-gray-50 rounded-xl p-4 border border-gray-200/50 hover:border-blue-200 transition-colors'
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.4, delay: achIndex * 0.1 }}
+                        >
+                          <div className='flex items-start gap-3'>
+                            <div className='flex-shrink-0 mt-1'>
+                              {achievement.icon}
+                            </div>
+                            <div>
+                              <h4 className='font-semibold text-gray-900 mb-1'>
+                                {achievement.title}
+                              </h4>
+                              <p className='text-gray-600 text-sm leading-relaxed'>
+                                {achievement.description}
+                              </p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </motion.div>
+
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+          {/* Education */}
+          <motion.div
+            className='bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100/50 p-8'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className='flex items-center gap-3 mb-6'>
+              <div className='p-2 bg-indigo-100 rounded-lg'>
+                <FaUniversity className='text-xl text-indigo-600' />
+              </div>
+              <h2 className='text-xl font-bold text-gray-900'>Education</h2>
+            </div>
+            <div className='space-y-6'>
+              {education.map((edu, index) => (
+                <motion.div
+                  key={edu.institution}
+                  className='border-l-4 border-indigo-200 pl-4'
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <h3 className='font-semibold text-gray-900 mb-1'>
+                    {edu.institution}
+                  </h3>
+                  <p className='text-gray-600 text-sm mb-1'>{edu.degree}</p>
+                  <p className='text-gray-500 text-xs'>{edu.period}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Volunteering */}
-          <div className='bg-white rounded-2xl shadow p-8'>
-            <div className='flex items-center gap-2 mb-4'>
-              <FaHandsHelping className='text-xl text-gray-400' />
-              <h2 className='text-xl font-semibold text-black'>Volunteering</h2>
+          <motion.div
+            className='bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100/50 p-8'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <div className='flex items-center gap-3 mb-6'>
+              <div className='p-2 bg-green-100 rounded-lg'>
+                <FaHandsHelping className='text-xl text-green-600' />
+              </div>
+              <h2 className='text-xl font-bold text-gray-900'>Volunteering</h2>
             </div>
-            <ul className='space-y-6'>
-              {volunteering.map((item) => (
-                <li key={item.organization} className='ml-2'>
-                  <div className='font-medium text-black'>
+            <div className='space-y-6'>
+              {volunteering.map((item, index) => (
+                <motion.div
+                  key={item.organization}
+                  className='border-l-4 border-green-200 pl-4'
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <h3 className='font-semibold text-gray-900 mb-1'>
                     {item.organization} - {item.role}
-                  </div>
-                  <div className='text-gray-700 text-sm'>
+                  </h3>
+                  <p className='text-gray-600 text-sm mb-1'>
                     {item.description}
-                  </div>
-                  <div className='text-gray-500 text-xs mt-1'>
-                    {item.period}
-                  </div>
-                </li>
+                  </p>
+                  <p className='text-gray-500 text-xs'>{item.period}</p>
+                </motion.div>
               ))}
-            </ul>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+'use client';
+
 import {
   SiJavascript,
   SiTypescript,
@@ -22,6 +24,7 @@ import {
 import { FaAws } from 'react-icons/fa';
 import { MdWidgets, MdOutlineTipsAndUpdates } from 'react-icons/md';
 import { FaProjectDiagram } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const skillsData = {
   languages: [
@@ -211,52 +214,140 @@ const skillsData = {
 const SkillSection = ({
   title,
   items,
+  color,
 }: {
   title: string;
   items: { name: string; logo: React.ReactNode; description: string }[];
+  color: string;
 }) => (
-  <div className='mb-12'>
-    <h2 className='text-2xl font-bold mb-6 text-black'>{title}</h2>
-    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-      {items.map((item) => (
-        <div
+  <motion.div
+    className='mb-16'
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
+    <div className='flex items-center gap-3 mb-8'>
+      <div className={`p-2 ${color} rounded-lg`}></div>
+      <h2 className='text-2xl font-bold text-gray-900'>{title}</h2>
+    </div>
+
+    <motion.div
+      className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
+      viewport={{ once: true, margin: '-100px' }}
+    >
+      {items.map((item, index) => (
+        <motion.div
           key={item.name}
-          className='bg-white rounded-xl shadow border border-gray-100 p-6 hover:shadow-lg transition-shadow'
+          className='group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.05 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
         >
-          <div className='flex items-center gap-3 mb-3'>
-            <span className='text-2xl'>{item.logo}</span>
-            <h3 className='text-lg font-semibold text-black'>{item.name}</h3>
+          <div className='flex items-center gap-3 mb-4'>
+            <div className='text-3xl group-hover:scale-110 transition-transform duration-300'>
+              {item.logo}
+            </div>
+            <h3 className='text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors'>
+              {item.name}
+            </h3>
           </div>
-          <p className='text-gray-700 text-sm leading-relaxed'>
+          <p className='text-gray-600 text-sm leading-relaxed'>
             {item.description}
           </p>
-        </div>
+        </motion.div>
       ))}
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 export default function SkillsPage() {
   return (
-    <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
+    <section
+      className='py-16 w-full bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50 min-h-screen'
+      data-scrollable
+    >
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
-        <div className='pt-8'>
-          <h1 className='text-3xl font-bold mb-6 text-black'>Skills</h1>
+        <motion.div
+          className='pt-8 mb-16'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>Skills</h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
             A comprehensive overview of my technical skills, development
             principles, and tools I use to build modern web applications.
           </p>
-        </div>
 
-        <SkillSection title='Languages' items={skillsData.languages} />
+          {/* Skills Overview Cards */}
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-12'>
+            <motion.div
+              className='bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200/50'
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className='text-2xl font-bold text-blue-600'>5</div>
+              <div className='text-sm text-gray-600'>Languages</div>
+            </motion.div>
+            <motion.div
+              className='bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200/50'
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className='text-2xl font-bold text-indigo-600'>12</div>
+              <div className='text-sm text-gray-600'>Frameworks</div>
+            </motion.div>
+            <motion.div
+              className='bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200/50'
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className='text-2xl font-bold text-purple-600'>6</div>
+              <div className='text-sm text-gray-600'>Tools</div>
+            </motion.div>
+            <motion.div
+              className='bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200/50'
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <div className='text-2xl font-bold text-green-600'>6</div>
+              <div className='text-sm text-gray-600'>Principles</div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <SkillSection
+          title='Programming Languages'
+          items={skillsData.languages}
+          color='bg-blue-100'
+        />
+
         <SkillSection
           title='Frameworks & Libraries'
           items={skillsData.frameworks}
+          color='bg-indigo-100'
         />
-        <SkillSection title='Tools & Testing' items={skillsData.tools } />
+
+        <SkillSection
+          title='Tools & Testing'
+          items={skillsData.tools}
+          color='bg-purple-100'
+        />
+
         <SkillSection
           title='Development Principles'
           items={skillsData.principles}
+          color='bg-green-100'
         />
       </div>
     </section>

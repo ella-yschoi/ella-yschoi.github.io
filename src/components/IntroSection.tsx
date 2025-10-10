@@ -14,7 +14,7 @@ const ViewAllButton = ({
 }) => (
   <Link
     href={href}
-    className='group inline-flex items-center text-black text-base font-normal transition-all relative hover:text-gray-700'
+    className='group inline-flex items-center text-gray-700 text-base font-medium transition-all relative hover:text-blue-600'
   >
     <span className='transition-transform duration-300 group-hover:translate-x-1'>
       {children}
@@ -36,8 +36,8 @@ const IntroSection = () => {
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.2]);
 
   const handleEmailCopy = async () => {
     try {
@@ -52,69 +52,125 @@ const IntroSection = () => {
   return (
     <section
       ref={ref}
-      className='flex flex-col items-center justify-center min-h-screen bg-white px-6 w-full relative overflow-hidden'
+      className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 px-6 w-full relative overflow-hidden'
     >
-      {/* Parallax Background */}
+      {/* Animated Background Elements */}
       <motion.div
-        className='absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-50'
+        className='absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-indigo-100/20'
         style={{ y }}
       />
 
+      {/* Floating geometric shapes */}
       <motion.div
-        className='flex flex-col items-center gap-8 text-center max-w-3xl w-full relative z-10'
+        className='absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-full blur-xl'
+        animate={{
+          y: [0, -20, 0],
+          x: [0, 10, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+      <motion.div
+        className='absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-orange-400/10 rounded-full blur-xl'
+        animate={{
+          y: [0, 20, 0],
+          x: [0, -10, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      />
+
+      <motion.div
+        className='flex flex-col items-center gap-8 text-center max-w-4xl w-full relative z-10'
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         style={{ opacity }}
       >
         <motion.div
-          className='space-y-1'
+          className='space-y-4'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black leading-tight'>
+          <motion.div
+            className='inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 shadow-sm mb-6'
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className='w-2 h-2 bg-green-500 rounded-full animate-pulse'></div>
+            <span className='text-sm font-medium text-gray-600'>
+              Available for opportunities
+            </span>
+          </motion.div>
+
+          <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent leading-tight'>
             Ella Choi
           </h1>
-          <p className='text-base sm:text-lg md:text-xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed'>
-            Software Engineer bridging UX and business impact
-          </p>
+          <motion.p
+            className='text-lg sm:text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <span className='text-blue-600 font-medium'>Frontend Engineer</span>{' '}
+            <br />
+            Bridging UX and business impact through code
+          </motion.p>
         </motion.div>
 
         <motion.div
           className='flex flex-col sm:flex-row gap-4 w-full justify-center'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <a
+          <motion.a
             href='https://drive.google.com/file/d/1S81inwvNIDEr-upwlHFzlGAuMZIbPRhr/view?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
-            className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold
-              hover:bg-black hover:text-white transition-all duration-300 text-base w-full sm:w-auto transform hover:scale-105'
+            className='group px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold
+              hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-base w-full sm:w-auto transform hover:scale-105 hover:shadow-lg shadow-blue-500/25'
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Resume
-          </a>
-          <Link
-            href='#projects'
-            className='px-6 py-3 rounded-full border-2 border-black text-black font-semibold
-              hover:bg-black hover:text-white transition-all duration-300 text-base w-full sm:w-auto block'
-          >
-            Projects
-          </Link>
+            <span className='flex items-center justify-center gap-2'>
+              Resume
+              <motion.span className='group-hover:translate-x-1 transition-transform duration-200'>
+                ↗
+              </motion.span>
+            </span>
+          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href='#projects'
+              className='px-8 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-semibold
+                hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 text-base w-full sm:w-auto block'
+            >
+              View Projects
+            </Link>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          className='flex gap-10 mt-4 justify-center relative'
+          className='flex gap-8 mt-6 justify-center relative'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <button
+          <motion.button
             onClick={handleEmailCopy}
             aria-label='Copy email to clipboard'
-            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200 relative cursor-pointer'
+            className='text-2xl text-gray-400 hover:text-blue-600 transition-colors duration-200 relative cursor-pointer p-2 rounded-full hover:bg-blue-50'
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <FaEnvelope />
             {showCopyModal && (
@@ -122,45 +178,63 @@ const IntroSection = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-white text-black text-sm rounded-md whitespace-nowrap border border-gray-200 shadow-md z-50'
+                className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-md whitespace-nowrap shadow-lg z-50'
               >
                 Copied to clipboard!
               </motion.div>
             )}
-          </button>
-          <a
+          </motion.button>
+          <motion.a
             href='https://github.com/ella-yschoi'
             target='_blank'
             rel='noopener noreferrer'
             aria-label='GitHub'
-            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
+            className='text-2xl text-gray-400 hover:text-gray-700 transition-colors duration-200 p-2 rounded-full hover:bg-gray-100'
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <FaGithub />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href='https://linkedin.com/in/ella-yschoi'
             target='_blank'
             rel='noopener noreferrer'
             aria-label='LinkedIn'
-            className='text-3xl text-gray-400 hover:text-black transition-colors duration-200'
+            className='text-2xl text-gray-400 hover:text-blue-600 transition-colors duration-200 p-2 rounded-full hover:bg-blue-50'
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <FaLinkedin />
-          </a>
+          </motion.a>
         </motion.div>
 
         <motion.div
-          className='mt-1 space-y-4 max-w-xl'
+          className='mt-8 space-y-6 max-w-2xl'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
         >
           <p className='text-lg text-gray-600 leading-relaxed'>
-            I enjoy building products that balance technical excellence with
-            real user needs. My work often sits at the intersection of design,
-            engineering, and business, turning ideas into practical solutions.
+            I build products that balance{' '}
+            <span className='text-blue-600 font-medium'>
+              technical excellence
+            </span>{' '}
+            with{' '}
+            <span className='text-indigo-600 font-medium'>user needs.</span>
+            <br />
+            My work often sits at the intersection of{' '}
+            <span className='text-blue-600 font-medium'>design</span>,{' '}
+            <span className='text-indigo-600 font-medium'>engineering</span>,
+            <br />
+            and <span className='text-purple-600 font-medium'>business</span>,
+            turning ideas into{' '}
+            <span className='text-gray-800 font-semibold'>
+              practical solutions
+            </span>
+            .
           </p>
-          <div className='flex justify-end mt-12'>
-            <ViewAllButton href='/about'>View All About Me</ViewAllButton>
+          <div className='flex justify-end mt-8'>
+            <ViewAllButton href='/about'>Learn More About Me</ViewAllButton>
           </div>
         </motion.div>
       </motion.div>

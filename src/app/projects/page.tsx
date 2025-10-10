@@ -1,4 +1,7 @@
+'use client';
+
 import ProjectCard from '../../components/ProjectCard';
+import { motion } from 'framer-motion';
 
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -86,63 +89,95 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+  const professionalProjects = projects.filter(
+    (p) => p.slug === 'vience-datahub' || p.slug === 'vience-workspace'
+  );
+  const personalProjects = projects.filter(
+    (p) => p.slug !== 'vience-datahub' && p.slug !== 'vience-workspace'
+  );
+
   return (
-    <section className='py-16 w-full bg-gray-50 min-h-screen' data-scrollable>
+    <section
+      className='py-16 w-full bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50 min-h-screen'
+      data-scrollable
+    >
       <div className='max-w-5xl mx-auto px-4 md:px-6'>
-        <div className='pt-8'>
-          <h1 className='text-3xl font-bold mb-6 text-black'>Projects</h1>
+        <motion.div
+          className='pt-8'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>Projects</h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
             This collection of projects showcases my ability to build efficient,
             scalable, and user-centric web applications, with a strong focus on
             clean code, performance, and accessibility.
           </p>
-        </div>
-        <div className='space-y-12'>
-          <section aria-labelledby='professional-projects-heading'>
-            <h2
-              id='professional-projects-heading'
-              className='text-2xl font-medium mb-6 text-gray-700'
-            >
-              Professional Projects
-            </h2>
-            <div className='grid gap-8'>
-              {projects
-                .filter(
-                  (p) =>
-                    p.slug === 'vience-datahub' || p.slug === 'vience-workspace'
-                )
-                .map((project) => (
-                  <ProjectCard
-                    key={project.slug}
-                    {...project}
-                    variant='large'
-                  />
-                ))}
-            </div>
-          </section>
+        </motion.div>
 
-          <section aria-labelledby='personal-projects-heading'>
-            <h2
-              id='personal-projects-heading'
-              className='text-2xl font-medium mb-6 text-gray-700'
-            >
-              Personal Projects
-            </h2>
-            <div className='grid gap-8'>
-              {projects
-                .filter(
-                  (p) =>
-                    p.slug !== 'vience-datahub' && p.slug !== 'vience-workspace'
-                )
-                .map((project) => (
-                  <ProjectCard
-                    key={project.slug}
-                    {...project}
-                    variant='large'
-                  />
-                ))}
+        <div className='space-y-16'>
+          {/* Professional Projects Section */}
+          <motion.section
+            aria-labelledby='professional-projects-heading'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className='flex items-center gap-3 mb-8'>
+              <div className='p-2 bg-blue-100 rounded-lg'></div>
+              <h2
+                id='professional-projects-heading'
+                className='text-2xl font-bold text-gray-900'
+              >
+                Professional Projects
+              </h2>
             </div>
-          </section>
+
+            <div className='space-y-8'>
+              {professionalProjects.map((project, index) => (
+                <motion.div
+                  key={project.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <ProjectCard {...project} variant='large' />
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Personal Projects Section */}
+          <motion.section
+            aria-labelledby='personal-projects-heading'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className='flex items-center gap-3 mb-8'>
+              <div className='p-2 bg-indigo-100 rounded-lg'></div>
+              <h2
+                id='personal-projects-heading'
+                className='text-2xl font-bold text-gray-900'
+              >
+                Personal Projects
+              </h2>
+            </div>
+
+            <div className='space-y-8'>
+              {personalProjects.map((project, index) => (
+                <motion.div
+                  key={project.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <ProjectCard {...project} variant='large' />
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
         </div>
       </div>
     </section>
