@@ -25,7 +25,7 @@ const experience = [
         icon: <FaRocket className='text-blue-500' />,
         title: 'Scalable Platform Development',
         description:
-          'Built a scalable cloud-based pathology platform using TypeScript and React, collaborating with backend teams to integrate APIs handling 1,000+ SVS files for optimized performance and navigation of large data.',
+          'Led the zero-to-one development of a cloud-based pathology platform using TypeScript and React, collaborating with backend teams to integrate APIs handling 1,000+ SVS files for optimized performance.',
       },
       {
         icon: <FaChartLine className='text-green-500' />,
@@ -43,7 +43,7 @@ const experience = [
         icon: <FaUsers className='text-orange-500' />,
         title: 'User-Friendly Interface',
         description:
-          'Delivered a user-friendly list and grid UI that required no training for medical staff by designing reusable core logic, which was applied across three features and reduced component development time by 67%.',
+          'Delivered a user-friendly list and grid UI from the ground up, requiring no training for medical staff by designing reusable core logic applied across three features, reducing component development time by 67%.',
       },
       {
         icon: <FaRocket className='text-indigo-500' />,

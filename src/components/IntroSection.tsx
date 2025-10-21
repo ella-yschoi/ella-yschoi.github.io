@@ -120,9 +120,11 @@ const IntroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className='text-blue-600 font-medium'>Frontend Engineer</span>{' '}
+            <span className='text-blue-600 font-medium'>Software Engineer</span>{' '}
             <br />
-            Bridging UX and business impact through code
+            Specializing in{' '}
+            <span className='text-black font-medium'>zero to one</span> product
+            development
           </motion.p>
         </motion.div>
 
@@ -133,7 +135,7 @@ const IntroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <motion.a
-            href='https://drive.google.com/file/d/1S81inwvNIDEr-upwlHFzlGAuMZIbPRhr/view?usp=sharing'
+            href='https://drive.google.com/file/d/1ODrjilM8TSDXUKCK7b6W79B3mUNqH7n7/view?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
             className='group px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold
@@ -215,23 +217,16 @@ const IntroSection = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           <p className='text-lg text-gray-600 leading-relaxed'>
-            I build products that balance{' '}
-            <span className='text-blue-600 font-medium'>
-              technical excellence
-            </span>{' '}
-            with{' '}
-            <span className='text-indigo-600 font-medium'>user needs.</span>
+            I build products that connect{' '}
+            <span className='text-indigo-600 font-medium'>user needs</span> with{' '}
+            <span className='text-blue-600 font-medium'>technical depth</span>.
             <br />
-            My work often sits at the intersection of{' '}
-            <span className='text-blue-600 font-medium'>design</span>,{' '}
-            <span className='text-indigo-600 font-medium'>engineering</span>,
-            <br />
-            and <span className='text-purple-600 font-medium'>business</span>,
-            turning ideas into{' '}
-            <span className='text-gray-800 font-semibold'>
-              practical solutions
-            </span>
-            .
+            My work lives where{' '}
+            <span className='text-indigo-600 font-medium'>
+              engineering
+            </span> and{' '}
+            <span className='text-purple-600 font-medium'>business</span> meet,
+            <br /> turning early ideas into practical, scalable products.
           </p>
           <div className='flex justify-end mt-8'>
             <ViewAllButton href='/about'>Learn More About Me</ViewAllButton>
