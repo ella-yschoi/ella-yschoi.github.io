@@ -135,7 +135,7 @@ const IntroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <motion.a
-            href='https://drive.google.com/file/d/1ODrjilM8TSDXUKCK7b6W79B3mUNqH7n7/view?usp=sharing'
+            href='https://drive.google.com/file/d/1C-IVz2eRtc3PiBOpEPjBxvRZmsusMcRr/view?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
             className='group px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold
