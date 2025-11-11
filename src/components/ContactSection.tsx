@@ -110,7 +110,7 @@ const ContactSection = () => {
             className='flex-1'
           >
             <Link
-              href='https://drive.google.com/file/d/1C-IVz2eRtc3PiBOpEPjBxvRZmsusMcRr/view?usp=sharing'
+              href='https://drive.google.com/file/d/1wqWf9yQujBfU05B9eIO7m7KovRHP6aaz/view?usp=sharing'
               target='_blank'
               rel='noopener noreferrer'
               className='group flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold
