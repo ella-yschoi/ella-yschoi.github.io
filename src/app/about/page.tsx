@@ -55,11 +55,11 @@ const experience = [
   },
   {
     company: 'Channel Talk',
-    role: 'Customer Experience Manager',
+    role: 'Customer Experience Specialist',
     period: 'Aug 2022 - Jan 2023',
     startDate: '2022-08-01',
     description:
-      'AI-driven messenger and CRM platform startup (Series D, ~200 people)',
+      'AI-driven messenger and CRM platform startup serving 100k+ companies (Series D, ~200 people)',
     achievements: [
       {
         icon: <FaHandsHelping className='text-green-500' />,
@@ -83,7 +83,7 @@ const experience = [
   },
   {
     company: 'NEXT KITCHEN',
-    role: 'CRM Manager',
+    role: 'Customer Relationship Management Specialist',
     period: 'Jul 2021 - Aug 2022',
     startDate: '2021-07-01',
     description:
