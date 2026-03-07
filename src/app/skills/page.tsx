@@ -20,9 +20,17 @@ import {
   SiStorybook,
   SiSocketdotio,
   SiReactquery,
+  SiFastapi,
+  SiFlutter,
+  SiOpenai,
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
-import { MdWidgets, MdOutlineTipsAndUpdates } from 'react-icons/md';
+import {
+  MdWidgets,
+  MdOutlineTipsAndUpdates,
+  MdSpeed,
+  MdSmartToy,
+} from 'react-icons/md';
 import { FaProjectDiagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -38,25 +46,25 @@ const skillsData = {
       name: 'TypeScript',
       logo: <SiTypescript className='text-blue-500' />,
       description:
-        'Building a safe development environment through type safety. Writing robust code using interfaces, generics, and union types.',
+        'Expertise in type-safe development. Writing robust code using interfaces, generics, and union types for scalable applications.',
     },
     {
       name: 'Python',
       logo: <SiPython className='text-blue-500' />,
       description:
-        'Batch scripting and GitHub Actions deployment automation. Experience building small CLI tools and release workflows.',
+        'Proficient in backend development with FastAPI, scripting automation, and AI agent orchestration. Building CLI tools and deployment workflows.',
     },
     {
       name: 'HTML',
       logo: <SiHtml5 className='text-red-500' />,
       description:
-        'Designing HTML structures with semantic markup and web accessibility (WCAG AAA) in mind. Enhancing SEO and user experience.',
+        'Expertise in semantic markup and web accessibility (WCAG AAA). Enhancing SEO and user experience through proper HTML structure.',
     },
     {
       name: 'CSS',
       logo: <SiCss3 className='text-blue-500' />,
       description:
-        'Implementing layouts using responsive design with CSS Grid/Flexbox. Improving maintainability through CSS variables and modularization.',
+        'Expertise in responsive design with CSS Grid/Flexbox. Debugging layout shifts, overflow issues, and mobile-specific rendering problems.',
     },
   ],
   frameworks: [
@@ -64,19 +72,31 @@ const skillsData = {
       name: 'React',
       logo: <SiReact className='text-sky-400' />,
       description:
-        'Modern React development using functional components and Hooks. Optimizing component design and state management.',
+        'Expertise in modern React development using functional components and Hooks. Optimizing component design and state management.',
     },
     {
       name: 'Next.js',
       logo: <SiNextdotjs className='text-black' />,
       description:
-        'A React-based full-stack framework. Developing high-performance web applications using SSR, SSG, and the App Router.',
+        'Proficient in full-stack React framework. Building high-performance web applications using SSR, SSG, and the App Router.',
     },
     {
       name: 'Express.js',
       logo: <SiExpress className='text-black' />,
       description:
-        'Building REST APIs, WebSocket signaling servers, and backend services. Experience with Socket.io integration and PDF generation pipelines.',
+        'Building REST APIs, WebSocket signaling servers, and backend services. Proficient in Socket.io integration and PDF generation pipelines.',
+    },
+    {
+      name: 'FastAPI',
+      logo: <SiFastapi className='text-emerald-500' />,
+      description:
+        'Proficient in high-performance Python APIs with automatic OpenAPI docs, async support, and dependency injection.',
+    },
+    {
+      name: 'Flutter',
+      logo: <SiFlutter className='text-sky-400' />,
+      description:
+        'Cross-platform mobile development with Dart. Building responsive UIs with state management and API integration.',
     },
     {
       name: 'Vite',
@@ -88,7 +108,7 @@ const skillsData = {
       name: 'Zustand',
       logo: <MdWidgets className='text-gray-400' />,
       description:
-        'A lightweight state management library. Optimizing applications by separating global/local state and reducing complexity.',
+        'Lightweight state management. Optimizing applications by separating global/local state and reducing complexity.',
     },
     {
       name: 'TanStack Query',
@@ -106,31 +126,31 @@ const skillsData = {
       name: 'TailwindCSS',
       logo: <SiTailwindcss className='text-sky-400' />,
       description:
-        'A utility-first CSS framework. Enabling rapid prototyping and consistent design system implementation.',
+        'Utility-first CSS framework. Enabling rapid prototyping and consistent design system implementation.',
     },
     {
       name: 'Styled-Components',
       logo: <SiStyledcomponents className='text-pink-400' />,
       description:
-        'A CSS-in-JS library. Component-based styling using dynamic styling and theming systems.',
+        'CSS-in-JS library. Component-based styling using dynamic styling and theming systems.',
     },
     {
       name: 'D3.js',
       logo: <SiD3Dotjs className='text-orange-500' />,
       description:
-        'A data visualization library. Experience implementing complex charts and interactive graphs.',
+        'Data visualization library. Expertise in implementing complex charts and interactive graphs.',
     },
     {
       name: 'Rete.js',
       logo: <FaProjectDiagram className='text-purple-400' />,
       description:
-        'A TypeScript-first framework for creating node-based visual editors. Experience building dataflow-driven interfaces and custom visual programming tools.',
+        'TypeScript-first framework for node-based visual editors. Building dataflow-driven interfaces and custom visual programming tools.',
     },
     {
       name: 'OpenSeadragon',
       logo: <MdWidgets className='text-gray-400' />,
       description:
-        'A high-resolution image viewer library. Implemented visualization for pathology images and large SVS files.',
+        'High-resolution image viewer library. Implemented visualization for pathology images and large SVS files.',
     },
   ],
   tools: [
@@ -138,19 +158,19 @@ const skillsData = {
       name: 'AWS',
       logo: <FaAws className='text-orange-500' />,
       description:
-        'Basic EC2 usage and SSH connection experience. Comfortable connecting and operating instances for simple deployments.',
+        'EC2 instance management and SSH connection. Comfortable connecting and operating instances for deployments.',
     },
     {
       name: 'GitHub Actions',
       logo: <SiGithubactions className='text-blue-400' />,
       description:
-        'CI/CD pipeline automation. Improving development efficiency by automating build, test, and deployment processes.',
+        'CI/CD pipeline automation. Automating build, test, lint, security scanning, and deployment processes.',
     },
     {
       name: 'Git',
       logo: <SiGit className='text-gray-400' />,
       description:
-        'Version control and collaboration tool. Systematic code management through branch strategies and commit conventions.',
+        'Version control and collaboration. Systematic code management through branch strategies and commit conventions.',
     },
     {
       name: 'Storybook',
@@ -162,13 +182,65 @@ const skillsData = {
       name: 'Jest',
       logo: <SiJest className='text-rose-400' />,
       description:
-        'A JavaScript testing framework. Ensuring code quality through unit and integration tests.',
+        'JavaScript testing framework. Ensuring code quality through unit and integration tests.',
     },
     {
       name: 'Vitest',
       logo: <SiVitest className='text-lime-500' />,
       description:
-        'A Vite-based testing tool. Fast test execution and development environment optimization.',
+        'Vite-based testing tool. Fast test execution and development environment optimization.',
+    },
+  ],
+  performance: [
+    {
+      name: 'Core Web Vitals Optimization',
+      logo: <MdSpeed className='text-green-500' />,
+      description:
+        'Proficient in diagnosing and improving LCP, FID, and CLS scores for better user experience and SEO rankings.',
+    },
+    {
+      name: 'Image & Asset Optimization',
+      logo: <MdSpeed className='text-blue-500' />,
+      description:
+        'Expertise in lazy loading, next-gen formats (WebP/AVIF), responsive images, and CDN-based asset delivery.',
+    },
+    {
+      name: 'Responsive Layout Debugging',
+      logo: <MdSpeed className='text-orange-500' />,
+      description:
+        'Solving CLS issues, horizontal overflow, and mobile-specific rendering problems across browsers and devices.',
+    },
+    {
+      name: 'SEO Technical Audit',
+      logo: <MdSpeed className='text-purple-500' />,
+      description:
+        'Structured data, meta optimization, canonical URLs, and Lighthouse-driven performance auditing.',
+    },
+  ],
+  ai: [
+    {
+      name: 'Claude Code / Anthropic API',
+      logo: <MdSmartToy className='text-orange-500' />,
+      description:
+        'Expertise in building AI-powered workflows, automated code review pipelines, and multi-agent orchestration with Claude.',
+    },
+    {
+      name: 'OpenAI API',
+      logo: <SiOpenai className='text-gray-700' />,
+      description:
+        'Proficient in GPT integration for content generation, data analysis, and conversational AI features.',
+    },
+    {
+      name: 'AI Agent Orchestration',
+      logo: <MdSmartToy className='text-indigo-500' />,
+      description:
+        'Designing multi-agent workflows with triangular verification, self-correction loops, and automated quality gates.',
+    },
+    {
+      name: 'Prompt Engineering',
+      logo: <MdSmartToy className='text-emerald-500' />,
+      description:
+        'Crafting effective prompts for code generation, analysis, and structured output. Optimizing token usage and response quality.',
     },
   ],
   principles: [
@@ -188,25 +260,25 @@ const skillsData = {
       name: 'Separation of Concerns',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        'Principle of Separation of Concerns. Improving code quality through clear separation of business logic and UI logic.',
+        'Improving code quality through clear separation of business logic and UI logic.',
     },
     {
       name: 'DRY Principle',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        "Don't Repeat Yourself (DRY) principle. Abstracting common logic and designing reusable components.",
+        "Don't Repeat Yourself. Abstracting common logic and designing reusable components.",
     },
     {
       name: 'Single Responsibility',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        'Single Responsibility Principle. Designing each component and function to have one clear responsibility.',
+        'Designing each component and function to have one clear responsibility.',
     },
     {
       name: 'TDD',
       logo: <MdOutlineTipsAndUpdates className='text-gray-400' />,
       description:
-        'Test-Driven Development (TDD). Writing stable code by creating tests before implementation.',
+        'Test-Driven Development. Writing stable code by creating tests before implementation.',
     },
   ],
 };
@@ -279,10 +351,13 @@ export default function SkillsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>Skills</h1>
+          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>
+            Skills
+          </h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
-            A comprehensive overview of my technical skills, development
-            principles, and tools I use to build modern web applications.
+            A comprehensive overview of my technical skills, from responsive
+            web performance to AI-driven automation, built on modern frameworks
+            and best practices.
           </p>
 
           {/* Skills Overview Cards */}
@@ -302,7 +377,7 @@ export default function SkillsPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className='text-2xl font-bold text-indigo-600'>12</div>
+              <div className='text-2xl font-bold text-indigo-600'>14</div>
               <div className='text-sm text-gray-600'>Frameworks</div>
             </motion.div>
             <motion.div
@@ -320,8 +395,10 @@ export default function SkillsPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <div className='text-2xl font-bold text-green-600'>6</div>
-              <div className='text-sm text-gray-600'>Principles</div>
+              <div className='text-2xl font-bold text-green-600'>8</div>
+              <div className='text-sm text-gray-600'>
+                Performance & AI
+              </div>
             </motion.div>
           </div>
         </motion.div>
@@ -345,9 +422,21 @@ export default function SkillsPage() {
         />
 
         <SkillSection
+          title='Performance & SEO'
+          items={skillsData.performance}
+          color='bg-green-100'
+        />
+
+        <SkillSection
+          title='AI & Automation'
+          items={skillsData.ai}
+          color='bg-orange-100'
+        />
+
+        <SkillSection
           title='Development Principles'
           items={skillsData.principles}
-          color='bg-green-100'
+          color='bg-gray-100'
         />
       </div>
     </section>

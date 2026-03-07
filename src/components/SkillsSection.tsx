@@ -3,19 +3,19 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import {
-  SiHtml5,
-  SiCss3,
   SiJavascript,
   SiTypescript,
   SiReact,
   SiNextdotjs,
   SiGit,
-  SiJest,
   SiPython,
   SiExpress,
-  SiStorybook,
+  SiFastapi,
+  SiOpenai,
+  SiTailwindcss,
 } from 'react-icons/si';
-import { FaAws } from 'react-icons/fa';
+import { FaAws, FaSearch } from 'react-icons/fa';
+import { MdSmartToy, MdSpeed } from 'react-icons/md';
 
 const skills = [
   {
@@ -34,16 +34,6 @@ const skills = [
     category: 'Backend',
   },
   {
-    name: 'HTML',
-    icon: <SiHtml5 className='text-red-500' />,
-    category: 'Frontend',
-  },
-  {
-    name: 'CSS',
-    icon: <SiCss3 className='text-blue-500' />,
-    category: 'Frontend',
-  },
-  {
     name: 'React',
     icon: <SiReact className='text-sky-400' />,
     category: 'Frontend',
@@ -59,20 +49,49 @@ const skills = [
     category: 'Backend',
   },
   {
+    name: 'FastAPI',
+    icon: <SiFastapi className='text-emerald-500' />,
+    category: 'Backend',
+  },
+  {
+    name: 'TailwindCSS',
+    icon: <SiTailwindcss className='text-sky-400' />,
+    category: 'Frontend',
+  },
+  {
+    name: 'Claude API',
+    icon: <MdSmartToy className='text-orange-500' />,
+    category: 'AI',
+  },
+  {
+    name: 'OpenAI',
+    icon: <SiOpenai className='text-gray-700' />,
+    category: 'AI',
+  },
+  {
+    name: 'AI Agent',
+    icon: <MdSmartToy className='text-indigo-500' />,
+    category: 'AI',
+  },
+  {
+    name: 'SEO',
+    icon: <FaSearch className='text-green-500' />,
+    category: 'Optimization',
+  },
+  {
+    name: 'Performance',
+    icon: <MdSpeed className='text-green-500' />,
+    category: 'Optimization',
+  },
+  {
     name: 'AWS',
     icon: <FaAws className='text-orange-500' />,
     category: 'Cloud',
   },
-  { name: 'Git', icon: <SiGit className='text-gray-400' />, category: 'Tools' },
   {
-    name: 'Storybook',
-    icon: <SiStorybook className='text-pink-500' />,
+    name: 'Git',
+    icon: <SiGit className='text-gray-400' />,
     category: 'Tools',
-  },
-  {
-    name: 'Jest',
-    icon: <SiJest className='text-rose-400' />,
-    category: 'Testing',
   },
 ];
 
@@ -103,7 +122,7 @@ const itemVariants = {
 const SkillsSection = () => (
   <section
     id='skills'
-    className='w-full bg-gradient-to-br from-white via-indigo-50/20 to-purple-50/30 rounded-2xl shadow-lg border border-gray-100/50 py-16 px-8 backdrop-blur-sm'
+    className='w-full bg-gradient-to-br from-white via-blue-50/20 to-indigo-50/30 rounded-2xl shadow-lg border border-gray-100/50 py-16 px-8 backdrop-blur-sm'
   >
     <div className='max-w-6xl mx-auto'>
       <motion.div
@@ -114,7 +133,7 @@ const SkillsSection = () => (
         viewport={{ once: true }}
       >
         <motion.h2
-          className='text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-indigo-800 to-purple-800 bg-clip-text text-transparent'
+          className='text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -122,17 +141,10 @@ const SkillsSection = () => (
         >
           Technical Skills
         </motion.h2>
-        <motion.p
-          className='text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed'
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        ></motion.p>
       </motion.div>
 
       <motion.div
-        className='grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'
+        className='grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
         variants={containerVariants}
         initial='hidden'
         whileInView='visible'
@@ -149,14 +161,9 @@ const SkillsSection = () => (
               <div className='text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-300'>
                 {skill.icon}
               </div>
-              <div className='space-y-1'>
-                <h3 className='text-sm md:text-base font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors'>
-                  {skill.name}
-                </h3>
-                <span className='text-xs text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded-full'>
-                  {skill.category}
-                </span>
-              </div>
+              <h3 className='text-sm md:text-base font-semibold text-gray-900 group-hover:text-blue-600 transition-colors'>
+                {skill.name}
+              </h3>
             </div>
           </motion.div>
         ))}
@@ -172,8 +179,8 @@ const SkillsSection = () => (
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             href='/skills'
-            className='px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold
-              hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30'
+            className='px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold
+              hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30'
           >
             View All Skills
           </Link>
