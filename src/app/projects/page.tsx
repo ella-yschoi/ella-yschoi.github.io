@@ -51,7 +51,7 @@ const projects = [
     title: 'RefridgeGO',
     description:
       'AI-powered recipe recommendation app. Users select ingredients, cooking tools, and difficulty, then receive personalized recipes via OpenAI. Cross-platform with local history.',
-    image: `${prefix}/images/project/refridge-go-thumbnail.png`,
+    image: `${prefix}/images/project/refridge-go-home.png`,
     tech: ['Flutter', 'Dart', 'OpenAI API', 'Vercel'],
     period: 'Jan 2026 - Present',
     section: 'ai' as const,
@@ -61,7 +61,7 @@ const projects = [
     title: 'Tailwind Class Grouper',
     description:
       'VSCode extension that organizes Tailwind CSS classes into 13 categorized groups with clsx() output. Published on VSCode Marketplace.',
-    image: `${prefix}/images/project/tailwind-class-grouper-thumbnail.png`,
+    image: `${prefix}/images/project/tailwind-marketplace.jpeg`,
     tech: ['TypeScript', 'VSCode Extension API'],
     period: 'Dec 2025 - Present',
     section: 'opensource' as const,

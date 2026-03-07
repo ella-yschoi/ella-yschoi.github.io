@@ -545,7 +545,8 @@ const projects = {
       'Vercel',
     ],
     images: [
-      `${prefix}/images/project/refridge-go-thumbnail.png`,
+      `${prefix}/images/project/refridge-go-home.png`,
+      `${prefix}/images/project/refridge-go-receipe.png`,
     ],
     overview: {
       title: 'Project Overview',
@@ -586,7 +587,9 @@ const projects = {
       'VSCode Extension API',
     ],
     images: [
-      `${prefix}/images/project/tailwind-class-grouper-thumbnail.png`,
+      `${prefix}/images/project/tailwind-marketplace.jpeg`,
+      `${prefix}/images/project/tailwind-vscode.jpeg`,
+      `${prefix}/images/project/tailwind-result.jpeg`,
     ],
     overview: {
       title: 'Project Overview',
