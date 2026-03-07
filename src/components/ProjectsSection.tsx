@@ -24,19 +24,28 @@ const projects = [
     tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
   },
   {
-    slug: 'peer-connect',
-    title: 'PeerConnect',
+    slug: 'renewal-review',
+    title: 'Renewal Review',
     description:
-      'WebRTC-based video chat with room codes and real-time connection monitoring',
-    image: `${prefix}/images/project/peer-connect-thumbnail.png`,
-    tech: [
-      'WebRTC',
-      'Socket',
-      'Express.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-    ],
+      'Insurance renewal review pipeline combining rule-based + LLM intelligence. 8,000 policies in under 10 seconds.',
+    image: `${prefix}/images/project/renewal-review-thumbnail.png`,
+    tech: ['Python', 'FastAPI', 'Claude API', 'PostgreSQL'],
+  },
+  {
+    slug: 'agentic-dev-pipeline',
+    title: 'Agentic Dev Pipeline',
+    description:
+      'AI-driven automation: code → lint/test/security → triangular verification → self-correction. Zero human intervention.',
+    image: `${prefix}/images/project/agentic-dev-pipeline-thumbnail.png`,
+    tech: ['Bash', 'Claude Code', 'GitHub Actions'],
+  },
+  {
+    slug: 'datepicker-calendar',
+    title: 'DatePicker Calendar',
+    description:
+      'Published npm package with 200+ weekly downloads and WCAG 2.1 AA accessibility compliance',
+    image: `${prefix}/images/project/calendar-thumbnail.jpeg`,
+    tech: ['TypeScript', 'React', 'Vite', 'npm'],
   },
   {
     slug: 'github-pulse',
@@ -44,33 +53,7 @@ const projects = [
     description:
       'GitHub activity dashboard with AI-powered insights and automated PDF reports',
     image: `${prefix}/images/project/github-pulse-thumbnail.png`,
-    tech: [
-      'Next.js',
-      'Recharts',
-      'OpenAI',
-      'Express.js',
-      'TypeScript',
-      'React',
-      'Tailwind CSS',
-      'NextAuth.js',
-      'TanStack Query',
-    ],
-  },
-  {
-    slug: 'datepicker-calendar',
-    title: 'Open Source - DatePicker',
-    description:
-      'Published npm package with 200+ weekly downloads and WCAG 2.1 AA accessibility compliance',
-    image: `${prefix}/images/project/calendar-thumbnail.jpeg`,
-    tech: ['TypeScript', 'React', 'Vite'],
-  },
-  {
-    slug: 'random-picker',
-    title: 'Random Picker',
-    description:
-      'Simple random selection tool with clean UI and smooth user experience',
-    image: `${prefix}/images/project/random-picker-thumbnail.png`,
-    tech: ['TypeScript', 'React', 'Emotion', 'Vite'],
+    tech: ['Next.js', 'Recharts', 'OpenAI', 'Express.js', 'TypeScript'],
   },
 ];
 
@@ -96,13 +79,6 @@ const ProjectsSection = () => (
         >
           Featured Projects
         </motion.h2>
-        <motion.p
-          className='text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed'
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        ></motion.p>
       </motion.div>
 
       <motion.div

@@ -14,6 +14,7 @@ const projects = [
     image: `${prefix}/images/project/datahub-desktop-lightmode.png`,
     tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
     period: 'Sep 2024 - Aug 2025',
+    section: 'professional' as const,
   },
   {
     slug: 'vience-workspace',
@@ -23,6 +24,47 @@ const projects = [
     image: `${prefix}/images/project/workspace-viewer-lightmode.png`,
     tech: ['TypeScript', 'React', 'Vite', 'Tailwind CSS'],
     period: 'Sep 2024 - Aug 2025',
+    section: 'professional' as const,
+  },
+  {
+    slug: 'agentic-dev-pipeline',
+    title: 'Agentic Dev Pipeline',
+    description:
+      'Open-source AI-driven automation skill: code, lint/test/security gates, triangular verification (blind review + discrepancy report), and self-correction loop. Zero human intervention.',
+    image: `${prefix}/images/project/agentic-dev-pipeline-thumbnail.png`,
+    tech: ['Bash', 'Claude Code', 'GitHub Actions'],
+    period: 'Feb 2026 - Present',
+    section: 'ai' as const,
+  },
+  {
+    slug: 'renewal-review',
+    title: 'Renewal Review',
+    description:
+      'Insurance renewal review pipeline combining rule-based analysis with LLM (Claude) intelligence. Processes 8,000 policies in under 10 seconds with 23 risk flags.',
+    image: `${prefix}/images/project/renewal-review-thumbnail.png`,
+    tech: ['Python', 'FastAPI', 'Claude API', 'PostgreSQL', 'Docker'],
+    period: 'Feb 2026 - Present',
+    section: 'ai' as const,
+  },
+  {
+    slug: 'refridge-go',
+    title: 'RefridgeGO',
+    description:
+      'AI-powered recipe recommendation app. Users select ingredients, cooking tools, and difficulty, then receive personalized recipes via OpenAI. Cross-platform with local history.',
+    image: `${prefix}/images/project/refridge-go-thumbnail.png`,
+    tech: ['Flutter', 'Dart', 'OpenAI API', 'Vercel'],
+    period: 'Jan 2026 - Present',
+    section: 'ai' as const,
+  },
+  {
+    slug: 'tailwind-class-grouper',
+    title: 'Tailwind Class Grouper',
+    description:
+      'VSCode extension that organizes Tailwind CSS classes into 13 categorized groups with clsx() output. Published on VSCode Marketplace.',
+    image: `${prefix}/images/project/tailwind-class-grouper-thumbnail.png`,
+    tech: ['TypeScript', 'VSCode Extension API'],
+    period: 'Dec 2025 - Present',
+    section: 'opensource' as const,
   },
   {
     slug: 'peer-connect',
@@ -39,6 +81,7 @@ const projects = [
       'Tailwind CSS',
     ],
     period: 'Oct 2025 - Present',
+    section: 'opensource' as const,
   },
   {
     slug: 'github-pulse',
@@ -58,6 +101,7 @@ const projects = [
       'OpenAI',
     ],
     period: 'Sep 2025 - Present',
+    section: 'opensource' as const,
   },
   {
     slug: 'datepicker-calendar',
@@ -67,35 +111,32 @@ const projects = [
     image: `${prefix}/images/project/calendar-thumbnail.jpeg`,
     tech: ['TypeScript', 'React', 'Vite'],
     period: 'Mar 2024 - Present',
-  },
-  {
-    slug: 'personal-portfolio',
-    title: 'Personal Portfolio Website',
-    description:
-      'Accessible portfolio with Lighthouse scores of 100/100/100/99 and fast load performance',
-    image: `${prefix}/images/project/portfolio-home.png`,
-    tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
-    period: 'Jun 2025',
-  },
-  {
-    slug: 'random-picker',
-    title: 'Open Source - Random Picker',
-    description:
-      'Simple random selection tool with clean UI and smooth user experience',
-    image: `${prefix}/images/project/random-picker-thumbnail.png`,
-    tech: ['TypeScript', 'React', 'Vite', 'Emotion'],
-    period: 'Feb 2024',
+    section: 'opensource' as const,
   },
 ];
 
-export default function ProjectsPage() {
-  const professionalProjects = projects.filter(
-    (p) => p.slug === 'vience-datahub' || p.slug === 'vience-workspace'
-  );
-  const personalProjects = projects.filter(
-    (p) => p.slug !== 'vience-datahub' && p.slug !== 'vience-workspace'
-  );
+const sections = [
+  {
+    id: 'professional',
+    heading: 'Professional',
+    headingId: 'professional-projects-heading',
+    color: 'bg-blue-100',
+  },
+  {
+    id: 'ai',
+    heading: 'AI & Automation',
+    headingId: 'ai-projects-heading',
+    color: 'bg-indigo-100',
+  },
+  {
+    id: 'opensource',
+    heading: 'Open Source & Side Projects',
+    headingId: 'opensource-projects-heading',
+    color: 'bg-purple-100',
+  },
+] as const;
 
+export default function ProjectsPage() {
   return (
     <section
       className='py-16 w-full bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50 min-h-screen'
@@ -108,76 +149,56 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>Projects</h1>
+          <h1 className='text-4xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>
+            Projects
+          </h1>
           <p className='text-lg text-gray-700 mb-12 max-w-3xl leading-relaxed'>
-            This collection of projects showcases my ability to build efficient,
-            scalable, and user-centric web applications, with a strong focus on
-            clean code, performance, and accessibility.
+            A collection of projects showcasing responsive web development,
+            AI-powered automation, and full-stack engineering, built with a
+            focus on performance, clean code, and real-world impact.
           </p>
         </motion.div>
 
         <div className='space-y-16'>
-          {/* Professional Projects Section */}
-          <motion.section
-            aria-labelledby='professional-projects-heading'
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className='flex items-center gap-3 mb-8'>
-              <div className='p-2 bg-blue-100 rounded-lg'></div>
-              <h2
-                id='professional-projects-heading'
-                className='text-2xl font-bold text-gray-900'
+          {sections.map((section, sectionIndex) => {
+            const sectionProjects = projects.filter(
+              (p) => p.section === section.id
+            );
+            if (sectionProjects.length === 0) return null;
+
+            return (
+              <motion.section
+                key={section.id}
+                aria-labelledby={section.headingId}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + sectionIndex * 0.2 }}
               >
-                Professional Projects
-              </h2>
-            </div>
+                <div className='flex items-center gap-3 mb-8'>
+                  <div className={`p-2 ${section.color} rounded-lg`}></div>
+                  <h2
+                    id={section.headingId}
+                    className='text-2xl font-bold text-gray-900'
+                  >
+                    {section.heading}
+                  </h2>
+                </div>
 
-            <div className='space-y-8'>
-              {professionalProjects.map((project, index) => (
-                <motion.div
-                  key={project.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <ProjectCard {...project} variant='large' />
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
-
-          {/* Personal Projects Section */}
-          <motion.section
-            aria-labelledby='personal-projects-heading'
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className='flex items-center gap-3 mb-8'>
-              <div className='p-2 bg-indigo-100 rounded-lg'></div>
-              <h2
-                id='personal-projects-heading'
-                className='text-2xl font-bold text-gray-900'
-              >
-                Personal Projects
-              </h2>
-            </div>
-
-            <div className='space-y-8'>
-              {personalProjects.map((project, index) => (
-                <motion.div
-                  key={project.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <ProjectCard {...project} variant='large' />
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
+                <div className='space-y-8'>
+                  {sectionProjects.map((project, index) => (
+                    <motion.div
+                      key={project.slug}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                      <ProjectCard {...project} variant='large' />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.section>
+            );
+          })}
         </div>
       </div>
     </section>

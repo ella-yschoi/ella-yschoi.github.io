@@ -12,9 +12,13 @@ export async function generateStaticParams() {
   return [
     { slug: 'vience-datahub' },
     { slug: 'vience-workspace' },
+    { slug: 'renewal-review' },
+    { slug: 'agentic-dev-pipeline' },
+    { slug: 'refridge-go' },
     { slug: 'peer-connect' },
     { slug: 'github-pulse' },
     { slug: 'datepicker-calendar' },
+    { slug: 'tailwind-class-grouper' },
     { slug: 'personal-portfolio' },
     { slug: 'random-picker' },
   ];
@@ -416,6 +420,202 @@ const projects = {
     },
   },
 
+  'renewal-review': {
+    title: 'Renewal Review',
+    subtitle: undefined,
+    projectURL: undefined,
+    period: 'Feb 2026 - Present',
+    githubURL: undefined,
+    tech: [
+      'Python',
+      'FastAPI',
+      'Claude API',
+      'PostgreSQL',
+      'Docker',
+      'Langfuse',
+    ],
+    images: [
+      `${prefix}/images/project/renewal-review-thumbnail.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
+      content: [
+        'Built an insurance renewal review pipeline that combines rule-based analysis with LLM (Claude) intelligence to process 8,000 policies in under 10 seconds.',
+        'The system applies 23 risk flags across coverage gaps, pricing anomalies, and compliance checks, replacing an 11-day manual review cycle with a 2-day automated process.',
+      ],
+    },
+    contributions: [
+      {
+        category: 'AI-Powered Analysis Pipeline',
+        items: [
+          'Designed a hybrid rule-based + LLM architecture that applies 23 risk flags per policy with structured JSON output',
+          'Integrated Claude API for nuanced risk assessment beyond simple rule matching',
+          'Built comparison evaluation system with Langfuse for benchmarking LLM accuracy',
+        ],
+      },
+      {
+        category: 'Backend & Data Layer',
+        items: [
+          'Implemented FastAPI endpoints for policy ingestion, batch processing, and result retrieval',
+          'Designed PostgreSQL schema for policies, reviews, and comparison run results',
+          'Built seed scripts and data generation tools for realistic test datasets',
+        ],
+      },
+      {
+        category: 'Performance & Reliability',
+        items: [
+          'Achieved sub-10-second processing for 8,000 policies through async batch processing',
+          'Containerized with Docker for consistent deployment across environments',
+          'Reduced manual review cycle from 11 days to 2 days',
+        ],
+      },
+    ],
+    result: {
+      title: 'Project Results',
+      content: [
+        'Reduced insurance renewal review cycle from 11 days to 2 days',
+        'Processes 8,000 policies in under 10 seconds with 23 risk flags',
+        'Demonstrated hybrid rule + LLM approach for regulated industry automation',
+      ],
+    },
+  },
+
+  'agentic-dev-pipeline': {
+    title: 'Agentic Dev Pipeline',
+    subtitle: undefined,
+    projectURL: undefined,
+    period: 'Feb 2026 - Present',
+    githubURL: undefined,
+    tech: [
+      'Bash',
+      'Claude Code',
+      'GitHub Actions',
+      'Semgrep',
+      'Gitleaks',
+    ],
+    images: [
+      `${prefix}/images/project/agentic-dev-pipeline-thumbnail.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
+      content: [
+        'Created an open-source AI-driven development automation skill that orchestrates the full code → lint/test/security gates → triangular verification → self-correction loop with zero human intervention.',
+        'The pipeline uses blind review and discrepancy reports for triangular verification, ensuring code quality through independent AI review channels.',
+      ],
+    },
+    contributions: [
+      {
+        category: 'Automation Pipeline Design',
+        items: [
+          'Designed end-to-end automation flow: code generation → lint/test/security → triangular verification → self-correction',
+          'Implemented blind review mechanism where an independent AI reviewer evaluates code without seeing the original prompt',
+          'Built discrepancy report generation that compares blind review findings with original intent',
+        ],
+      },
+      {
+        category: 'Security & Quality Gates',
+        items: [
+          'Integrated Semgrep for static analysis security scanning',
+          'Integrated Gitleaks for secret detection in generated code',
+          'Built automated test execution and lint checking as pipeline gates',
+        ],
+      },
+      {
+        category: 'Self-Correction Loop',
+        items: [
+          'Implemented automated self-correction that fixes issues found during verification',
+          'Designed retry logic with configurable iteration limits',
+          'Created structured feedback loop between verification and correction stages',
+        ],
+      },
+    ],
+    result: undefined,
+  },
+
+  'refridge-go': {
+    title: 'RefridgeGO',
+    subtitle: undefined,
+    projectURL: undefined,
+    period: 'Jan 2026 - Present',
+    githubURL: undefined,
+    tech: [
+      'Flutter',
+      'Dart',
+      'OpenAI API',
+      'Vercel',
+    ],
+    images: [
+      `${prefix}/images/project/refridge-go-thumbnail.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
+      content: [
+        'Built an AI-powered recipe recommendation app where users select ingredients, cooking tools, and difficulty level to receive personalized recipes via OpenAI.',
+        'Cross-platform Flutter application with local history storage for previously generated recipes.',
+      ],
+    },
+    contributions: [
+      {
+        category: 'AI-Powered Recipe Generation',
+        items: [
+          'Integrated OpenAI API for personalized recipe recommendations based on user-selected ingredients and constraints',
+          'Designed structured prompts that factor in cooking tools, difficulty level, and available ingredients',
+          'Implemented recipe history with local storage for offline access to previously generated recipes',
+        ],
+      },
+      {
+        category: 'Cross-Platform Development',
+        items: [
+          'Built responsive Flutter UI that works seamlessly on both iOS and Android',
+          'Implemented ingredient selection interface with intuitive categorization',
+          'Created cooking tool and difficulty level selectors for recipe personalization',
+        ],
+      },
+    ],
+    result: undefined,
+  },
+
+  'tailwind-class-grouper': {
+    title: 'Tailwind Class Grouper',
+    subtitle: undefined,
+    projectURL: undefined,
+    period: 'Dec 2025 - Present',
+    githubURL: undefined,
+    tech: [
+      'TypeScript',
+      'VSCode Extension API',
+    ],
+    images: [
+      `${prefix}/images/project/tailwind-class-grouper-thumbnail.png`,
+    ],
+    overview: {
+      title: 'Project Overview',
+      content: [
+        'Built and published a VSCode extension that organizes Tailwind CSS classes into 13 categorized groups with clsx() output.',
+        'Available on the VSCode Marketplace for developers looking to maintain consistent class ordering in their Tailwind projects.',
+      ],
+    },
+    contributions: [
+      {
+        category: 'Extension Development',
+        items: [
+          'Implemented class parsing and categorization logic for 13 Tailwind CSS groups',
+          'Built clsx() output formatting for organized class strings',
+          'Published and maintained the extension on VSCode Marketplace',
+        ],
+      },
+      {
+        category: 'Developer Experience',
+        items: [
+          'Designed intuitive command palette integration for quick class organization',
+          'Implemented selection-based and full-file class grouping modes',
+          'Added support for responsive prefixes and state variants',
+        ],
+      },
+    ],
+    result: undefined,
+  },
+
   'personal-portfolio': {
     title: 'Personal Portfolio Website',
     subtitle: undefined,
@@ -604,52 +804,6 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </p>
               )}
             </div>
-            {(project.projectURL || 'githubURL' in project) && (
-              <div className='flex gap-3 flex-wrap'>
-                {project.projectURL && (
-                  <a
-                    href={project.projectURL}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 font-medium text-sm'
-                    aria-label='View live demo'
-                  >
-                    <svg
-                      width='16'
-                      height='16'
-                      viewBox='0 0 24 24'
-                      fill='currentColor'
-                      className='flex-shrink-0'
-                      aria-hidden='true'
-                    >
-                      <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' />
-                    </svg>
-                    Live Demo
-                  </a>
-                )}
-                {'githubURL' in project && project.githubURL && (
-                  <a
-                    href={project.githubURL}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-200 transition-colors duration-200 font-medium text-sm'
-                    aria-label='View source code on GitHub'
-                  >
-                    <svg
-                      width='16'
-                      height='16'
-                      viewBox='0 0 24 24'
-                      fill='currentColor'
-                      className='flex-shrink-0'
-                      aria-hidden='true'
-                    >
-                      <path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z' />
-                    </svg>
-                    Source Code
-                  </a>
-                )}
-              </div>
-            )}
           </div>
           {project.subtitle && (
             <div className='flex items-center gap-2 mb-4'>
