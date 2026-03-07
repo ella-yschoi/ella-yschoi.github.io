@@ -9,10 +9,8 @@ import { IoArrowBack } from 'react-icons/io5';
 
 const navItems = [
   { label: 'Home', href: '/', id: 'intro' },
-  { label: 'About', href: '/about' },
   { label: 'Skills', href: '/skills', id: 'skills' },
   { label: 'Projects', href: '/projects', id: 'projects' },
-  { label: 'Study', href: '/study', id: 'study' },
   { label: 'Contact', href: '/contact', id: 'contact' },
 ];
 

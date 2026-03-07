@@ -15,19 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Ella Choi',
-  description: "Software Engineer Ella Choi's portfolio",
+  title: 'Ella Choi | Software Engineer',
+  description:
+    'Software Engineer specializing in responsive web performance optimization and AI-driven automation solutions',
   openGraph: {
-    title: 'Ella Choi',
-    description: "Software Engineer Ella Choi's portfolio",
+    title: 'Ella Choi | Software Engineer',
+    description:
+      'Software Engineer specializing in responsive web performance optimization and AI-driven automation solutions',
     url: 'https://ella-yschoi.github.io/',
-    siteName: 'Ella Choi Portfolio',
+    siteName: 'Ella Choi | Software Engineer',
     images: [
       {
         url: 'https://ella-yschoi.github.io/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Ella Choi Portfolio Thumbnail',
+        alt: 'Ella Choi - Software Engineer',
       },
     ],
     locale: 'en_US',

@@ -2,7 +2,6 @@ import IntroSection from '@/components/IntroSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
 import ContactSection from '@/components/ContactSection';
-import StudySection from '@/components/StudySection';
 
 export default function Home() {
   return (
@@ -22,9 +21,6 @@ export default function Home() {
           className='rounded-2xl shadow-lg my-8 overflow-hidden'
         >
           <ProjectsSection />
-        </div>
-        <div id='study' className='rounded-2xl shadow-lg my-8 overflow-hidden'>
-          <StudySection />
         </div>
         <div
           id='contact'
