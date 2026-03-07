@@ -1,36 +1,34 @@
 'use client';
 
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
-const ViewAllButton = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => (
-  <Link
-    href={href}
-    className='group inline-flex items-center text-gray-700 text-base font-medium transition-all relative hover:text-blue-600'
-  >
-    <span className='transition-transform duration-300 group-hover:translate-x-1'>
-      {children}
-    </span>
-    <span
-      aria-hidden
-      className='ml-2 text-xl transition-transform duration-300 group-hover:translate-x-1'
-    >
-      →
-    </span>
-  </Link>
-);
+const expertiseItems = [
+  {
+    title: 'Responsive Fixes',
+    description:
+      'Solving horizontal overflow, layout shifts, and mobile-specific bugs.',
+  },
+  {
+    title: 'Performance Tuning',
+    description:
+      'Optimizing Core Web Vitals, image loading, and asset delivery.',
+  },
+  {
+    title: 'AI Integration',
+    description:
+      'Building custom AI agents and automated workflows using Claude Code and Anthropic API.',
+  },
+  {
+    title: 'Full-Stack Solutions',
+    description:
+      'React, Next.js, Python/FastAPI. Delivering robust systems that work seamlessly with AI tools.',
+  },
+];
 
 const IntroSection = () => {
   const ref = useRef(null);
-  const [showCopyModal, setShowCopyModal] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -38,16 +36,6 @@ const IntroSection = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.2]);
-
-  const handleEmailCopy = async () => {
-    try {
-      await navigator.clipboard.writeText('dev.ella.choi@gmail.com');
-      setShowCopyModal(true);
-      setTimeout(() => setShowCopyModal(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy email:', err);
-    }
-  };
 
   return (
     <section
@@ -107,7 +95,7 @@ const IntroSection = () => {
           >
             <div className='w-2 h-2 bg-green-500 rounded-full animate-pulse'></div>
             <span className='text-sm font-medium text-gray-600'>
-              Available for opportunities
+              Available for Hire
             </span>
           </motion.div>
 
@@ -120,11 +108,9 @@ const IntroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className='text-blue-600 font-medium'>Software Engineer</span>{' '}
+            <span className='text-blue-600 font-medium'>Software Engineer</span>
             <br />
-            Specializing in{' '}
-            <span className='text-black font-medium'>zero to one</span> product
-            development
+            Performance Optimization & AI-Driven Automation
           </motion.p>
         </motion.div>
 
@@ -134,22 +120,20 @@ const IntroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <motion.a
-            href='https://drive.google.com/file/d/1YSdXk3uCajIaQ99Y5VId4Qu8HKnRZWno/view?usp=sharing'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='group px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold
-              hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-base w-full sm:w-auto transform hover:scale-105 hover:shadow-lg shadow-blue-500/25'
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className='flex items-center justify-center gap-2'>
-              Resume
-              <motion.span className='group-hover:translate-x-1 transition-transform duration-200'>
-                ↗
-              </motion.span>
-            </span>
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href='/skills'
+              className='group px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold
+                hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-base w-full sm:w-auto block hover:shadow-lg shadow-blue-500/25'
+            >
+              <span className='flex items-center justify-center gap-2'>
+                View Skills
+                <motion.span className='group-hover:translate-x-1 transition-transform duration-200'>
+                  →
+                </motion.span>
+              </span>
+            </Link>
+          </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href='#projects'
@@ -162,74 +146,48 @@ const IntroSection = () => {
         </motion.div>
 
         <motion.div
-          className='flex gap-8 mt-6 justify-center relative'
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-        >
-          <motion.button
-            onClick={handleEmailCopy}
-            aria-label='Copy email to clipboard'
-            className='text-2xl text-gray-400 hover:text-blue-600 transition-colors duration-200 relative cursor-pointer p-2 rounded-full hover:bg-blue-50'
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaEnvelope />
-            {showCopyModal && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-md whitespace-nowrap shadow-lg z-50'
-              >
-                Copied to clipboard!
-              </motion.div>
-            )}
-          </motion.button>
-          <motion.a
-            href='https://github.com/ella-yschoi'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='GitHub'
-            className='text-2xl text-gray-400 hover:text-gray-700 transition-colors duration-200 p-2 rounded-full hover:bg-gray-100'
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaGithub />
-          </motion.a>
-          <motion.a
-            href='https://linkedin.com/in/ella-yschoi'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label='LinkedIn'
-            className='text-2xl text-gray-400 hover:text-blue-600 transition-colors duration-200 p-2 rounded-full hover:bg-blue-50'
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaLinkedin />
-          </motion.a>
-        </motion.div>
-
-        <motion.div
-          className='mt-8 space-y-6 max-w-2xl'
+          className='mt-8 space-y-8 max-w-2xl'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <p className='text-lg text-gray-600 leading-relaxed'>
-            I build products that connect{' '}
-            <span className='text-indigo-600 font-medium'>user needs</span> with{' '}
-            <span className='text-blue-600 font-medium'>technical depth</span>.
-            <br />
-            My work lives where{' '}
-            <span className='text-indigo-600 font-medium'>
-              engineering
-            </span> and{' '}
-            <span className='text-purple-600 font-medium'>business</span> meet,
-            <br /> turning early ideas into practical, scalable products.
-          </p>
-          <div className='flex justify-end mt-8'>
-            <ViewAllButton href='/about'>Learn More About Me</ViewAllButton>
+          <div className='space-y-4'>
+            <p className='text-lg text-gray-600 leading-relaxed'>
+              I create{' '}
+              <span className='text-blue-600 font-medium'>
+                high-performance, pixel-perfect web experiences
+              </span>{' '}
+              and build{' '}
+              <span className='text-blue-600 font-medium'>
+                AI-powered automation systems
+              </span>{' '}
+              that save time and costs.
+            </p>
+            <p className='text-lg text-gray-600 leading-relaxed'>
+              With 3+ years of marketing experience prior to engineering, I
+              understand how{' '}
+              <span className='text-blue-600 font-medium'>
+                technical performance directly impacts conversion rates and
+                business growth.
+              </span>
+            </p>
+          </div>
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 text-left'>
+            {expertiseItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className='bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 border-l-2 border-l-blue-400'
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+              >
+                <h3 className='text-sm font-semibold text-gray-900 mb-1'>
+                  {item.title}
+                </h3>
+                <p className='text-sm text-gray-500'>{item.description}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </motion.div>

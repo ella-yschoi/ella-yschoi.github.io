@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
-import { IoIosDocument } from 'react-icons/io';
 import { TbWorld } from 'react-icons/tb';
 import { motion } from 'framer-motion';
 
@@ -19,36 +18,6 @@ const contacts = [
     iconBg: 'bg-blue-100',
   },
   {
-    label: 'Resume',
-    value: 'View Resume',
-    href: 'https://drive.google.com/file/d/1YSdXk3uCajIaQ99Y5VId4Qu8HKnRZWno/view?usp=sharing',
-    icon: <IoIosDocument className='text-2xl' />,
-    bg: 'bg-white/80 backdrop-blur-sm',
-    copyable: false,
-    color: 'text-indigo-600',
-    iconBg: 'bg-indigo-100',
-  },
-  {
-    label: 'GitHub',
-    value: 'ella-yschoi',
-    href: 'https://github.com/ella-yschoi',
-    icon: <FaGithub className='text-2xl' />,
-    bg: 'bg-white/80 backdrop-blur-sm',
-    copyable: false,
-    color: 'text-gray-600',
-    iconBg: 'bg-gray-100',
-  },
-  {
-    label: 'LinkedIn',
-    value: 'ella-yschoi',
-    href: 'https://linkedin.com/in/ella-yschoi',
-    icon: <FaLinkedin className='text-2xl' />,
-    bg: 'bg-white/80 backdrop-blur-sm',
-    copyable: false,
-    color: 'text-blue-600',
-    iconBg: 'bg-blue-100',
-  },
-  {
     label: 'Tech Blog in English',
     value: 'medium.com/@ella_choi',
     href: 'https://medium.com/@ella_choi',
@@ -57,16 +26,6 @@ const contacts = [
     copyable: false,
     color: 'text-green-600',
     iconBg: 'bg-green-100',
-  },
-  {
-    label: 'Tech Blog in Korean',
-    value: 'devella.oopy.io',
-    href: 'https://devella.oopy.io/',
-    icon: <TbWorld className='text-2xl' />,
-    bg: 'bg-white/80 backdrop-blur-sm',
-    copyable: false,
-    color: 'text-purple-600',
-    iconBg: 'bg-purple-100',
   },
 ];
 
